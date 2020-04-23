@@ -6,9 +6,7 @@ function getLastItem(array) {
 
 try {
   check(getLastItem).whenCalledWith(["a", "b", "c", "d"]).returns("d");
-  check(getLastItem)
-    .whenCalledWith(["apple", "banana", "pear", "kiwi"])
-    .returns("kiwi");
+  check(getLastItem).whenCalledWith(["apple", "banana", "pear", "kiwi"]).returns("kiwi");
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -22,13 +20,8 @@ function getLastNItems(array, n) {
 }
 
 try {
-  check(getLastNItems)
-    .whenCalledWith(["a", "b", "c", "d"], 2)
-    .returns(["c", "d"]);
-
-  check(getLastNItems)
-    .whenCalledWith(["apple", "banana", "pear", "kiwi"], 0)
-    .returns([]);
+  check(getLastNItems).whenCalledWith(["a", "b", "c", "d"], 2).returns(["c", "d"]);
+  check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 0).returns([]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -42,13 +35,8 @@ function removeItem(array, n) {
 }
 
 try {
-  check(removeItem)
-    .whenCalledWith(["a", "b", "c", "d"], 2)
-    .returns(["a", "b", "d"]);
-
-  check(removeItem)
-    .whenCalledWith(["a", "b", "c", "d"], 0)
-    .returns(["b", "c", "d"]);
+  check(removeItem).whenCalledWith(["a", "b", "c", "d"], 2).returns(["a", "b", "d"]);
+  check(removeItem).whenCalledWith(["a", "b", "c", "d"], 0).returns(["b", "c", "d"]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -60,13 +48,8 @@ function mergeArrays(arr1, arr2) {
 }
 
 try {
-  check(removeItem)
-    .whenCalledWith(["a", "b", "c", "d"], 2)
-    .returns(["a", "b", "d"]);
-
-  check(removeItem)
-    .whenCalledWith(["a", "b", "c", "d"], 0)
-    .returns(["b", "c", "d"]);
+  check(mergeArrays).whenCalledWith(["a", "b"], ["c", "d"]).returns(["a", "b", "c", "d"]);
+  check(mergeArrays).whenCalledWith([1], [3, 5, 7]).returns([1, 3, 5, 7]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -78,13 +61,8 @@ function getSandwichFilling(sandwich) {
 }
 
 try {
-  check(removeItem)
-    .whenCalledWith(["a", "b", "c", "d"], 2)
-    .returns(["a", "b", "d"]);
-
-  check(removeItem)
-    .whenCalledWith(["a", "b", "c", "d"], 0)
-    .returns(["b", "c", "d"]);
+  check(getSandwichFilling).whenCalledWith(["a", "b", "c", "d"]).returns(["b", "c"]);
+  check(getSandwichFilling).whenCalledWith([10, 20, 30, 40, 50, 60]).returns([20, 30, 40, 50]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -93,6 +71,16 @@ try {
 
 function accessItem(array, index) {
   // should access an array element at a specified index position
+}
+
+try {
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 2).returns("c");
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 0).returns("a");
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 4).returns("d");
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
 }
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
@@ -109,8 +97,7 @@ function check(func) {
         if (!checkDeeplyEqual(actual, expected)) {
           throw new Error(createFeedback(this.func.name, actual, expected));
         }
-      } else if (actual !== expected)
-        throw new Error(createFeedback(this.func.name, actual, expected));
+      } else if (actual !== expected) throw new Error(createFeedback(this.func.name, actual, expected));
     },
   };
   const obj = Object.create(methods);
