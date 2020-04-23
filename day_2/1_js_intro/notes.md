@@ -16,6 +16,8 @@ JavaScript is a dynamic scripted language emerging out of the browser wars in th
 
 A fundamental concept in computer programming is the notion of data and functions. **Data could be anything piece of information** from numbers to strings of text. A function is a **set of instructions** that can be used to do tasks. A large part of programming involves writing functions that will carry out meaningul tasks with data. A more concrete example might be to think of a function called `add`. This function will take in number inputs (some data) and then produce an output. So if we passed in the input values of `10` and `32` into our add function we could expect it to output a value of `42`. It is our task as developers to implement or build functions that will carry out tasks like the one previously mentioned.
 
+---
+
 ## Our first program
 
 ### `"hello northcoders"`
@@ -67,7 +69,19 @@ Once `example.js` is executed we can see that something has been printed to our 
 
 🔑 `console.log` is an in-built function we can use in order to print information or data to our console
 
-## Comments
+---
+
+## Strings
+
+The input into our function `console.log` was the following piece of data: `"hello northcoders"`
+Any characters enclosed inside quotation marks `"` or `'` is known as a **string**.
+We can think of this as type of data used for storing textual information.
+
+```js
+"hello northcoders";
+```
+
+## Comments
 
 Comments are parts of a program that will be ignored by the computer. Comments in JavaScript are denoted by `//` starting on a line like in the example below:
 
@@ -77,4 +91,13 @@ console.log("hello northcoders");
 // this will print the message 'hello northcoders' to the screen
 ```
 
-## Strings
+We can also create a comment by enclosing text inside `/*` and `*/`. For example,
+
+```js
+console.log("hello northcoders");
+
+/*
+ this will print the message 'hello northcoders' to the screen
+ another comment on here too!
+*/
+```
