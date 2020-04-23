@@ -1,4 +1,1 @@
-
-function connectStrings(string1,string2) {
-
-}
+function connectStrings(string1, string2) {}
