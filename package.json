@@ -1,0 +1,12 @@
+{
+  "name": "remote_precourse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "random.js",
+  "scripts": {
+    "check_answers": "node ./exercise_2/2_check_answers.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

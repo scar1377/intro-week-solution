@@ -14,7 +14,6 @@
 
 ### 12:15 - 13:00 - More command line
 
-
 ### ----- **LUNCH** -----
 
 ### 14:00 - 14:30 - Intro to Programming, Javascript, Browsers, NodeJS, Using NodeJS
@@ -49,9 +48,7 @@
 
 ---
 
-
 ## Day 3
-
 
 ### 8:30 - 9:15 - Conditional logic, predicates, logical operators, `if` / `else` statements 🤔
 
@@ -61,9 +58,7 @@
 
 ### 10:30 - 10:45 - Break
 
-### 10:45 - 11:30 - Regular Expressions Workshop 🤔
-
-### 11:30 - 13:00 - Practice 📝
+### 10:45 - 13:00 - Practice 📝
 
 ### ----- **LUNCH** -----
 
@@ -92,6 +87,8 @@
 ### 11:30 - 13:00 - Problem solving - Iteration, arrays, objects 📝
 
 ### ----- **LUNCH** ----- 🍔 🍟 🍎
+
+### ??? - Regular Expressions Workshop 🤔
 
 ### 14:00 - 15:00 - Clean code workshop, semantic variable naming, breaking down problems, no magic numbers, good formatting, prettier(quasi-solution lecture) 🤔
 
