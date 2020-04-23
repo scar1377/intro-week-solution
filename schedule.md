@@ -1,4 +1,4 @@
-# Taught pre-course
+# Taught JavaScript pre-course
 
 ## Day 1
 
@@ -16,20 +16,6 @@
 
 ### ----- **LUNCH** -----
 
-### 14:00 - 14:30 - Intro to Programming, Javascript, Browsers, NodeJS, Using NodeJS
-
-### 14:30 - 14:45 - Functions and data, Our first programs, Data types, strings, `console.log` 🤔
-
-### 14:45 - 15:15 - Practice 📝
-
-### 15:30 - 16:00 - Data Types, variables, primitives, strings, numbers, booleans, number operations, comparison operators
-
-### 16:00 - 17:00 - Practice 📝
-
----
-
-## Day 2
-
 ### 14:00 - 14:45 - Git 101 - Understanding why we use it, the conceptual model, staging, commits
 
 ### 14:45 - 15:00 - Break
@@ -37,6 +23,24 @@
 ### 15:00 - 15:45 - Git 101 - Understanding master branch, introducing GitHub, forking, remotes
 
 ### 15:45 - 17:00 - Setting up the precourse repo
+
+---
+
+## Day 2
+
+## 08:30 - 09:00 - Intro to Programming, Javascript, Browsers, NodeJS, Using NodeJS
+
+## 09:00 - 09:15 - Break
+
+## 09:15 - 10:00 - Our first programs, data and functions, Data types, strings, `console.log` 🤔
+
+### 10:00 - 10:30 - Practice 📝
+
+### 10:30 - 11:15 - Data Types, variables, primitives, strings, numbers, booleans, number operations, comparison operators
+
+### 11:15 - 11:30 - Break
+
+### 11:30 - 13:00 - Practice 📝
 
 ### ----- **LUNCH** ----- 🍔 🍟 🍎
 
@@ -50,7 +54,7 @@
 
 ## Day 3
 
-### 8:30 - 9:15 - Conditional logic, predicates, logical operators, `if` / `else` statements 🤔
+### 8:30 - 9:15 - Conditional logic, predicates, logical operators, expressions vs statements, `if` / `else` statements 🤔
 
 ### 9:15 - 9:30 - Break
 
