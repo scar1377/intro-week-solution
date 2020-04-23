@@ -9,6 +9,8 @@ console.log("hello northcoders");
 The above example is **call** or an **invocation** of a function.
 However, `console.log` is an in-built function. We will want to create our functions so that we can carry out tasks in our code.
 
+---
+
 ## Calling functions
 
 Suppose we have a function called `add` that takes **2 inputs**, in this example `10` and `32` and produces an **output** of `42`:
@@ -16,6 +18,8 @@ Suppose we have a function called `add` that takes **2 inputs**, in this example
 ```js
 add(10, 32);
 ```
+
+---
 
 ## Function declarations
 
@@ -26,6 +30,8 @@ function add(a, b) {
   return a + b;
 }
 ```
+
+---
 
 ## Anatomy of a function
 
@@ -42,6 +48,8 @@ We can break down the following block of code into different sections:
 
 5. `return a + b;` - `return` is a keyword in JavaScript. It used to indicate what our function will **output**.
    The expression `a + b` is the **return value** of the function. The **return value** is essentially the **output** of a function.
+
+---
 
 ## Working with numbers
 
@@ -70,6 +78,3 @@ This statement can either be **true** or **false**. If we wanted to carry out th
 // < is the "less than" comparison operator
 // this expression evaluates to or "works out to have the value of" true
 ```
-
-anat - > define evaluate!
-Tricky "work out the value of"

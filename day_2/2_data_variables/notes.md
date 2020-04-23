@@ -1,5 +1,7 @@
 # Variables
 
+## Storing data
+
 Suppose we are going to use some data in our code like in the following example:
 
 ```js
@@ -22,9 +24,13 @@ However in programming it makes sense for us to store our data in such way that 
 "hello northcoders".slice(0, 6);
 ```
 
-This block of code is designed to access the first word in the string `"hello northcoders"`. However, if we needed to use this piece of data repeatedly throughout our code then we would have to write out this block of code again and again. Instead we can store this data "hello northcoders" in a **variable**
+This block of code is designed to access the first word in the string `"hello northcoders"`. However, if we needed to use this piece of data repeatedly throughout our code then we would have to write out this block of code again and again. Instead we can store this data "hello northcoders" in a **variable**.
+
+---
 
 🔑 A variable is used to store a piece of data or information
+
+---
 
 ## Variable declarations
 
@@ -44,3 +50,5 @@ We can break this piece of code into several parts:
    It is used to assign a value to a particular **variable name**
 
 4. `"hello northcoders".slice(0, 6)` this is an expression which will be assigned to `firstWord`;
+
+---
