@@ -1,8 +1,8 @@
 // Declare a function called add
 // This function should add 2 numbers and return the sum
 
-function add(a,b) {
+function add(a, b) {
   return a + b;
 }
 
-console.log('Your function ouput is ' + add(10,32) + ', expected output: 42');
+console.log("Your function ouput is " + add(10, 32) + ", expected output: 42");

@@ -1,5 +1,6 @@
 function modulo(a, b) {
   // return the remainder of the division a / b
+  return a % b;
 }
 
 console.log("modulo() gives the correct output");
@@ -16,6 +17,7 @@ try {
 
 function squareRoot(n) {
   // return the square root of n
+  return Math.sqrt(n);
 }
 
 console.log("squareRoot() works for positive integers");
@@ -72,9 +74,7 @@ function putNamesTogether(firstName, lastName) {
 
 console.log("putNamesTogether() can join two strings with a space");
 try {
-  check(putNamesTogether)
-    .whenCalledWith("izzi", "maccabee")
-    .returns("izzi maccabee");
+  check(putNamesTogether).whenCalledWith("izzi", "maccabee").returns("izzi maccabee");
 
   printGreenMessage("Pass ✔");
 } catch (error) {
@@ -153,7 +153,7 @@ function getMiddle(str) {
   // return the middle (or middle two) character(s) of the passed string
 }
 
-console.log("getMiddle() returns the middle character(s) in a string");
+console.log("getMiddle() returns the middle character in a string of odd length");
 
 try {
   check(getMiddle).whenCalledWith("abc").returns("b");
@@ -165,6 +165,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("getMiddle() returns the middle characters in a string of even length");
 try {
   check(getMiddle).whenCalledWith("abcd").returns("bc");
   check(getMiddle).whenCalledWith("blob").returns("lo");
@@ -185,8 +186,7 @@ function check(func) {
     },
     returns(expected) {
       const actual = this.func(...this.args);
-      if (actual !== expected)
-        throw new Error(createFeedback(this.func.name, actual, expected));
+      if (actual !== expected) throw new Error(createFeedback(this.func.name, actual, expected));
     },
   };
   const obj = Object.create(methods);
@@ -199,9 +199,7 @@ function addQuotes(string) {
 }
 
 function createFeedback(name, actual, expected) {
-  const feedback = `${name}'s output was ${
-    typeof actual === "string" ? addQuotes(actual) : actual
-  }, but it should be ${
+  const feedback = `${name}'s output was ${typeof actual === "string" ? addQuotes(actual) : actual}, but it should be ${
     typeof expected === "string" ? addQuotes(expected) : expected
   }`;
   return feedback;
