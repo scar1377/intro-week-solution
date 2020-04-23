@@ -4,10 +4,17 @@ function makeCard(value, suit) {}
 function isFaceCard(card) {}
 // This function should take a card object with a value and suit property and
 
-checkThat(isFaceCard({ value: "Q", suit: "spade" })).isEqualTo(true);
-
 function accessObject(object, key) {}
 // This function should take an object and a key and return the object's property value;
+
+try {
+  check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "name").returns("jonny");
+  check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(32);
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
 
 function checkIfPropertyExists(object, key) {}
 // This function should take an object and a key and return boolean that indicates whether or not the object has the given keys
@@ -47,4 +54,66 @@ function updateCoinMachine(coinMachine, money) {
   //      '2p': [],
   //    }
   // should update the
+}
+
+// >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
+
+function check(func) {
+  const methods = {
+    whenCalledWith(...args) {
+      this.args = args;
+      return this;
+    },
+    returns(expected) {
+      const actual = this.func(...this.args);
+      if (typeof actual === "object" && typeof expected === "object") {
+        if (!checkDeeplyEqual(actual, expected)) {
+          throw new Error(createFeedback(this.func.name, actual, expected));
+        }
+      } else if (actual !== expected) throw new Error(createFeedback(this.func.name, actual, expected));
+    },
+  };
+  const obj = Object.create(methods);
+  obj.func = func;
+  return obj;
+}
+
+function checkDeeplyEqual(actualList, expectedList) {
+  if (typeof actualList !== typeof expectedList) return false;
+  if (actualList.length !== expectedList.length) return false;
+
+  for (let i = 0; i < actualList.length; i++) {
+    if (Array.isArray(actualList[i]) && Array.isArray(expectedList[i])) {
+      if (!checkDeeplyEqual(actualList[i], expectedList[i])) return false;
+    } else {
+      if (actualList[i] !== expectedList[i]) return false;
+    }
+  }
+
+  return true;
+}
+
+function createFeedBackString(item) {
+  const lookup = {
+    string: (item) => `"${item}"`,
+    object: (item) => JSON.stringify(item),
+    undefined: (x) => x,
+  };
+  return lookup[typeof item](item);
+}
+
+function createFeedback(name, actual, expected) {
+  const actualString = createFeedBackString(actual);
+  const expectedString = createFeedBackString(expected);
+
+  const feedback = `${name}'s output was ${actualString}, but it should be ${expectedString}`;
+  return feedback;
+}
+
+function printRedMessage(message) {
+  console.log("\x1b[31m", message, "\x1b[0m");
+}
+
+function printGreenMessage(message) {
+  console.log("\x1b[32m", message, "\x1b[0m");
 }
