@@ -1,12 +1,9 @@
-function makeCard(value, suit) {}
-// This function should return a new object with a value property and a suit property - the function will be passed a value and a suit for the property values
-
-function isFaceCard(card) {}
-// This function should take a card object with a value and suit property and
-
-function accessObject(object, key) {}
+function accessObject(object, key) {
+  return object[key];
+}
 // This function should take an object and a key and return the object's property value;
 
+console.log(`accessObject() can access a property value using a key`);
 try {
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "name").returns("jonny");
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(32);
@@ -16,9 +13,12 @@ try {
   printRedMessage(error);
 }
 
-function checkIfPropertyExists(object, key) {}
+function checkIfPropertyExists(object, key) {
+  return key in object;
+}
 // This function should take an object and a key and return boolean that indicates whether or not the object has the given keys
 
+console.log(`checkIfPropertyExists() checks if a property exists inside an object`);
 try {
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "name").returns(true);
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(true);
@@ -29,9 +29,13 @@ try {
   printRedMessage(error);
 }
 
-function createObject(keyValuePair) {}
+function createObject(keyValuePair) {
+  const [key, value] = keyValuePair;
+  return { [key]: value };
+}
 // This function should take a key value pair (stored in an array) and use it to create an object with a key and a value
 
+console.log(`createObject() creates a new object from a key value pair`);
 try {
   check(createObject).whenCalledWith(["name", "shaq"]).returns({ name: "shaq" });
   check(createObject).whenCalledWith(["fruit", "apple"]).returns({ fruit: "apple" });
@@ -42,9 +46,12 @@ try {
   printRedMessage(error);
 }
 
-function countProperties(obj) {}
+function countProperties(obj) {
+  return Object.keys(obj).length;
+}
 // This function should take an object and count the number of properties it has
 
+console.log(`countProperties() counts the number of key-value pairs for a given object`);
 try {
   check(countProperties).whenCalledWith({}).returns(0);
   check(countProperties).whenCalledWith({ name: "shaq" }).returns(1);
@@ -56,6 +63,7 @@ try {
 }
 
 function updateVoterAddress(voter, correctHouseNumber) {
+  voter.address.houseNumber = correctHouseNumber;
   /* Uh-Oh! We've got some silly voters who've registered their addresses incorrectly.
    Lets help them fix those typos by changing their houseNumber to the correctHouseNumber.
    The user object looks like this:
@@ -72,6 +80,7 @@ function updateVoterAddress(voter, correctHouseNumber) {
   */
 }
 
+console.log(`updateVoterAddress() updates the voter's houseNumber`);
 try {
   const voter = {
     name: "Alex",
@@ -82,7 +91,7 @@ try {
       city: "Chester",
     },
   };
-  console.log(`updateVoterAddress() updates the voter's houseNumber`);
+
   updateVoterAddress(voter, 10);
 
   check(voter).isEqualTo({
@@ -105,16 +114,18 @@ function createUserString(userObj) {
   // returns a string with the user's details in the form:
   // 'name: Mitch, age: 27, language: Javascript';
   // Note - this is a good use case of string template literals.
+  return `name: ${userObj.name}, age: ${userObj.age}, language: ${userObj.language}`;
 }
 
+console.log(`createUserString() will create a message from an details object`);
 try {
   check(createUserString)
     .whenCalledWith({ name: "Mitch", age: 30, language: "Javascript" })
-    .returns("name: Mitch, age: 27, language: Javascript");
+    .returns("name: Mitch, age: 30, language: Javascript");
 
   check(createUserString)
     .whenCalledWith({ name: "Anat", age: 24, language: "Ruby" })
-    .returns("name: Mitch, age: 27, language: Javascript");
+    .returns("name: Anat, age: 24, language: Ruby");
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -130,6 +141,8 @@ function updateCoinMachine(coinMachine, money) {
   // should update the
 }
 
+console.log(`updateCoinMachine() will create a message from an details object`);
+
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 
 function check(func) {
@@ -140,12 +153,8 @@ function check(func) {
     },
     isEqualTo(expected) {
       const { actual } = this;
-      console.log(expected, "expected");
-      console.log(actual, "actual");
 
       if (typeof actual === "object" && typeof expected === "object") {
-        console.log("here");
-
         if (!checkDeeplyEqual(actual, expected)) {
           throw new Error(
             `${JSON.stringify(actual, null, 2)}\n is not equal to the expected value of \n${JSON.stringify(
