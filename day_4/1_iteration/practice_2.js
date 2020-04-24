@@ -1,8 +1,17 @@
 const items = [];
 
 // your loop here ...
+for (let i = 10; i < 101; i += 5) {
+  items.push(i);
+}
 
-expect(items).toEqual([10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]);
+try {
+  check(items).isEqualTo([10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]);
+
+  printGreenMessage("Success :)");
+} catch (error) {
+  printRedMessage(error);
+}
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 

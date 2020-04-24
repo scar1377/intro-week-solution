@@ -146,11 +146,7 @@ function check(func) {
       if (typeof actual === "object" && typeof expected === "object") {
         if (!checkDeeplyEqual(actual, expected)) {
           throw new Error(
-            `${JSON.stringify(actual, null, 2)}\n is not equal to the expected value of \n${JSON.stringify(
-              expected,
-              null,
-              2
-            )}`
+            `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
           );
         }
       } else if (actual !== expected) throw new Error(`${actual} is not equal to the expected value of ${expected}`);
@@ -171,24 +167,23 @@ function check(func) {
 }
 
 function checkDeeplyEqual(coll1, coll2) {
-  let areEqual = true;
-  if (typeof coll1 === "object" && typeof coll2 === "object") {
-    if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
-    if (Array.isArray(coll1) === Array.isArray(coll2)) {
-      for (let key1 in coll1) {
-        if (!coll2[key1]) return false;
-        else areEqual = checkDeeplyEqual(coll1[key1], coll2[key1]);
-        if (!areEqual) return false;
-      }
-    } else return false;
-  } else return coll1 === coll2;
-  return areEqual;
+  if (typeof coll1 !== "object" || typeof coll2 !== "object") return coll1 === coll2;
+
+  if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
+
+  if (Array.isArray(coll1) !== Array.isArray(coll2)) return false;
+
+  for (let key1 in coll1) {
+    if (!(key1 in coll2)) return false;
+    if (!checkDeeplyEqual(coll1[key1], coll2[key1])) return false;
+  }
+  return true;
 }
 
 function createFeedBackString(item) {
   const lookup = {
     string: (item) => `"${item}"`,
-    object: (item) => JSON.stringify(item, null, 3),
+    object: (item) => JSON.stringify(item),
     undefined: (x) => x,
     boolean: (x) => x,
     number: (x) => x,
