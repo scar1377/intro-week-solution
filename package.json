@@ -4,9 +4,12 @@
   "description": "",
   "main": "random.js",
   "scripts": {
-    "check_answers": "node ./exercise_2/2_check_answers.js"
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.4.0"
+  }
 }

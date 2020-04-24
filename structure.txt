@@ -1,0 +1,76 @@
+./
+├── README.md
+├── day_1
+│   ├── 1_bash_fundamentals
+│   └── 2_git
+│       ├── README.md
+│       └── notes.md
+├── day_2
+│   ├── 1_js_intro
+│   │   ├── README.md
+│   │   ├── explore.js
+│   │   ├── logging.js
+│   │   ├── notes.md
+│   │   ├── poem.js
+│   │   └── urls.js
+│   ├── 2_data_variables
+│   │   ├── README.md
+│   │   ├── challenges.js
+│   │   ├── concat.js
+│   │   ├── notes.md
+│   │   ├── question_0.js
+│   │   ├── question_1.js
+│   │   ├── question_2.js
+│   │   ├── question_3.js
+│   │   └── question_4.js
+│   └── 3_functions
+│       ├── README.md
+│       ├── add.js
+│       ├── challenges.js
+│       ├── connect.js
+│       ├── example.js
+│       ├── explore.js
+│       ├── notes.md
+│       ├── question_1.js
+│       ├── question_2.js
+│       └── question_3.js
+├── day_3
+│   ├── 1_logic
+│   │   └── challenges.js
+│   ├── 2_arrays
+│   │   ├── README.md
+│   │   ├── challenges.js
+│   │   ├── notes.md
+│   │   ├── practice.js
+│   │   └── question_0.js
+│   └── 3_objects
+│       ├── challenges.js
+│       ├── point.js
+│       ├── practice.js
+│       ├── question_0.js
+│       ├── question_1.js
+│       └── question_2.js
+├── day_4
+│   ├── 1_iteration
+│   │   ├── challenges.js
+│   │   ├── notes.md
+│   │   ├── practice_0.js
+│   │   ├── practice_1.js
+│   │   ├── practice_2.js
+│   │   ├── practice_3.js
+│   │   ├── practice_4.js
+│   │   └── practice_5.js
+│   ├── 2_regex
+│   └── 3_problem_solving
+│       ├── challenges.js
+│       └── notes.md
+├── day_5
+│   ├── 1_array_methods
+│   └── 2_node_npm_jest
+├── package.json
+├── schedule.md
+├── setup
+├── structure.md
+└── structure.txt
+
+19 directories, 54 files
