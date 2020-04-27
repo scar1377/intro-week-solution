@@ -17,10 +17,10 @@ try {
 const filePath = "/Users/mitch/northcoders/remote_precourse/day_1/1_intro_strings";
 
 // find the index position of the last / forward slash in the filePath string
-let lastFowardSlashIndex = filePath1.lastIndexOf("/");
-let currentDirectory = filePath1.slice(lastFowardSlashIndex + 1);
-// use a string method to find the slice of the string at that position
-// check that a value can
+let lastFowardSlashIndex = filePath.lastIndexOf("/");
+
+// use a string method to find access the directory at the end of the file paths
+let currentDirectory = filePath.slice(lastFowardSlashIndex + 1);
 
 console.log("currentDirectory is intialised with the name of the directory and the end of the filePath");
 try {
@@ -31,8 +31,6 @@ try {
 }
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
-
-var FILL_ME_IN;
 
 function check(func) {
   const methods = {

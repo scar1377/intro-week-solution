@@ -21,12 +21,3 @@ checkThat(country.population).isEqualTo(FILL_ME_IN);
 checkThat(country.regionalBlocs).isEqualTo(FILL_ME_IN);
 
 checkThat(country.regionalBlocs[FILL_ME_IN].FILL_ME_IN).isEqualTo("Central American Integration System");
-
-const tills = {
-  till_1: {
-    name: "Keith",
-    customers: [{}, {}, {}],
-  },
-  till_2: [{}, {}, {}, {}, {}],
-  till_3: [{}, {}, {}, {}],
-};

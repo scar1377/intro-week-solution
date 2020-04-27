@@ -1,9 +1,9 @@
 function checkBatteryLevel(batteryLevel) {}
 
 // if the battery level is less than 5% then should return a string saying:
-// "warning - battery level: <number-here>%, please charge your device"
+// "warning - battery level low: <number-here>%, please charge your device"
 // if the battery level is between 5 and 99% then it should display a string saying:
-// "Battery level:<number-here>%"
+// "Battery level: <number-here>%"
 // if the battery level is 100% then the string should say:
 // "Fully charged :)"
 
@@ -16,10 +16,10 @@ try {
   check(checkBatteryLevel).whenCalledWith(10).returns("Battery level: 10%");
   check(checkBatteryLevel).whenCalledWith(6).returns("Battery level: 6%");
 
-  check(checkBatteryLevel).whenCalledWith(5).returns("warning - battery level: 5%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(4).returns("warning - battery level: 4%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(3).returns("warning - battery level: 3%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(1).returns("warning - battery level: 1%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(5).returns("warning - battery level low: 5%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(4).returns("warning - battery level low: 4%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(3).returns("warning - battery level low: 3%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(1).returns("warning - battery level low: 1%, please charge your device");
 } catch (error) {
   printRedMessage(error);
 }
