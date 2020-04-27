@@ -20,7 +20,7 @@ const details = {
 
 ---
 
-## Accessing objects
+## Accessing objects - dot notation
 
 Objects access refers to the process of "looking up" or accessing property values using a property key. Suppose we have an object with 2 properties, `name` and `age`
 
@@ -39,9 +39,20 @@ person.name; // evaluates to "Anat"
 
 The above example shows dot notation where we access a property value by stating the name of an object writing a `.` and then adding a key after the dot. This notation will
 
-### Dynamic access
+## Dynamic access - square brackets
 
 Alternatively we could use a variable to access an object instead of dot notation. Consider the example below:
 
 ```js
+const phoneBook = {
+  anat: "07986538201",
+  paul: "07891867541",
+  foluso: "0789573421",
+};
+let name = "paul";
+
+phoneBook.name; // evaluates to undefined
+phoneBook[name]; // evaluates to "07891867541"
 ```
+
+In the above example the square brackets mean that the value of the variable is being used as the key to access the property value in the object.
