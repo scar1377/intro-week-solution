@@ -148,13 +148,25 @@ try {
   printRedMessage(error);
 }
 
+console.log("isAbsolutePath() checks if a file path is absolute or relative");
+// HINT: all absolute file paths start with a /
+try {
+  check(isAbsolutePath).whenCalledWith("/Users/mitch").returns(true);
+  check(isAbsolutePath).whenCalledWith("/Users/mitch/northcoders/remote_course/remote_precourse_1").returns(true);
+  check(isAbsolutePath).whenCalledWith("../composers").returns(false);
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
 function getMiddle(str) {
   return str[Math.floor(str.length / 2)];
   // return the middle (or middle two) character(s) of the passed string
 }
 
 console.log("getMiddle() returns the middle character in a string of odd length");
-
 try {
   check(getMiddle).whenCalledWith("abc").returns("b");
   check(getMiddle).whenCalledWith("mitch").returns("t");
@@ -184,24 +196,62 @@ function check(func) {
       this.args = args;
       return this;
     },
+    isEqualTo(expected) {
+      const { actual } = this;
+
+      if (typeof actual === "object" && typeof expected === "object") {
+        if (!checkDeeplyEqual(actual, expected)) {
+          throw new Error(
+            `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
+          );
+        }
+      } else if (actual !== expected) throw new Error(`${actual} is not equal to the expected value of ${expected}`);
+    },
     returns(expected) {
       const actual = this.func(...this.args);
-      if (actual !== expected) throw new Error(createFeedback(this.func.name, actual, expected));
+      if (typeof actual === "object" && typeof expected === "object") {
+        if (!checkDeeplyEqual(actual, expected)) {
+          throw new Error(createFeedback(this.func.name, actual, expected));
+        }
+      } else if (actual !== expected) throw new Error(createFeedback(this.func.name, actual, expected));
     },
   };
   const obj = Object.create(methods);
-  obj.func = func;
+  if (typeof func === "function") obj.func = func;
+  else obj.actual = func;
   return obj;
 }
 
-function addQuotes(string) {
-  return `"${string}"`;
+function checkDeeplyEqual(coll1, coll2) {
+  if (typeof coll1 !== "object" || typeof coll2 !== "object") return coll1 === coll2;
+
+  if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
+
+  if (Array.isArray(coll1) !== Array.isArray(coll2)) return false;
+
+  for (let key1 in coll1) {
+    if (!(key1 in coll2)) return false;
+    if (!checkDeeplyEqual(coll1[key1], coll2[key1])) return false;
+  }
+  return true;
+}
+
+function createFeedBackString(item) {
+  const lookup = {
+    string: (item) => `"${item}"`,
+    object: (item) => JSON.stringify(item),
+    undefined: (x) => x,
+    boolean: (x) => x,
+    number: (x) => x,
+  };
+  return lookup[typeof item](item);
 }
 
 function createFeedback(name, actual, expected) {
-  const feedback = `${name}'s output was ${typeof actual === "string" ? addQuotes(actual) : actual}, but it should be ${
-    typeof expected === "string" ? addQuotes(expected) : expected
-  }`;
+  const actualString = createFeedBackString(actual);
+  const expectedString = createFeedBackString(expected);
+
+  const feedback = `${name}'s output was ${actualString}, but it should be ${expectedString}`;
   return feedback;
 }
 
