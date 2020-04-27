@@ -65,12 +65,14 @@ $ ls -a
 Suppose a new file `list.txt` is created with some file content, as follows:
 
 ```raw
+---- list.txt ----
 My new list of ingredients
+
 ```
 
-This new file is not currently stored by git in the git repository `.git`. Instead we have updated the **working tree** or the **working directory**.
+This new file is not currently stored in the git repository `.git`. Instead we have updated the **working tree** or the **working directory**.
 
-🔑 The **working directory** refers to all of the files and directories we can currently view and edit in our code editor.
+🔑 The **working directory** refers to all of the files and directories we can currently view and edit in our project.
 
 `git` will register that the **working directory** has been updated and we can view this information by running the `git status` command:
 
@@ -87,8 +89,8 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The most important part of this command is the section beginning "Untracked files".
-An **untracked file** is a newly created file that has not yet been stored inside the git repository. In order to store this content on our timeline then we need to use additional commands.
+The most important part of this command is the section beginning `Untracked files`.
+An **untracked file** is a newly created file that has not yet been stored inside the git repository. In order to store this content on our timeline we need to use additional `git` commands.
 
 ---
 
