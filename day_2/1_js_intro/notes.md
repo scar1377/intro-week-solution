@@ -57,7 +57,7 @@ The example above consists of 3 different parts:
 
 ---
 
-- an **input**, which is a piece of text called hello northcoders
+- an **input**, which is the piece of text: "hello northcoders"
 
 We can now use our run-time environment NodeJS in order to run this piece of code. We can use the following command:
 
