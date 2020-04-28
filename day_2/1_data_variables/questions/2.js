@@ -1,5 +1,4 @@
-
-// Run this file using Node
+// Run this file using node
 
 const name = "Samuel Caine;
 console.log(name);

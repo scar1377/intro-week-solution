@@ -1,4 +1,4 @@
-// Declare a function called add
+// Declare a function called multiply
 // This function should add 2 numbers and return the sum
 
 function add(a, b) {

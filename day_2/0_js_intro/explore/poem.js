@@ -1,3 +1,5 @@
+// Research how to enter line breaks into a string in javascript and then print the output of this file into your terminal but with line breaks inserted at the correct places :)
+
 console.log(
   "Do not go gentle into that good night,Old age should burn and rage at close of day;Rage, rage against the dying of the light"
 );

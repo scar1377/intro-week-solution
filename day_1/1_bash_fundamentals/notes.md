@@ -53,7 +53,7 @@ So `echo` command will take some text input and output the same text in the term
 Computers that can store vast amounts of data or information. It makes sense for this storage of data to be organised so each piece of information has its own separate space. Collections of data are organised into groups called `files` which can can then be accessed and used to store more information. A **directory** is a container for multiple files and directorties. We can organise a collection of related files into a single directory for organisational purposes. A **directory** can also store multiple **sub-directories**.
 If we talk about being "inside" a directory then it means we're currently residing in the directory
 
-### Nagivating the file system
+## Nagivating the file system
 
 If we start in a new terminal we can use the command `pwd` which stands for **print working directory**. The shell program will currently be **inside** a directory that is to say it will have immediate access to all the files in this directory without having to access another file or folder.
 
@@ -73,12 +73,12 @@ The output `/Users/mitch` is said to be a file path. A **file path** is a list o
 
 ---
 
-### `ls` & `cd`
+### `ls`
 
-We will very frequently want to ask which folders and directories are currently inside of the current directory. For this task we can use the commnand `ls` which can be used to print the contents - files an directories inside the current directory. `ls` command stands short for **list directory contents**. `ls` command is used in the following way:
+We will frequently want to ask which folders and directories are currently inside of the current directory. For this task we can use the commnand `ls` which can be used to print the contents - files an directories inside the current directory. `ls` command stands short for **list directory contents**. `ls` command is used in the following way:
 
 ```bash
-ls <name-of-directory>
+🔑 ls <name-of-directory>
 ```
 
 If no directory is specified when using this command then it will default to **listing the directory contents** of the **current working directory**.
@@ -92,10 +92,12 @@ When I run the `ls` command inside of my current directory I get an output listi
 `Scores`, `Zoom`, `mitch_learnings` and `solution_lecture_videos`
 There is also a single file `paradigms.pdf` inside the current directory.
 
+### `cd`
+
 Suppose we wanted to enter one of the directories from above when we could use the `cd` command which stands for **change directory**. The `cd` command is used in the following way:
 
 ```bash
-cd <name-of-directory>
+🔑 cd <name-of-directory>
 ```
 
 A typical usage would be after running the `ls` command to see **which directories are currently inside the current directory** and then using `cd` in order **to change into that directory**:

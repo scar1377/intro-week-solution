@@ -2,29 +2,12 @@ const item0 = "apples";
 const item1 = "bananas";
 const item2 = "pears";
 
-// use the additional item variables from above to create a variable called shoppingList
-
+// Use the additional item variables from above to create a variable called shoppingList
 let shoppingList = item0 + ", " + item1 + " and " + item2;
 
 console.log("shoppingList is declared and initialised as a list with values from items 0,1 and 2");
 try {
   check(shoppingList).isEqualTo("apples, bananas and pears");
-  printGreenMessage("Success :)");
-} catch (e) {
-  printRedMessage(e);
-}
-
-const filePath = "/Users/mitch/northcoders/remote_precourse/day_1/1_intro_strings";
-
-// find the index position of the last / forward slash in the filePath string
-let lastFowardSlashIndex = filePath.lastIndexOf("/");
-
-// use a string method to find access the directory at the end of the file paths
-let currentDirectory = filePath.slice(lastFowardSlashIndex + 1);
-
-console.log("currentDirectory is intialised with the name of the directory and the end of the filePath");
-try {
-  check(currentDirectory).isEqualTo("1_intro_strings");
   printGreenMessage("Success :)");
 } catch (e) {
   printRedMessage(e);

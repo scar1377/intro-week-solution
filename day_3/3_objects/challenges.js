@@ -207,7 +207,6 @@ function createFeedback(name, actual, expected) {
   const expectedString = createFeedBackString(expected);
 
   const feedback = `${name}'s output was ${actualString}, but it should be ${expectedString}`;
-  return feedback;
 }
 
 function printRedMessage(message) {

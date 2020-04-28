@@ -1,4 +1,6 @@
-# Command line tasks
+# Day 1 tasks
+
+## Command line tasks
 
 1. Use the command `echo` to print your a message `"hello <your-name>"` to the terminal
 

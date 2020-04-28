@@ -1,3 +1,5 @@
+// Run this file using node
+
 let name;
 console.log(name);
 

@@ -7,5 +7,3 @@ function isBiggerThan10(num) {
 }
 
 // assert that this function returns the correct message
-
-var EXPRESSION_HERE;

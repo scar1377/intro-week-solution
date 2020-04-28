@@ -19,10 +19,11 @@ function getLastNItems(array, n) {
   return array.slice(-n);
 }
 
-console.log("getLastNItems() returns the last item in an array");
+console.log("getLastNItems() returns the last n items in an array");
 try {
   check(getLastNItems).whenCalledWith(["a", "b", "c", "d"], 2).returns(["c", "d"]);
   check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 0).returns([]);
+  check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 3).returns(["banana", "pear", "kiwi"]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -154,7 +155,7 @@ function createFeedback(name, actual, expected) {
   const actualString = createFeedBackString(actual);
   const expectedString = createFeedBackString(expected);
 
-  const feedback = `${name}'s output was ${actualString}, but it should be ${expectedString}`;
+  const feedback = `${name}'s return value was ${actualString}, but it should be ${expectedString}`;
   return feedback;
 }
 

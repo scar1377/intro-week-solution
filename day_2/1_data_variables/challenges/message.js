@@ -1,4 +1,5 @@
 try {
+  let message = "hello there";
   check(message).isEqualTo("hello there");
 
   printGreenMessage("Success :)");
