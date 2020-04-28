@@ -16,7 +16,7 @@ if (userAge >= filmCertificate && ticketPrice <= pocketMoney) {
   console.log("You can't watch the film");
 }
 
-// MAGIC UTILITY FUNCTIONSs
+/////////// MAGIC UTILITY FUNCTIONS --> DON'T ALTER THE FUNCTIONS BELOW THIS LINE /////////
 
 function getUserAge() {
   const userAge = +process.argv[2];

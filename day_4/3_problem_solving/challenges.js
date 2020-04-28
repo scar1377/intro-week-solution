@@ -6,6 +6,9 @@ function flipBooleans(bools) {
   return bools.map((bool) => !bool);
 }
 
+try {
+} catch (error) {}
+
 function translateKey(student, keyToChange, translation) {
   /*
     Northcoders is expanding to France 🎉🥖. 

@@ -6,6 +6,8 @@ for (let i = 0; i < sounds.length; i++) {
   exclaimedSounds.push(sounds[i] + "!");
 }
 
+console.log("check strings with added ! are pushed into exclaimedSounds");
+
 try {
   check(exclaimedSounds).isEqualTo(["fizz!", "buzz!", "bang!", "crash!", "wallop!"]);
   printGreenMessage("Success :)");

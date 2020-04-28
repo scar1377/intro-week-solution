@@ -1,24 +1,59 @@
-const multiTypeArray = ["I am a string", 42, true, [1, 2, 3]];
+const items = [];
 
-console.log("checking multiTypeArray");
-checkThat(typeof alphaSample[0]).isEqualTo(FILL_ME_IN);
-checkThat(typeof alphaSample[1]).isEqualTo(FILL_ME_IN);
-checkThat(typeof alphaSample[2]).isEqualTo(FILL_ME_IN);
-checkThat(typeof alphaSample[3]).isEqualTo(FILL_ME_IN);
+// your loop here...
 
-console.log("checking alphaSample");
+for (let i = 42; i >= 3; i--) {
+  items.push(i);
+}
 
-const alphaSample = ["a", "b", "c"];
-
-alphaSample.push("d");
-alphaSample.push("g");
-
-checkThat(alphaSample).isEqualTo(FILL_ME_IN);
-
-const lastItem = alphaSample.pop();
-
-checkThat(alphaSample).isEqualTo(FILL_ME_IN);
-checkThat(lastItem).isEqualTo(FILL_ME_IN);
+console.log("check numbers starting at 42 and descending are pushed into an array");
+try {
+  printGreenMessage("Success :)");
+  check(items).isEqualTo([
+    42,
+    41,
+    40,
+    39,
+    38,
+    37,
+    36,
+    35,
+    34,
+    33,
+    32,
+    31,
+    30,
+    29,
+    28,
+    27,
+    26,
+    25,
+    24,
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+  ]);
+} catch (e) {
+  printRedMessage(e);
+}
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 
@@ -34,7 +69,11 @@ function check(func) {
       if (typeof actual === "object" && typeof expected === "object") {
         if (!checkDeeplyEqual(actual, expected)) {
           throw new Error(
-            `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
+            `${JSON.stringify(actual, null, 2)}\n is not equal to the expected value of \n${JSON.stringify(
+              expected,
+              null,
+              2
+            )}`
           );
         }
       } else if (actual !== expected) throw new Error(`${actual} is not equal to the expected value of ${expected}`);
@@ -55,23 +94,24 @@ function check(func) {
 }
 
 function checkDeeplyEqual(coll1, coll2) {
-  if (typeof coll1 !== "object" || typeof coll2 !== "object") return coll1 === coll2;
-
-  if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
-
-  if (Array.isArray(coll1) !== Array.isArray(coll2)) return false;
-
-  for (let key1 in coll1) {
-    if (!(key1 in coll2)) return false;
-    if (!checkDeeplyEqual(coll1[key1], coll2[key1])) return false;
-  }
-  return true;
+  let areEqual = true;
+  if (typeof coll1 === "object" && typeof coll2 === "object") {
+    if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
+    if (Array.isArray(coll1) === Array.isArray(coll2)) {
+      for (let key1 in coll1) {
+        if (!coll2[key1]) return false;
+        else areEqual = checkDeeplyEqual(coll1[key1], coll2[key1]);
+        if (!areEqual) return false;
+      }
+    } else return false;
+  } else return coll1 === coll2;
+  return areEqual;
 }
 
 function createFeedBackString(item) {
   const lookup = {
     string: (item) => `"${item}"`,
-    object: (item) => JSON.stringify(item),
+    object: (item) => JSON.stringify(item, null, 3),
     undefined: (x) => x,
     boolean: (x) => x,
     number: (x) => x,
@@ -83,7 +123,7 @@ function createFeedback(name, actual, expected) {
   const actualString = createFeedBackString(actual);
   const expectedString = createFeedBackString(expected);
 
-  const feedback = `${name}'s return value was ${actualString}, but it should be ${expectedString}`;
+  const feedback = `${name}'s output was ${actualString}, but it should be ${expectedString}`;
   return feedback;
 }
 

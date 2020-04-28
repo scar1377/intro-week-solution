@@ -1,13 +1,14 @@
-let total = 0;
+const alternatingChars = [];
 
-// use iteration to get the total of all the numbers from 1 to 50
-
-for (let i = 0; i <= 50; i++) {
-  total += i;
+// your loop here ...
+for (let i = 0; i < 8; i++) {
+  alternatingChars.push(i % 2 ? "o" : "x");
 }
 
+console.log("can push alternating characters into an array");
+
 try {
-  check(total).isEqualTo(1275);
+  check(alternatingChars).isEqualTo(["x", "o", "x", "o", "x", "o", "x", "o"]);
 
   printGreenMessage("Success :)");
 } catch (error) {

@@ -1,12 +1,9 @@
-function grabCoefficient(expression) {
-  // should take an expression and return the coefficient
-}
-
 function extracTotal() {
   // an array of codes
 }
-
-function updateRules() {}
+function grabCoefficient(expression) {
+  // should take an expression and return the coefficient
+}
 
 grabCoefficient("100x");
 grabCoefficient("500xy^3");

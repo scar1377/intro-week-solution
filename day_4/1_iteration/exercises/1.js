@@ -1,55 +1,17 @@
 const items = [];
 
-// your loop here...
-for (let i = 42; i >= 3; i--) {
+// your loop here ...
+for (let i = 0; i < 16; i += 2) {
   items.push(i);
 }
+
+console.log("check the even numbers 0 to 14 are pushed into items");
 try {
+  check(items).isEqualTo([0, 2, 4, 6, 8, 10, 12, 14]);
+
   printGreenMessage("Success :)");
-  check(items).isEqualTo([
-    42,
-    41,
-    40,
-    39,
-    38,
-    37,
-    36,
-    35,
-    34,
-    33,
-    32,
-    31,
-    30,
-    29,
-    28,
-    27,
-    26,
-    25,
-    24,
-    23,
-    22,
-    21,
-    20,
-    19,
-    18,
-    17,
-    16,
-    15,
-    14,
-    13,
-    12,
-    11,
-    10,
-    9,
-    8,
-    7,
-    6,
-    5,
-    4,
-    3,
-  ]);
-} catch (e) {
-  printRedMessage(e);
+} catch (error) {
+  printRedMessage(error);
 }
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
@@ -90,19 +52,33 @@ function check(func) {
   return obj;
 }
 
+// function checkDeeplyEqual(coll1, coll2) {
+//   let areEqual = true;
+//   if (typeof coll1 === "object" && typeof coll2 === "object") {
+//     if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
+//     if (Array.isArray(coll1) === Array.isArray(coll2)) {
+//       for (let key1 in coll1) {
+//         if (!coll2[key1]) return false;
+//         else areEqual = checkDeeplyEqual(coll1[key1], coll2[key1]);
+//         if (areEqual === false) return false;
+//       }
+//     } else return false;
+//   } else return coll1 === coll2;
+//   return areEqual;
+// }
+
 function checkDeeplyEqual(coll1, coll2) {
-  let areEqual = true;
-  if (typeof coll1 === "object" && typeof coll2 === "object") {
-    if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
-    if (Array.isArray(coll1) === Array.isArray(coll2)) {
-      for (let key1 in coll1) {
-        if (!coll2[key1]) return false;
-        else areEqual = checkDeeplyEqual(coll1[key1], coll2[key1]);
-        if (!areEqual) return false;
-      }
-    } else return false;
-  } else return coll1 === coll2;
-  return areEqual;
+  if (typeof coll1 !== "object" || typeof coll2 !== "object") return coll1 === coll2;
+
+  if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
+
+  if (Array.isArray(coll1) !== Array.isArray(coll2)) return false;
+
+  for (let key1 in coll1) {
+    if (!(key1 in coll2)) return false;
+    if (!checkDeeplyEqual(coll1[key1], coll2[key1])) return false;
+  }
+  return true;
 }
 
 function createFeedBackString(item) {

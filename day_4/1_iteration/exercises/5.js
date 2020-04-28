@@ -1,12 +1,14 @@
-const items = [];
+let total = 0;
 
-// your loop here ...
-for (let i = 0; i < 16; i += 2) {
-  items.push(i);
+// use iteration to get the total of all the numbers from 1 to 50
+
+for (let i = 0; i <= 50; i++) {
+  total += i;
 }
 
+console.log("Calculate the sum of several numbers using a loop");
 try {
-  check(items).isEqualTo([0, 2, 4, 6, 8, 10, 12, 14]);
+  check(total).isEqualTo(1275);
 
   printGreenMessage("Success :)");
 } catch (error) {
@@ -51,33 +53,19 @@ function check(func) {
   return obj;
 }
 
-// function checkDeeplyEqual(coll1, coll2) {
-//   let areEqual = true;
-//   if (typeof coll1 === "object" && typeof coll2 === "object") {
-//     if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
-//     if (Array.isArray(coll1) === Array.isArray(coll2)) {
-//       for (let key1 in coll1) {
-//         if (!coll2[key1]) return false;
-//         else areEqual = checkDeeplyEqual(coll1[key1], coll2[key1]);
-//         if (areEqual === false) return false;
-//       }
-//     } else return false;
-//   } else return coll1 === coll2;
-//   return areEqual;
-// }
-
 function checkDeeplyEqual(coll1, coll2) {
-  if (typeof coll1 !== "object" || typeof coll2 !== "object") return coll1 === coll2;
-
-  if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
-
-  if (Array.isArray(coll1) !== Array.isArray(coll2)) return false;
-
-  for (let key1 in coll1) {
-    if (!(key1 in coll2)) return false;
-    if (!checkDeeplyEqual(coll1[key1], coll2[key1])) return false;
-  }
-  return true;
+  let areEqual = true;
+  if (typeof coll1 === "object" && typeof coll2 === "object") {
+    if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
+    if (Array.isArray(coll1) === Array.isArray(coll2)) {
+      for (let key1 in coll1) {
+        if (!coll2[key1]) return false;
+        else areEqual = checkDeeplyEqual(coll1[key1], coll2[key1]);
+        if (!areEqual) return false;
+      }
+    } else return false;
+  } else return coll1 === coll2;
+  return areEqual;
 }
 
 function createFeedBackString(item) {
