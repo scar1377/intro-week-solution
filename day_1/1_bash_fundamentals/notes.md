@@ -1,61 +1,72 @@
 # Programming essentials
 
-# Operating systems
+## Computers
 
-### Computers
-
-Computers are machhines that can perform calculations and operations on data. They possess a good deal of hardware like memory in order to process tasks and perform these computations. The various pieces of hardware on your computer are various and complex - it would take a very long time indeed in order to fully comprehend the complexity of the hardware and the ways in which they interact with each other.
-
-Operating systems are large pieces of software that manage and coordinate the different component pieces of hardware (like memory) that allow computers to carry out all their tasks.
-
-### Unix
-
-Unix is a family of operating systems with specific design philosophies. MORE HERE...
-
-## Interacting with the computer
-
-An essential part of using a computer will be providing the computer or machine a task to carry out or **execute**. **Execute** in this context means the machine carrying out or performing a task set out in a set of instructions. We can issue **commands** to the computer in order to perform certain tasks. We can use a **command line interface** which is a tool for inputting commands and they will in turn be **executed** by the computer.
-
-### Consoles and terminals
-
-A `console` is a device or set of devices that can you be used to control a machine like your computer. The `console` on your terminal comprises the keyboard, mouse and screen which users use to control and operate the computer. A **terminal** is a computer interface that is used for entering commands into your computer. You can type a command into your terminal and hit enter and expect to get back some form of text output as a result of running that command.
-
-### Shells
-
-The term shell and terminal are often used interchangeabely: however, they are not the same thing. A terminal allows users to input commands but this application doesn't know what to do with the command itself. A shell is a program that interprets commands and executes a program that will carry out the task. A inputs a command in a **terminal** and then the **shell** will interpret and execute the command. For this reason a shell is said sometimes to be a **command line interpreter**.
-
-### Bash
+Computers are machines that can perform calculations and operations on data. The development of computers since the 1930s has taken off at an explosive pace and today computers are ubiquitous throughtout the modern world. Computers are made up of many different physical components such as monitors, keyboards and chips that we refer to together as **hardware**. **Software** is the set of instructionswritten to be processed and executed by the hardware that makes up a computer.
 
 ---
 
-### `echo` commands
+## Operating systems
 
-We can start to enter basic bash commmands into the terminal and bash will execute these programs and send some text output back to the terminal. Lets think of the most basic command is `echo`:
+Modern computers such as a laptop often have to run several applications at the same time. A user could be browsing the internet whilst listening to music at the same time on 2 different applications. Each of these applications are made up of software which will require access to the physical resources of the computer in order to run. In addition, the various pieces of hardware used to make up your computer are manifold and complex - it would take a very long time indeed in order to fully comprehend the complexity of the hardware and the ways in which they interact with each other.
+
+**Operating systems** are essentially master programs that manage and co-ordinate the different software and how they get access to the physical hardware of a computer. Without the use of an operating system programmers would have to directly interface with complicated hardware which would take up a lot of time. Operating systems allow people to build software far more efficiently by abstracting away the complexities of the hardware on a machine.
+
+### Unix
+
+Unix is an operating system first created and developed by a team of developers working in Bell Labs in the late 1960s. Many operating systems today are said to be **unix-like** including Mac OS, meaning that Mac OS behaves or has many of the features of the Unix Operating system.
+Linux is another operating system invented in the early 1990s after Linus Torvalds built a new operating system based off the standards of Unix. The drive behind the development of Linux was the creation of an open-source operating system with many of the features and behaviours of the Unix operating system. The linux operating system is used by many computers across the world today and is often a popular operating system of choice amongst developers.
+
+### DOS
+
+Windows operating system emerged from the MS-DOS (MicroSoft Disk Operating System). The main difference between MS-DOS and Unix is that MS-DOS was designed for a single user.
+
+---
+
+## Interacting with a computer
+
+An essential part of using a computer will be providing the computer or machine a set of instructions to **execute**. We can refer to a set of instructions that a computer executes as a **computer program**. **Execute** in this context means the machine carrying out the set of instructions contained within some computer program.
+
+As users we can issue **commands** to the computer in order to perform certain tasks. A **terminal** is a computer interface that is used for entering text commands into your computer. You can type a command into your terminal, hit enter and expect to get back some form of text output as a result of running that command.
+
+A **console** is a set of tools that are used to operate a machine. In the context of computers, a **console** comprises all the tools used to operate a machine, such as the **terminal** and the keyboard you use in order to type commands into the **terminal**. However, sometimes the terms **console** and **terminal** are used interchangeably.
+
+---
+
+## Shells
+
+The term shell and terminal are often used interchangeabely: however, they are not the same thing. A terminal allows users to input commands but this application doesn't know what to do with the command itself. A shell is a program that interprets commands and executes a program that will carry out the task. A user inputs a command in a **terminal** and then the **shell** will interpret and execute the command. A shell is a **command line interpreter** because it interprets and executes the commands inputted by a user.
+
+### Bash
+
+Bash is both a **command line interpreter** and a **programming language**. The default terminal used that is started when we open up a terminal will often be bash (when working on Unix-like operating systems such as Mac OS and Linux). The rich set of commands we can use to control our machine from the terminal is also said to form a **command line interface**.
+
+### `echo` command
+
+We can start to enter commmands into the **terminal** and bash will interpret and execute these commands and then finally send some text output back to the terminal. One of the most basic commands we can use is `echo`:
 
 ```bash
-echo hello there I am coding
+🔑 echo <some-text-input>
 ```
 
-We are using the name of a command `echo` and pass some input or data into that command `echo`.
-The output is displayed in our terminal as follows:
+In the above example, we are using the name of the command `echo` and then separated by a space some text input. The output is displayed in our terminal as follows:
 
 ```terminal
 $ echo hello world
 hello world
 ```
 
-So `echo` command will take some text input and output the same text in the terminal.
+So the `echo` command will take some text input and output the same text in the terminal.
 
 ---
 
 ## File system
 
-Computers that can store vast amounts of data or information. It makes sense for this storage of data to be organised so each piece of information has its own separate space. Collections of data are organised into groups called `files` which can can then be accessed and used to store more information. A **directory** is a container for multiple files and directorties. We can organise a collection of related files into a single directory for organisational purposes. A **directory** can also store multiple **sub-directories**.
-If we talk about being "inside" a directory then it means we're currently residing in the directory
+Computers that can store vast amounts of data. It makes sense for this storage of data to be organised so each piece of information has its own separate space. Collections of data are organised into groups called `files` which can can then be accessed and used to store more information. A **directory** is a container for multiple files and directories. We can organise a collection of related files into a single directory for organisational purposes.
 
-## Nagivating the file system
+### Nagivating the file system
 
-If we start in a new terminal we can use the command `pwd` which stands for **print working directory**. The shell program will currently be **inside** a directory that is to say it will have immediate access to all the files in this directory without having to access another file or folder.
+If we start in a new terminal we can use the command `pwd` which stands for **print working directory**. The shell program will currently be **inside** a directory that is to say it will have immediate access to all the files and sub-directories in this directory without having to access another file or folder.
 
 ```terminal
 $ pwd
@@ -68,10 +79,8 @@ If I run the command `pwd` then we see the following printed to the terminal:
 /Users/mitch
 ```
 
-This is referred to as the home directory and will be the directory the shell program starts inside when the terminal is first created.
-The output `/Users/mitch` is said to be a file path. A **file path** is a list of different directories separated by a `/`, indicating which `directory` you are currently inside and which directories it is nested inside.
-
----
+This is referred to as the home directory and will be the directory the shell program starts **inside** when the terminal is first created.
+The output `/Users/mitch` is a **file path**. A **file path** is a list of different directories separated by a `/`, indicating which `directory` the shell program is currenly inside and which directories it is nested inside.
 
 ### `ls`
 
