@@ -1,4 +1,4 @@
-# Day 1 tasks
+# Day 1 tasks
 
 ## Command line tasks
 
