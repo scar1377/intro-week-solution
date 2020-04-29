@@ -1,27 +1,29 @@
-function readTrafficLight(colour) {
-  if (colour === "GREEN") {
-    return "GO!";
-  } else if (colour === "AMBER") {
-    return "GET READY...";
-  } else {
-    return "STOP!";
-  }
-}
+function checkBatteryLevel(batteryLevel) {}
+
+// if the battery level is less than 5% then should return a string saying:
+// "warning - battery level low: <number-here>%, please charge your device"
+// if the battery level is between 5 and 99% then it should display a string saying:
+// "Battery level: <number-here>%"
+// if the battery level is 100% then the string should say:
+// "Fully charged :)"
 
 try {
-  check(readTrafficLight).whenCalledWith("green").returns("GO!");
-  check(readTrafficLight).whenCalledWith("GREEN").returns("GO!");
+  check(checkBatteryLevel).whenCalledWith(100).returns('"Fully charged :)"');
 
-  check(readTrafficLight).whenCalledWith("amber").returns("GET READY...");
-  check(readTrafficLight).whenCalledWith("AMBER").returns("GET READY...");
+  check(checkBatteryLevel).whenCalledWith(99).returns("Battery level: 99%");
+  check(checkBatteryLevel).whenCalledWith(80).returns("Battery level: 80%");
+  check(checkBatteryLevel).whenCalledWith(30).returns("Battery level: 30%");
+  check(checkBatteryLevel).whenCalledWith(10).returns("Battery level: 10%");
+  check(checkBatteryLevel).whenCalledWith(6).returns("Battery level: 6%");
 
-  check(readTrafficLight).whenCalledWith("red").returns("STOP!");
-  check(readTrafficLight).whenCalledWith("RED").returns("STOP!");
+  check(checkBatteryLevel).whenCalledWith(5).returns("warning - battery level low: 5%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(4).returns("warning - battery level low: 4%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(3).returns("warning - battery level low: 3%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(1).returns("warning - battery level low: 1%, please charge your device");
 } catch (error) {
   printRedMessage(error);
 }
 
-// assertions here...
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 
 function check(func) {
