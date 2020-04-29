@@ -16,14 +16,28 @@
 
 ## Part 2
 
-1. Create a new GitHub repository
+1. Create a new account on GitHub. Make a note of your github username and email.
 
-2. Connect your local github repository with the remote github repository you've just created
+2. Configure your username and email in the terminal using the following commands:
 
-3. Push all of your local changes to the new remote github repository.
+```terminal
+git config --global user.name <github-username>
+```
 
-4. Change the git remote repository you are connected to and instead use the following url:
+and
 
-5. Use `git remote -v` to **double check** your git remote is now fully changed.
+```terminal
+git config --global user.email <github-email>
+```
 
-6. Now use the command `git pull orign master` to retrieve the remote changes that you want to store locally. This should bring down some material for `day_2` 😄
+2. Create a new GitHub repository
+
+3. Connect your local github repository with the remote github repository you've just created
+
+4. Push all of your local changes to the new remote github repository.
+
+5. Change the git remote repository you are connected to and instead use the following url:
+
+6. Use `git remote -v` to **double check** your git remote is now fully changed.
+
+7. Now use the command `git pull orign master` to retrieve the remote changes that you want to store locally. This should bring down some material for `day_2` 😄

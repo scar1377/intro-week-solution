@@ -17,11 +17,13 @@ Github is a website that stores github repositories in the cloud and allows mult
 
 Github repositories can be created newly on the github websites
 
+---
+
 ## Remote
 
 A remote repository is one stored on github that others can access and update from local machines. A typical pattern is to have one remote repository and other uses can create clones of this repository on to their local machine. Users can create local changes to the git repository on their machine and then once ready add their changes the remote repository. The name origin is a convention way of referring to a git remote repository - a new github repository will be referred to as origin.
 
-## Creating a link
+### Creating a link
 
 When a new repository is created on github then a new url is generated which points to the remote repository on github. We can use this url to connect a local machine with a github repo so work can be retrieved from the remote and so the remote can be updated with any local commits. We can use the commmand `git remote`:
 
