@@ -1,5 +1,9 @@
 # Javascript intro tasks
 
+## `message.js`
+
+There is a problem with `message.js` - correct the syntax in this file in order to correctly print the message to the terminal.
+
 ## `challenges`
 
 - In each of the files in here you will find a line of code that is commented out.

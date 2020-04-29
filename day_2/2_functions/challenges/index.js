@@ -1,3 +1,19 @@
+function double() {
+  // return any number doubled
+}
+
+console.log("double() gives the correct output");
+try {
+  check(double).whenCalledWith(11).returns(22);
+  check(double).whenCalledWith(129).returns(258);
+  check(double).whenCalledWith(25).returns(50);
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
 function modulo(a, b) {
   // return the remainder of the division a / b
   return a % b;
@@ -147,6 +163,8 @@ try {
   printRedMessage("Fail ✗");
   printRedMessage(error);
 }
+
+function isAbsolutePath() {}
 
 console.log("isAbsolutePath() checks if a file path is absolute or relative");
 // HINT: all absolute file paths start with a /

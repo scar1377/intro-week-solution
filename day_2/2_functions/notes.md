@@ -1,4 +1,4 @@
-# Functions
+# Functions and operators
 
 We have already seen that functions contain instructions that can perform tasks:
 
