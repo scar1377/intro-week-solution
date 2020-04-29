@@ -5,7 +5,7 @@
 Sets of instructions can become extremely complex and difficult to manage over time.
 We need software that will allow us to control the version of the programs that we are creating so we can move between different versions. If we're not able to move between different versions and something goes wrong then it may be impossible for us to retreive a state of our project when everything was fully working.
 
-## Building timelines
+### Building timelines
 
 Consider a timeline consisting of distinct points in time - each distinct part of the timeline represents the contents of your files and folders at a specific part of time. We can update the timeline and continue to add new points in the timeline to reflect changes or updates we've made to our file content. The essential components of such a time line could be specified as follows:
 
@@ -24,7 +24,9 @@ git is **version control software** and some of its most basic features will all
 
 ## git command line interface
 
-Git has a rich command line interface - in otherwords a variety of command lines that we can use for interacting and using git. The first command we'll want to use is `git init` which creates a new git repository - this will be the place where git stores the content of files and folders along with the timeline.
+Git has a rich command line interface - in otherwords a catalogue of commands that we can use for using git's features. One of the starting commands is `git init`.
+
+🔑 `git init` a creates a new git repository - this will be the place where git stores the content of files and folders in each snapshot on your timeline.
 
 ```terminal
 $ git init
@@ -42,11 +44,11 @@ $ ls -a
 
 ## Storing content
 
-We can store content on the timeline by creating distinct snapshots that show us the content of our files and directories at a given moment in time.
+We can store content on our project timeline by creating distinct snapshots that show us the content of our files and directories at a given moment in time.
 
 ### Working directory
 
-The working directory refers to all the files and directories that we have immediate access to. Suppose I start a project with an empty directory (a directory containing no sub-directories or files) and then I run `git init`. `git init` will create a new **empty git repository**. An empty git repository is one that does not yet store content from our files and folders. Suppose we create a new directory `new_project` that will contain all the data for a project.
+The working directory refers to all the files and directories that we have immediate access to in our project. Typically the working directory will be all the files and directories you can inspect in your code editor. Suppose I start a project with an empty directory (a directory containing no sub-directories or files) and then I run `git init`. `git init` will create a new **empty git repository**. An empty git repository is one that does not yet store content from our files and folders. Suppose we create a new directory `new_project` that will contain all the data for a project:
 
 ```terminal
 $ mkdir new_project
@@ -70,7 +72,7 @@ My new list of ingredients
 
 ```
 
-This new file is not currently stored in the git repository `.git`. Instead we have updated the **working tree** or the **working directory**.
+This new file is not currently stored in the git repository `.git`. Instead we have updated the **working directory**.
 
 🔑 The **working directory** refers to all of the files and directories we can currently view and edit in our project.
 
@@ -92,11 +94,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 The most important part of this command is the section beginning `Untracked files`.
 An **untracked file** is a newly created file that has not yet been stored inside the git repository. In order to store this content on our timeline we need to use additional `git` commands.
 
----
-
 ### `git add`
 
-Git uses 3 different areas to manage the state of our content. In order to create a new commit and have git store it permanently we must first add changes in our working tree to the **staging area**. The **staging area** is an area inside git where we store all the changes that we want stored in our next snapshot. We can use the `git add` command in order to stage these changes.
+Git uses 3 different areas to manage the state of our content. In order to create a new commit (a snapshot) and have git store it permanently we must first add changes in our working tree to the **staging area**. The **staging area** is an area inside git where we store all the changes that we want stored in our next snapshot. We can use the `git add` command in order to stage these changes.
 
 - Working directory: `list.txt`
 

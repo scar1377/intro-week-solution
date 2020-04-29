@@ -1,8 +1,8 @@
-# Git 102
+# Branches and Github
 
-## Master branch
+## master branch
 
-A commit is a snapshot of our files and folders over time. Over time we can create multiple commits to build up a timeline containing different snapshots. Each commit that we create will automatically point back to the previous parent commit (unless it is the root commit). The commits we create therefore create a chain or sequence. It is therefore sufficient to point to a single commit as these will continue to point back to form a chain. A **branch** in git is often referred to as a series of commits that forms a timeline representing some work in a project. However, we need only point a single commit as this one points back the others.
+A commit is a snapshot of the files and folders in our project over time. Over time we can create multiple commits to build up a timeline containing different snapshots. Each commit that we create will automatically point back to the previous parent commit (unless it is the root commit). The commits we create therefore create a chain or sequence. It is therefore sufficient to point to a single commit as these will continue to point back to form a chain. A **branch** in git is often referred to as a series of commits that forms a timeline representing some work in a project. However, we need only point a single commit as this one points back the others.
 
 🔑 A **branch** is a reference to a particular commit.
 
