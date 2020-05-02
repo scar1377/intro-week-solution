@@ -1,4 +1,4 @@
-# Remote precourse
+# Remote Javascript basics
 
 Each section is organised into  **practice**, **challenges**, and **questions**
 
