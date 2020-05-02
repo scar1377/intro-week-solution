@@ -92,6 +92,76 @@ try {
   printRedMessage(error);
 }
 
+function isEmptyArray(array) {
+  return array.length === 0;
+}
+
+console.log("isEmptyArray() checks if an array is empty");
+try {
+  check(isEmptyArray).whenCalledWith([]).returns(true);
+  check(isEmptyArray).whenCalledWith(["a", "b", "c", "d"]).returns(false);
+  check(isEmptyArray).whenCalledWith(["a"]).returns(false);
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+function howManyArguments(...args) {
+  return args.length;
+}
+
+console.log("howManyArguments() returns the number of items passed on a single call");
+try {
+  check(howManyArguments).whenCalledWith("a", "b", "c").returns(3);
+  check(howManyArguments).whenCalledWith().returns(0);
+  check(howManyArguments).whenCalledWith(1, 2, 3, 4, 5).returns(5);
+  check(howManyArguments).whenCalledWith("the", "meaning", "of", "life", "is", 42).returns(6);
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+function updatePosition(coordinates, direction) {}
+
+console.log("updatePosition() checks if an array is empty");
+try {
+  check(updatePosition).whenCalledWith([10, 10], "up").returns([10, 11]);
+  check(updatePosition).whenCalledWith([0, 0], "down").returns([0, -1]);
+  check(updatePosition).whenCalledWith([3, 3], "left").returns([2, 3]);
+  check(updatePosition).whenCalledWith([2, 2], "right").returns([3, 2]);
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+function addCoins(coinCollection, money) {}
+console.log("addCoins() will update the coins in a given slot");
+
+try {
+  check(addCoins)
+    .whenCalledWith([[], [], [], []], "1p")
+    .returns([["1p"], [], [], []]);
+
+  check(addCoins)
+    .whenCalledWith([[], [], [], []], "2p")
+    .returns([[], ["2p"], [], []]);
+
+  check(addCoins)
+    .whenCalledWith([[], ["2p"], [], []], "2p")
+    .returns([[], ["2p", "2p"], [], []]);
+
+  check(addCoins)
+    .whenCalledWith([[], [], [], []], "5p")
+    .returns([[], [], ["5p"], []]);
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 
 function check(func) {
