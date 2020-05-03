@@ -123,21 +123,34 @@ try {
   printRedMessage(error);
 }
 
-function updatePosition(coordinates, direction) {}
+function updatePosition(coordinates, direction) {
+  const [x, y] = coordinates;
+  if (direction === "up") return [x, y + 1];
+  if (direction === "down") return [x, y - 1];
+  if (direction === "left") return [x - 1, y];
+  if (direction === "right") return [x + 1, y];
+}
 
 console.log("updatePosition() checks if an array is empty");
 try {
   check(updatePosition).whenCalledWith([10, 10], "up").returns([10, 11]);
   check(updatePosition).whenCalledWith([0, 0], "down").returns([0, -1]);
   check(updatePosition).whenCalledWith([3, 3], "left").returns([2, 3]);
-  check(updatePosition).whenCalledWith([2, 2], "right").returns([3, 2]);
+  check(updatePosition).whenCalledWith([7, 50], "right").returns([8, 50]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
   printRedMessage(error);
 }
 
-function addCoins(coinCollection, money) {}
+function addCoins(coinCollection, money) {
+  const [slot1p, slot2p, slot5p, slot10p] = coinCollection;
+  if (money === "1p") slot1p.push(money);
+  if (money === "2p") slot2p.push(money);
+  if (money === "5p") slot5p.push(money);
+  if (money === "10p") slot10p.push(money);
+  return coinCollection;
+}
 console.log("addCoins() will update the coins in a given slot");
 
 try {
