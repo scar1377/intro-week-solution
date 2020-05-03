@@ -3,10 +3,10 @@ console.log("checking multiTypeArray");
 try {
   const multiTypeArray = ["I am a string", 42, true, [1, 2, 3]];
 
-  check("string").isEqualTo(typeof multiTypeArray[0]);
-  check("number").isEqualTo(typeof multiTypeArray[1]);
-  check("boolean").isEqualTo(typeof multiTypeArray[2]);
-  check("object").isEqualTo(typeof multiTypeArray[3]);
+  check(FILL_ME_IN).isEqualTo(typeof multiTypeArray[0]);
+  check(FILL_ME_IN).isEqualTo(typeof multiTypeArray[1]);
+  check(FILL_ME_IN).isEqualTo(typeof multiTypeArray[2]);
+  check(FILL_ME_IN).isEqualTo(typeof multiTypeArray[3]);
 
   printGreenMessage("Success :)");
 } catch (error) {
@@ -20,12 +20,12 @@ try {
   alphaSample.push("d");
   alphaSample.push("g");
 
-  check(["a", "b", "c", "d", "g"]).isEqualTo(alphaSample);
+  check(FILL_ME_IN).isEqualTo(alphaSample);
 
   const lastItem = alphaSample.pop();
 
-  check("g").isEqualTo(lastItem);
-  check(["a", "b", "c", "d"]).isEqualTo(alphaSample);
+  check(FILL_ME_IN).isEqualTo(lastItem);
+  check(FILL_ME_IN).isEqualTo(alphaSample);
 
   printGreenMessage("Success :)");
 } catch (error) {
@@ -40,17 +40,17 @@ try {
     ["g", "h", "i"],
   ];
 
-  check(["a", "b", "c"]).isEqualTo(rows[0]);
-  check(["d", "e", "f"]).isEqualTo(rows[1]);
-  check(["g", "h", "i"]).isEqualTo(rows[2]);
+  check(FILL_ME_IN).isEqualTo(rows[0]);
+  check(FILL_ME_IN).isEqualTo(rows[1]);
+  check(FILL_ME_IN).isEqualTo(rows[2]);
 
   const firstRow = rows[0];
   check(firstRow[0]).isEqualTo("a");
-  check("b").isEqualTo(firstRow[1]);
+  check("b").isEqualTo(firstRow[FILL_ME_IN]);
 
-  check("e").isEqualTo(rows[1][1]);
-  check("g").isEqualTo(rows[2][0]);
-  check("c").isEqualTo(rows[0][2]);
+  check("e").isEqualTo(rows[1][FILL_ME_IN]);
+  check("g").isEqualTo(rows[2][FILL_ME_IN]);
+  check("c").isEqualTo(rows[0][FILL_ME_IN]);
 
   printGreenMessage("Success :)");
 } catch (error) {
@@ -62,12 +62,12 @@ console.log("get the slice of an array");
 try {
   const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"];
 
-  check(["b", "c", "d"]).isEqualTo(letters.slice(1, 4));
-  check(["c"]).isEqualTo(letters.slice(2, 3));
-  check(["d", "e"]).isEqualTo(letters.slice(3, 5));
-  check(["n"]).isEqualTo(letters.slice(-1));
-  check(["m", "n"]).isEqualTo(letters.slice(-2));
-  check(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]).isEqualTo(letters.slice(0, -4));
+  check(FILL_ME_IN).isEqualTo(letters.slice(1, 4));
+  check(FILL_ME_IN).isEqualTo(letters.slice(2, 3));
+  check(FILL_ME_IN).isEqualTo(letters.slice(3, 5));
+  check(FILL_ME_IN).isEqualTo(letters.slice(-1));
+  check(FILL_ME_IN).isEqualTo(letters.slice(-2));
+  check(FILL_ME_IN).isEqualTo(letters.slice(0, -4));
 
   printGreenMessage("Success :)");
 } catch (error) {

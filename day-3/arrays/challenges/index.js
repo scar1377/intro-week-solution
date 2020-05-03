@@ -1,7 +1,4 @@
-function getLastItem(array) {
-  return array[array.length - 1];
-}
-// should return the last item from an array
+// getLastItems should return the last item from an array
 
 console.log("getLastItem() returns the last item in an array");
 try {
@@ -13,11 +10,7 @@ try {
   printRedMessage(error);
 }
 
-function getLastNItems(array, n) {
-  // return an array with the last n items of the array
-  if (n === 0) return [];
-  return array.slice(-n);
-}
+// getLastNItems return an array with the last n items of the array
 
 console.log("getLastNItems() returns the last n items in an array");
 try {
@@ -30,11 +23,7 @@ try {
   printRedMessage(error);
 }
 
-function removeItem(array, n) {
-  array.splice(n, 1);
-  return array;
-  // return a new array without the item on position 'n', effectively removing it from the array
-}
+// removeItem returns a new array without the item on position 'n', effectively removing it from the array
 
 console.log("removeItem() removes an item at a given index");
 try {
@@ -46,12 +35,10 @@ try {
   printRedMessage(error);
 }
 
-function mergeArrays(arr1, arr2) {
-  return [...arr1, ...arr2];
-  // return a new array with all the elements of arr1 followed by all the elements of arr2
-}
+// mergeArrays returns a new array with all the elements of arr1 followed by all the elements of arr2
 
 console.log("mergeArrays() will concatenate two arrays together");
+
 try {
   check(mergeArrays).whenCalledWith(["a", "b"], ["c", "d"]).returns(["a", "b", "c", "d"]);
   check(mergeArrays).whenCalledWith([1], [3, 5, 7]).returns([1, 3, 5, 7]);
@@ -61,10 +48,7 @@ try {
   printRedMessage(error);
 }
 
-function getSandwichFilling(sandwich) {
-  return sandwich.slice(1, -1);
-  // if an array is like a sandwich, the first and last items are the bread, return an array with the filling of the sandwich
-}
+// if an array is like a sandwich, the first and last items are the bread, getSandwichFilling should return an array with the filling of the sandwich
 
 console.log("getSandwichFilling() returns the inner elements of an array");
 try {
@@ -76,25 +60,7 @@ try {
   printRedMessage(error);
 }
 
-function accessItem(array, index) {
-  return array[index % array.length];
-  // should access an array element at a specified index position
-}
-
-console.log("accessItem() can retrieve an item inside in an array with a given index");
-try {
-  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 2).returns("c");
-  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 0).returns("a");
-  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 4).returns("a");
-
-  printGreenMessage("Pass :)");
-} catch (error) {
-  printRedMessage(error);
-}
-
-function isEmptyArray(array) {
-  return array.length === 0;
-}
+// isEmpyty should return a boolean checking if an array is empty
 
 console.log("isEmptyArray() checks if an array is empty");
 try {
@@ -107,9 +73,7 @@ try {
   printRedMessage(error);
 }
 
-function howManyArguments(...args) {
-  return args.length;
-}
+// howManyArguments should return the number of arguments passed into the function
 
 console.log("howManyArguments() returns the number of items passed on a single call");
 try {
@@ -123,13 +87,7 @@ try {
   printRedMessage(error);
 }
 
-function updatePosition(coordinates, direction) {
-  const [x, y] = coordinates;
-  if (direction === "up") return [x, y + 1];
-  if (direction === "down") return [x, y - 1];
-  if (direction === "left") return [x - 1, y];
-  if (direction === "right") return [x + 1, y];
-}
+// updatePosition takes an array representing coordinates - an x position and a y position - and a direction. It shouuld return a new pair of coordinates
 
 console.log("updatePosition() checks if an array is empty");
 try {
@@ -143,14 +101,6 @@ try {
   printRedMessage(error);
 }
 
-function addCoins(coinCollection, money) {
-  const [slot1p, slot2p, slot5p, slot10p] = coinCollection;
-  if (money === "1p") slot1p.push(money);
-  if (money === "2p") slot2p.push(money);
-  if (money === "5p") slot5p.push(money);
-  if (money === "10p") slot10p.push(money);
-  return coinCollection;
-}
 console.log("addCoins() will update the coins in a given slot");
 
 try {
@@ -169,6 +119,35 @@ try {
   check(addCoins)
     .whenCalledWith([[], [], [], []], "5p")
     .returns([[], [], ["5p"], []]);
+
+  check(addCoins)
+    .whenCalledWith([["1p"], [], [], ["10p", "10p"]], "2p")
+    .returns([["1p"], ["2p"], [], ["10p", "10p"]]);
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+// accessItem should access an array element at a specified index position
+
+console.log("accessItem() can retrieve an item inside in an array with a given index below the array length");
+try {
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 2).returns("c");
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 0).returns("a");
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 3).returns("d");
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+console.log("accessItem() can retrieve an item inside in an array with a given index");
+try {
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 4).returns("a");
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 6).returns("c");
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 10).returns("c");
+  check(accessItem).whenCalledWith(["a", "b", "c", "d"], 11).returns("d");
 
   printGreenMessage("Pass :)");
 } catch (error) {
