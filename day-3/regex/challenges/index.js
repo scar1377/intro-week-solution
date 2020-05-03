@@ -2,7 +2,7 @@ function extractNumber(code) {
   return +code.match(/\d+/)[0];
 }
 
-console.log("extractNumber() should return the number buried inside a string");
+console.log("extractNumber() should return the number buried inside a string of random characters");
 
 try {
   check(extractNumber).whenCalledWith("lasjdasasj(123)asljdlajk").returns(123);
@@ -11,6 +11,30 @@ try {
   check(extractNumber).whenCalledWith("qwasdasdfsyer(5601)iusdfsdfsd").returns(5601);
   check(extractNumber).whenCalledWith("qwasdasdfsyer(29)iusdfsdfsd").returns(29);
   check(extractNumber).whenCalledWith("qwasdasdfsyer(5)iusdfsdfsd").returns(5);
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+function isValidSortCode(sortCode) {
+  // checks if a passed string is a valid sort code - this should be 2 digits hyphen 2 digits hyphen 2 digits
+  return /^\d{2}-\d{2}-\d{2}$/.test(sortCode);
+}
+
+console.log("isValidSortCode() should check is a sort code string is in the correct format");
+
+try {
+  check(isValidSortCode).whenCalledWith("10-34-67").returns(true);
+  check(isValidSortCode).whenCalledWith("51-34-58").returns(true);
+  check(isValidSortCode).whenCalledWith("85-16-23").returns(true);
+
+  check(isValidSortCode).whenCalledWith("51-349-67").returns(false);
+  check(isValidSortCode).whenCalledWith("7980-34-67").returns(false);
+  check(isValidSortCode).whenCalledWith("34-12-899").returns(false);
+  check(isValidSortCode).whenCalledWith("a8-78-10").returns(false);
+  check(isValidSortCode).whenCalledWith("45_78_10").returns(false);
 
   printGreenMessage("Pass ✔");
 } catch (error) {

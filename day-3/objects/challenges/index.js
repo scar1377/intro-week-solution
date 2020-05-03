@@ -1,6 +1,3 @@
-function accessObject(object, key) {
-  return object[key];
-}
 // accessObject should take an object and a key and return the object's property value
 
 console.log("accessObject() can access a property value using a key");
@@ -13,10 +10,7 @@ try {
   printRedMessage(error);
 }
 
-function checkIfPropertyExists(object, key) {
-  return key in object;
-}
-// checkIfPropertyExistsshould take an object and a key and return a boolean that indicates whether or not the object has the given keys
+// checkIfPropertyExists should take an object and a key and return a boolean that indicates whether or not the object has the given keys
 
 console.log(`checkIfPropertyExists() checks if a property exists inside an object`);
 try {
@@ -29,10 +23,6 @@ try {
   printRedMessage(error);
 }
 
-function createObject(keyValuePair) {
-  const [key, value] = keyValuePair;
-  return { [key]: value };
-}
 // createObject() should take a key-value pair (stored in an array) and use it to create an object with a key and a value
 
 console.log(`createObject() creates a new object from a key value pair`);
@@ -46,9 +36,6 @@ try {
   printRedMessage(error);
 }
 
-function countProperties(obj) {
-  return Object.keys(obj).length;
-}
 // countPropertiess should take an object and count the number of properties it has
 
 console.log(`countProperties() counts the number of key-value pairs for a given object`);
@@ -62,23 +49,20 @@ try {
   printRedMessage(error);
 }
 
-function updateVoterAddress(voter, correctHouseNumber) {
-  voter.address.houseNumber = correctHouseNumber;
-  /* Uh-Oh! We've got some silly voters who've registered their addresses incorrectly.
-   Lets help them fix those typos by changing their houseNumber to the correctHouseNumber.
-   The user object looks like this:
-    {
-      name: "Alex",
-      age: 39,
-      address: {
-        houseNumber: 2,
-        street: "Old St",
-        city: "Chester"
-      }
-    };
-    Note - The function does NOT need to return anything.
-  */
-}
+// Uh-Oh! We've got some silly voters who've registered their addresses incorrectly.
+//   Lets help them fix those typos by changing their houseNumber to the correctHouseNumber.
+//   The user object looks like this:
+//    {
+//      name: "Alex",
+//      age: 39,
+//      address: {
+//        houseNumber: 2,
+//        street: "Old St",
+//        city: "Chester"
+//      }
+//    };
+//    Note - The function does NOT need to return anything.
+//
 
 console.log(`updateVoterAddress() updates the voter's houseNumber`);
 try {
@@ -109,13 +93,12 @@ try {
   printRedMessage(error);
 }
 
-function createUserString(userObj) {
-  // should take as an argument an object with the format from createNorthcoder
-  // returns a string with the user's details in the form:
-  // 'name: Mitch, age: 27, language: Javascript';
-  // Note - this is a good use case of string template literals.
-  return `name: ${userObj.name}, age: ${userObj.age}, language: ${userObj.language}`;
-}
+// createUserString() should take as an argument an object with the format from createNorthcoder
+// returns a string with the user's details in the form:
+// "name: Mitch, age: 27, language: Javascript";
+
+// Note - this is a good use case of template literals:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 console.log(`createUserString() will create a message from an details object`);
 try {
@@ -132,16 +115,14 @@ try {
   printRedMessage(error);
 }
 
-function updateCoinMachine(coinMachine, money) {
-  // should take a coinMachine object with the following form:
-  //    {
-  //      '1p' : 0,
-  //      '2p':  0,
-  //      '5p' : 0,
-  //      '10p:  0
-  //    }
-  // and should update the coinMachine to reflect any change that is added into the machine
-}
+// updateCoinMachine() should take a coinMachine object with the following form:
+//  {
+//    '1p': 0,
+//    '2p': 0,
+//    '5p': 0,
+//    '10p: 0
+//  }
+// and should update the coinMachine to reflect any change that is added into the machine
 
 console.log(`updateCoinMachine() will create a message from an details object`);
 

@@ -1,4 +1,4 @@
-// getLastItems should return the last item from an array
+// getLastItems() should return the last item from an array
 
 console.log("getLastItem() returns the last item in an array");
 try {
@@ -10,7 +10,7 @@ try {
   printRedMessage(error);
 }
 
-// getLastNItems return an array with the last n items of the array
+// getLastNItems() return an array with the last n items of the array
 
 console.log("getLastNItems() returns the last n items in an array");
 try {
@@ -23,7 +23,7 @@ try {
   printRedMessage(error);
 }
 
-// removeItem returns a new array without the item on position 'n', effectively removing it from the array
+// removeItem() returns a new array without the item on position 'n', effectively removing it from the array
 
 console.log("removeItem() removes an item at a given index");
 try {
@@ -35,32 +35,35 @@ try {
   printRedMessage(error);
 }
 
-// mergeArrays returns a new array with all the elements of arr1 followed by all the elements of arr2
+// mergeArrays() returns a new array containing all of arr1 and arr2's elements
 
 console.log("mergeArrays() will concatenate two arrays together");
 
 try {
   check(mergeArrays).whenCalledWith(["a", "b"], ["c", "d"]).returns(["a", "b", "c", "d"]);
   check(mergeArrays).whenCalledWith([1], [3, 5, 7]).returns([1, 3, 5, 7]);
+  check(mergeArrays).whenCalledWith(["x", "y", "z"], [1, 2, 3, 4]).returns(["x", "y", "z", 1, 2, 3, 4]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
   printRedMessage(error);
 }
 
-// if an array is like a sandwich, the first and last items are the bread, getSandwichFilling should return an array with the filling of the sandwich
+// if an array is like a sandwich, the first and last items are the bread
+// getSandwichFilling() should return an array with the filling of the sandwich
 
 console.log("getSandwichFilling() returns the inner elements of an array");
 try {
   check(getSandwichFilling).whenCalledWith(["a", "b", "c", "d"]).returns(["b", "c"]);
   check(getSandwichFilling).whenCalledWith([10, 20, 30, 40, 50, 60]).returns([20, 30, 40, 50]);
+  check(getSandwichFilling).whenCalledWith(["northcoders", "are", "the", "best"]).returns(["are", "the"]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
   printRedMessage(error);
 }
 
-// isEmpyty should return a boolean checking if an array is empty
+// isEmpty() should return a boolean checking if an array is empty
 
 console.log("isEmptyArray() checks if an array is empty");
 try {
@@ -73,7 +76,7 @@ try {
   printRedMessage(error);
 }
 
-// howManyArguments should return the number of arguments passed into the function
+// howManyArguments() should return the number of arguments passed into the function
 
 console.log("howManyArguments() returns the number of items passed on a single call");
 try {
@@ -87,7 +90,12 @@ try {
   printRedMessage(error);
 }
 
-// updatePosition takes an array representing coordinates - an x position and a y position - and a direction. It shouuld return a new pair of coordinates
+// updatePosition takes an array representing coordinates - an x position and a y position - and a direction. It shouuld return a new pair of coordinates with the coordinates array updated by moving either 1 unit in a particular direction.
+
+// If direction is up it should move 1 unit up (+ 1 in the y direction)
+// If the direction is down it should move 1 unit down (- 1 in the y direction)
+// If the direction is right it should move 1 unit right (+ 1 in the x direction)
+// If the direction is left it should move 1 unit left (- 1 in the x direction)
 
 console.log("updatePosition() checks if an array is empty");
 try {
@@ -105,7 +113,7 @@ try {
 // each nested array represents a slot in the coin collection in the following way:
 //  1p   2p   5p   10p
 // [[],  [],  [],  []] <-- coinCollection
-// addCoins will take the coinCollection and some money and will need to update a slot with some of the coins at a given //// position
+// addCoins() will take the coinCollection and some money and will need to update a slot with some of the coins at a given // position
 
 console.log("addCoins() will update the coins in a given slot");
 
@@ -130,6 +138,10 @@ try {
     .whenCalledWith([["1p"], [], [], ["10p", "10p"]], "2p")
     .returns([["1p"], ["2p"], [], ["10p", "10p"]]);
 
+  check(addCoins)
+    .whenCalledWith([[], [], ["5p", "5p"], []], "5p")
+    .returns([[], [], ["5p", "5p", "5p"], []]);
+
   printGreenMessage("Pass :)");
 } catch (error) {
   printRedMessage(error);
@@ -148,7 +160,7 @@ try {
   printRedMessage(error);
 }
 
-console.log("accessItem() can retrieve an item inside in an array with a given index");
+console.log("accessItem() can retrieve an item inside in an array with an index equal to or above the array length");
 try {
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 4).returns("a");
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 6).returns("c");
@@ -160,6 +172,7 @@ try {
   printRedMessage(error);
 }
 
+// findDayOfTheWeek() will need to return the day of the week
 // in this task,
 // 1 -> Monday, 2 -> Tuesday, 3 -> Wednesday, 4 -> Thursday, 5 -> Friday, 6 -> Saturday, 7 -> Sunday
 

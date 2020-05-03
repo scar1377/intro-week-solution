@@ -46,11 +46,11 @@ try {
 
   const firstRow = rows[0];
   check(firstRow[0]).isEqualTo("a");
-  check("b").isEqualTo(firstRow[FILL_ME_IN]);
+  check(firstRow[FILL_ME_IN]).isEqualTo("b");
 
-  check("e").isEqualTo(rows[1][FILL_ME_IN]);
-  check("g").isEqualTo(rows[2][FILL_ME_IN]);
-  check("c").isEqualTo(rows[0][FILL_ME_IN]);
+  check(rows[1][FILL_ME_IN]).isEqualTo("e");
+  check(rows[2][FILL_ME_IN]).isEqualTo("g");
+  check(rows[0][FILL_ME_IN]).isEqualTo("c");
 
   printGreenMessage("Success :)");
 } catch (error) {

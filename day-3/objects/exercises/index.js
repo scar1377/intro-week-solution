@@ -1,3 +1,5 @@
+console.log("Task 1");
+
 try {
   const myObject = {};
 
@@ -6,6 +8,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("Task 2");
 try {
   const father = {
     firstname: "Michael",
@@ -21,6 +24,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("Task 3");
 try {
   const son = {};
   son.name = "George Michael";
@@ -34,6 +38,8 @@ try {
 } catch (error) {
   printRedMessage(error);
 }
+
+console.log("Task 4");
 
 try {
   const starWars = {

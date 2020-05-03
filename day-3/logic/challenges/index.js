@@ -53,7 +53,7 @@ try {
   printRedMessage(error);
 }
 
-function isMultipleOf6(num) {
+function isMultipleOf6() {
   // isMultipleOf6 check if a passed value is a multiple of 6
 }
 
@@ -72,7 +72,7 @@ try {
 
 function checkInfinitive() {
   // checkInfinitive will check if a French word is an infinitive French verb
-  // A French infinitive verb is a word that ends with either re, ir or er
+  // A French infinitive verb is a word that ends with either "re", "ir" or "er"
 }
 
 console.log("checkInfinitive() checks if a french word is a regular verb");
@@ -100,7 +100,8 @@ try {
 function checkGame() {
   // checkGame should take a value from a diceRoll ( a number from 1 to 6 )
   // and should also take the result from a coinToss (either "H" for heads or "T" for tails)
-  // the function should return true if the player wins the game - getting a dice roll of 3 or higher and a coinToss of 'H'
+  // the function should return true if the player wins the game - getting a dice roll of 3 or higher AND a coinToss of 'H'
+  // means that you have won the game :)
 }
 
 console.log("checkGame() should check if a number is divisible by 6");
@@ -151,6 +152,7 @@ function getOrdinalSuffix() {
   // E.g. "nd" is an ordinal suffix as we'd write 2nd
   // E.g. "st" is an ordinal suffix as we'd write 1st etc
   // getOrdinalSuffix() should take a number and return the corresponding ordinal suffix
+  // See here for more details: https://www.grammarly.com/blog/how-to-write-ordinal-numbers-correctly/
 }
 
 try {
