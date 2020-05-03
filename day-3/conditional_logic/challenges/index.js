@@ -6,6 +6,19 @@ function isBiggerThan10(num) {
   }
 }
 
+try {
+  check(isBiggerThan10).whenCalledWith(3).returns("Number 3 is less than 10");
+  check(isBiggerThan10).whenCalledWith(4).returns("Number 4 is less than 10");
+  check(isBiggerThan10).whenCalledWith(5).returns("Number 5 is less than 10");
+  check(isBiggerThan10).whenCalledWith(11).returns("Number 11 is more than 10");
+  check(isBiggerThan10).whenCalledWith(100).returns("Number 100 is more than 10");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
 // assert that this function returns the correct message
 
 function checkBatteryLevel(batteryLevel) {}
@@ -16,6 +29,26 @@ function checkBatteryLevel(batteryLevel) {}
 // "Battery level: <number-here>%"
 // if the battery level is 100% then the string should say:
 // "Fully charged :)"
+
+try {
+  check(checkBatteryLevel).whenCalledWith(100).returns("Fully charged :)");
+
+  check(checkBatteryLevel).whenCalledWith(99).returns("Battery level: 99%");
+  check(checkBatteryLevel).whenCalledWith(80).returns("Battery level: 80%");
+  check(checkBatteryLevel).whenCalledWith(30).returns("Battery level: 30%");
+  check(checkBatteryLevel).whenCalledWith(10).returns("Battery level: 10%");
+  check(checkBatteryLevel).whenCalledWith(6).returns("Battery level: 6%");
+
+  check(checkBatteryLevel).whenCalledWith(5).returns("Warning - battery level low: 5%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(4).returns("Warning - battery level low: 4%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(3).returns("Warning - battery level low: 3%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith(1).returns("Warning - battery level low: 1%, please charge your device");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
 
 function readTrafficLight(colour) {
   if (colour === "GREEN") {
@@ -36,24 +69,10 @@ try {
 
   check(readTrafficLight).whenCalledWith("red").returns("STOP!");
   check(readTrafficLight).whenCalledWith("RED").returns("STOP!");
+
+  printGreenMessage("Pass ✔");
 } catch (error) {
-  printRedMessage(error);
-}
-
-try {
-  check(checkBatteryLevel).whenCalledWith(100).returns("Fully charged :)");
-
-  check(checkBatteryLevel).whenCalledWith(99).returns("Battery level: 99%");
-  check(checkBatteryLevel).whenCalledWith(80).returns("Battery level: 80%");
-  check(checkBatteryLevel).whenCalledWith(30).returns("Battery level: 30%");
-  check(checkBatteryLevel).whenCalledWith(10).returns("Battery level: 10%");
-  check(checkBatteryLevel).whenCalledWith(6).returns("Battery level: 6%");
-
-  check(checkBatteryLevel).whenCalledWith(5).returns("Warning - battery level low: 5%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(4).returns("Warning - battery level low: 4%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(3).returns("Warning - battery level low: 3%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(1).returns("Warning - battery level low: 1%, please charge your device");
-} catch (error) {
+  printRedMessage("Fail ✗");
   printRedMessage(error);
 }
 
@@ -74,17 +93,27 @@ try {
   printRedMessage(error);
 }
 
-function isMultipleOf6(num) {
-  return num % 3 === 0 && num % 6 === 0;
+function checkInfinitive(word) {
+  return word.endsWith("re") || word.endsWith("ir") || word.endsWith("er");
 }
 
-console.log("isMultipleOf6() should check if a number is divisible by 6");
-try {
-  check(isMultipleOf6).whenCalledWith(6).returns(true);
+// checkInfinitive will check if a French word is regular - an infinitive French word ends with either re, ir or er
 
-  check(isMultipleOf6).whenCalledWith(10).returns(false);
-  check(isMultipleOf6).whenCalledWith(15).returns(false);
-  check(isMultipleOf6).whenCalledWith(36).returns(true);
+console.log("checkInfinitive() checks if a french word is a regular verb");
+try {
+  check(checkInfinitive).whenCalledWith("manger").returns(true);
+  check(checkInfinitive).whenCalledWith("faire").returns(true);
+  check(checkInfinitive).whenCalledWith("aller").returns(true);
+  check(checkInfinitive).whenCalledWith("aller").returns(true);
+  check(checkInfinitive).whenCalledWith("finir").returns(true);
+  check(checkInfinitive).whenCalledWith("rendre").returns(true);
+  check(checkInfinitive).whenCalledWith("savoir").returns(true);
+
+  check(checkInfinitive).whenCalledWith("suis").returns(false);
+  check(checkInfinitive).whenCalledWith("ai").returns(false);
+  check(checkInfinitive).whenCalledWith("ete").returns(false);
+  check(checkInfinitive).whenCalledWith("sais").returns(false);
+
   printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage("Fail ✗");
