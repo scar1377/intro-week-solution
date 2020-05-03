@@ -4,6 +4,8 @@ try {
   const myObject = {};
 
   check(FILL_ME_IN).isEqualTo(typeof myObject);
+
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -20,6 +22,8 @@ try {
   check(father.lastname).isEqualTo(FILL_ME_IN);
   check(father.firstName).isEqualTo(FILL_ME_IN);
   check(father.car).isEqualTo(FILL_ME_IN);
+
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -35,6 +39,8 @@ try {
   check(son.name).isEqualTo(FILL_ME_IN);
   check(typeof son.jobs).isEqualTo(FILL_ME_IN);
   check(son.jobs[1]).isEqualTo(FILL_ME_IN);
+
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -52,6 +58,8 @@ try {
 
   check(worstOne).isEqualTo(FILL_ME_IN);
   check(starWars[FILL_ME_IN]).isEqualTo("The Force Awakens");
+
+  printGreenMessage("Pass ✔");
 } catch (error) {}
 
 try {
@@ -67,6 +75,8 @@ try {
 
   delete brotherInLaw.job;
   check(brotherInLaw.job).isEqualTo(FILL_ME_IN);
+
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -86,6 +96,8 @@ try {
   check(bluthFamily.father.name).isEqualTo(FILL_ME_IN);
   check(bluthFamily.mother["name"]).isEqualTo(FILL_ME_IN);
   check(bluthFamily["sons"][2].name).isEqualTo(FILL_ME_IN);
+
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }

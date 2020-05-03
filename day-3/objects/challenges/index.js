@@ -1,16 +1,16 @@
-// accessObject should take an object and a key and return the object's property value
+// accessObject() should take an object and a key and return the object's property value
 
 console.log("accessObject() can access a property value using a key");
 try {
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "name").returns("jonny");
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(32);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
 
-// checkIfPropertyExists should take an object and a key and return a boolean that indicates whether or not the object has the given keys
+// checkIfPropertyExists() should take an object and a key and return a boolean that indicates whether or not the object has the given keys
 
 console.log(`checkIfPropertyExists() checks if a property exists inside an object`);
 try {
@@ -18,7 +18,7 @@ try {
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(true);
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "pets").returns(false);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -31,12 +31,12 @@ try {
   check(createObject).whenCalledWith(["fruit", "apple"]).returns({ fruit: "apple" });
   check(createObject).whenCalledWith(["language", "haskell"]).returns({ language: "haskell" });
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
 
-// countPropertiess should take an object and count the number of properties it has
+// countProperties() should take an object and count the number of properties it has
 
 console.log(`countProperties() counts the number of key-value pairs for a given object`);
 try {
@@ -44,7 +44,7 @@ try {
   check(countProperties).whenCalledWith({ name: "shaq" }).returns(1);
   check(countProperties).whenCalledWith({ name: "shaq", job: "tutor", city: "Manchester" }).returns(3);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -88,7 +88,7 @@ try {
     },
   });
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -110,7 +110,7 @@ try {
     .whenCalledWith({ name: "Anat", age: 24, language: "Ruby" })
     .returns("name: Anat, age: 24, language: Ruby");
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -147,7 +147,7 @@ try {
     .whenCalledWith({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "10p")
     .returns({ "1p": 0, "2p": 3, "5p": 10, "10p": 1 }, "5p");
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
