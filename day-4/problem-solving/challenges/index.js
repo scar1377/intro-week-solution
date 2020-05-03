@@ -7,7 +7,7 @@ function flipBooleans(bools) {
 }
 
 console.log("flipBooleans()");
-console.log("  returns an empty array when passed []");
+console.log("returns an empty array when passed []");
 try {
   check(flipBooleans([])).isEqualTo([]);
 
@@ -15,7 +15,7 @@ try {
 } catch (error) {
   printRedMessage("  ", error);
 }
-console.log("  tinverts all booleans in the array");
+console.log("inverts all booleans in the array");
 try {
   check(flipBooleans([true, true, true])).isEqualTo([false, false, false]);
   check(flipBooleans([false, true, true])).isEqualTo([true, false, false]);

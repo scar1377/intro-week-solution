@@ -1,9 +1,9 @@
 function accessObject(object, key) {
   return object[key];
 }
-// This function should take an object and a key and return the object's property value;
+// accessObject should take an object and a key and return the object's property value
 
-console.log(`accessObject() can access a property value using a key`);
+console.log("accessObject() can access a property value using a key");
 try {
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "name").returns("jonny");
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(32);
@@ -16,7 +16,7 @@ try {
 function checkIfPropertyExists(object, key) {
   return key in object;
 }
-// This function should take an object and a key and return boolean that indicates whether or not the object has the given keys
+// checkIfPropertyExistsshould take an object and a key and return a boolean that indicates whether or not the object has the given keys
 
 console.log(`checkIfPropertyExists() checks if a property exists inside an object`);
 try {
@@ -33,7 +33,7 @@ function createObject(keyValuePair) {
   const [key, value] = keyValuePair;
   return { [key]: value };
 }
-// This function should take a key value pair (stored in an array) and use it to create an object with a key and a value
+// createObject() should take a key-value pair (stored in an array) and use it to create an object with a key and a value
 
 console.log(`createObject() creates a new object from a key value pair`);
 try {
@@ -49,7 +49,7 @@ try {
 function countProperties(obj) {
   return Object.keys(obj).length;
 }
-// This function should take an object and count the number of properties it has
+// countPropertiess should take an object and count the number of properties it has
 
 console.log(`countProperties() counts the number of key-value pairs for a given object`);
 try {
@@ -133,15 +133,43 @@ try {
 }
 
 function updateCoinMachine(coinMachine, money) {
-  // should take a coinMachine object with the following properties
+  // should take a coinMachine object with the following form:
   //    {
-  //      '1p' : [],
-  //      '2p': [],
+  //      '1p' : 0,
+  //      '2p':  0,
+  //      '5p' : 0,
+  //      '10p:  0
   //    }
-  // should update the
+  // and should update the coinMachine to reflect any change that is added into the machine
 }
 
 console.log(`updateCoinMachine() will create a message from an details object`);
+
+try {
+  check(updateCoinMachine)
+    .whenCalledWith({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "1p")
+    .returns({ "1p": 1, "2p": 0, "5p": 0, "10p": 0 });
+
+  check(updateCoinMachine)
+    .whenCalledWith({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "2p")
+    .returns({ "1p": 0, "2p": 1, "5p": 0, "10p": 0 });
+
+  check(updateCoinMachine)
+    .whenCalledWith({ "1p": 0, "2p": 3, "5p": 0, "10p": 0 }, "2p")
+    .returns({ "1p": 0, "2p": 4, "5p": 0, "10p": 0 });
+
+  check(updateCoinMachine)
+    .whenCalledWith({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "5p")
+    .returns({ "1p": 0, "2p": 3, "5p": 11, "10p": 0 });
+
+  check(updateCoinMachine)
+    .whenCalledWith({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "10p")
+    .returns({ "1p": 0, "2p": 3, "5p": 10, "10p": 1 }, "5p");
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 

@@ -234,6 +234,8 @@ try {
   check(extractNumber).whenCalledWith("lasjdasasj(123)asljdlajk").returns(123);
   check(extractNumber).whenCalledWith("qwasdaoyer(44687)iuwyeibasdahgsd").returns(44687);
   check(extractNumber).whenCalledWith("qwasdasdfsyer(19827)iusdfsdfsd").returns(19827);
+  check(extractNumber).whenCalledWith("qwasdasdfsyer(5601)iusdfsdfsd").returns(5601);
+  check(extractNumber).whenCalledWith("qwasdasdfsyer(29)iusdfsdfsd").returns(29);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
@@ -243,19 +245,6 @@ try {
 
 function extractNumber(code) {
   return +code.slice(code.indexOf("(") + 1, code.indexOf(")"));
-}
-
-console.log("extractNumber() should return the number buried inside a string");
-
-try {
-  check(extractNumber).whenCalledWith("lasjdasasj(123)asljdlajk").returns(123);
-  check(extractNumber).whenCalledWith("qwasdaoyer(44687)iuwyeibasdahgsd").returns(44687);
-  check(extractNumber).whenCalledWith("qwasdasdfsyer(19827)iusdfsdfsd").returns(19827);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
 }
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<

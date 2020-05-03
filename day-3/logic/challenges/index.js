@@ -1,15 +1,12 @@
-function isBiggerThan10(num) {
-  if (num > 10) {
-    return "Your number is bigger than 10";
-  } else {
-    return "Your number is less than or equal to 10";
-  }
+function isBiggerThan10() {
+  // checks if an number is strictly bigger than 10 and returns a message accordingly
 }
 
 try {
   check(isBiggerThan10).whenCalledWith(3).returns("Number 3 is less than 10");
   check(isBiggerThan10).whenCalledWith(4).returns("Number 4 is less than 10");
   check(isBiggerThan10).whenCalledWith(5).returns("Number 5 is less than 10");
+  check(isBiggerThan10).whenCalledWith(10).returns("Number 10 is equal to 10");
   check(isBiggerThan10).whenCalledWith(11).returns("Number 11 is more than 10");
   check(isBiggerThan10).whenCalledWith(100).returns("Number 100 is more than 10");
 
@@ -19,46 +16,26 @@ try {
   printRedMessage(error);
 }
 
-// assert that this function returns the correct message
-
-function checkBatteryLevel(batteryLevel) {}
-
-// if the battery level is less than 5% then should return a string saying:
-// "warning - battery level low: <number-here>%, please charge your device"
-// if the battery level is between 5 and 99% then it should display a string saying:
-// "Battery level: <number-here>%"
-// if the battery level is 100% then the string should say:
-// "Fully charged :)"
+function isFalsy() {
+  // checks if a value is falsy and returns true if it is - returns false otherwise
+}
 
 try {
-  check(checkBatteryLevel).whenCalledWith(100).returns("Fully charged :)");
+  check(isFalsy).whenCalledWith(false).returns(true);
+  check(isFalsy).whenCalledWith("").returns(true);
+  check(isFalsy).whenCalledWith(0).returns(true);
+  check(isFalsy).whenCalledWith(NaN).returns(true);
+  check(isFalsy).whenCalledWith(undefined).returns(true);
+  check(isFalsy).whenCalledWith(null).returns(true);
 
-  check(checkBatteryLevel).whenCalledWith(99).returns("Battery level: 99%");
-  check(checkBatteryLevel).whenCalledWith(80).returns("Battery level: 80%");
-  check(checkBatteryLevel).whenCalledWith(30).returns("Battery level: 30%");
-  check(checkBatteryLevel).whenCalledWith(10).returns("Battery level: 10%");
-  check(checkBatteryLevel).whenCalledWith(6).returns("Battery level: 6%");
-
-  check(checkBatteryLevel).whenCalledWith(5).returns("Warning - battery level low: 5%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(4).returns("Warning - battery level low: 4%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(3).returns("Warning - battery level low: 3%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith(1).returns("Warning - battery level low: 1%, please charge your device");
-
-  printGreenMessage("Pass ✔");
+  check(isFalsy).whenCalledWith(10).returns(false);
 } catch (error) {
-  printRedMessage("Fail ✗");
   printRedMessage(error);
 }
 
-function readTrafficLight(colour) {
-  if (colour === "GREEN") {
-    return "GO!";
-  } else if (colour === "AMBER") {
-    return "GET READY...";
-  } else {
-    return "STOP!";
-  }
-}
+// assert that this function returns the correct message
+
+function readTrafficLight(colour) {}
 
 try {
   check(readTrafficLight).whenCalledWith("green").returns("GO!");
@@ -77,7 +54,7 @@ try {
 }
 
 function isMultipleOf6(num) {
-  return num % 3 === 0 && num % 6 === 0;
+  return num % 3 === 0 && num % 2 === 0;
 }
 
 console.log("isMultipleOf6() should check if a number is divisible by 6");
@@ -96,8 +73,8 @@ try {
 function checkInfinitive(word) {
   return word.endsWith("re") || word.endsWith("ir") || word.endsWith("er");
 }
-
-// checkInfinitive will check if a French word is regular - an infinitive French word ends with either re, ir or er
+// checkInfinitive will check if a French word is an infinitive French verb
+// A French infinitive verb is a word that ends with either re, ir or er
 
 console.log("checkInfinitive() checks if a french word is a regular verb");
 try {
@@ -113,6 +90,7 @@ try {
   check(checkInfinitive).whenCalledWith("ai").returns(false);
   check(checkInfinitive).whenCalledWith("ete").returns(false);
   check(checkInfinitive).whenCalledWith("sais").returns(false);
+  check(checkInfinitive).whenCalledWith("allons").returns(false);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
@@ -122,6 +100,10 @@ try {
 
 function checkGame(diceRoll, coinToss) {}
 
+// checkGame should take a value from a diceRoll ( a number from 1 to 6 )
+// and should also take the result from a coinToss (either "H" for heads or "T" for tails)
+// the function should return true if the player wins the game - getting a dice roll of 3 or higher and a coinToss of 'H'
+
 console.log("checkGame() should check if a number is divisible by 6");
 try {
   check(checkGame).whenCalledWith(3, "H").returns(true);
@@ -129,6 +111,35 @@ try {
   check(checkGame).whenCalledWith(5, "H").returns(true);
   check(checkGame).whenCalledWith(6, "H").returns(true);
   check(checkGame).whenCalledWith(6, "T").returns(false);
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+function checkBatteryLevel(batteryLevel) {}
+
+// if the battery level is less than 5% then should return a string saying:
+// "warning - battery level low: <number-here>%, please charge your device"
+// if the battery level is between 5 and 99% then it should display a string saying:
+// "Battery level: <number-here>%"
+// if the battery level is 100% then the string should say:
+// "Fully charged :)"
+
+try {
+  check(checkBatteryLevel).whenCalledWith("100").returns("Fully charged :)");
+
+  check(checkBatteryLevel).whenCalledWith("99").returns("Battery level: 99%");
+  check(checkBatteryLevel).whenCalledWith("80").returns("Battery level: 80%");
+  check(checkBatteryLevel).whenCalledWith("30").returns("Battery level: 30%");
+  check(checkBatteryLevel).whenCalledWith("10").returns("Battery level: 10%");
+  check(checkBatteryLevel).whenCalledWith("6").returns("Battery level: 6%");
+
+  check(checkBatteryLevel).whenCalledWith("5").returns("Warning - battery level low: 5%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith("4").returns("Warning - battery level low: 4%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith("3").returns("Warning - battery level low: 3%, please charge your device");
+  check(checkBatteryLevel).whenCalledWith("1").returns("Warning - battery level low: 1%, please charge your device");
 
   printGreenMessage("Pass ✔");
 } catch (error) {
