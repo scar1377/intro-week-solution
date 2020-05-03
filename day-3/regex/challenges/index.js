@@ -11,6 +11,7 @@ try {
   check(extractNumber).whenCalledWith("qwasdasdfsyer(5601)iusdfsdfsd").returns(5601);
   check(extractNumber).whenCalledWith("qwasdasdfsyer(29)iusdfsdfsd").returns(29);
   check(extractNumber).whenCalledWith("qwasdasdfsyer(5)iusdfsdfsd").returns(5);
+  check(extractNumber).whenCalledWith("qwasdasdfsyer(513)iusdfsdfsd").returns(513);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
@@ -39,6 +40,16 @@ try {
   printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+function grabCoefficient(expression) {}
+
+console.log("grabCoefficient() will return the coefficient from an expression");
+
+try {
+  check(grabCoefficient).whenCalledWith().returns();
+} catch (error) {
   printRedMessage(error);
 }
 
