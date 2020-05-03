@@ -152,6 +152,19 @@ try {
   printRedMessage(error);
 }
 
+// createArrow() will take a direction string: "left", "right", "up" and "down" and return a corresponding arrow
+
+try {
+  check(createArrow).whenCalledWith("right").returns("→");
+  check(createArrow).whenCalledWith("left").returns("←");
+  check(createArrow).whenCalledWith("up").returns("↑");
+  check(createArrow).whenCalledWith("down").returns("↓");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage(error);
+}
+
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 
 function check(func) {
