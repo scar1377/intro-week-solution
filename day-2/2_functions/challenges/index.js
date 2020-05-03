@@ -1,5 +1,6 @@
-function double() {
+function double(n) {
   // return any number doubled
+  return n * 2;
 }
 
 console.log("double() gives the correct output");
@@ -199,6 +200,57 @@ console.log("getMiddle() returns the middle characters in a string of even lengt
 try {
   check(getMiddle).whenCalledWith("abcd").returns("bc");
   check(getMiddle).whenCalledWith("blob").returns("lo");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+function getCharCode(char) {
+  return `The ASCII character for ${char} is ${char.charCodeAt(0)}`;
+}
+
+console.log("getCharCode() will return a message stating the ascci code of a passed char");
+
+try {
+  check(getCharCode).whenCalledWith("A").returns("The ASCII character for A is 65");
+  check(getCharCode).whenCalledWith("b").returns("The ASCII character for b is 98");
+  check(getCharCode).whenCalledWith("z").returns("The ASCII character for z is 122");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+function extractNumber(code) {
+  return +code.slice(code.indexOf("(") + 1, code.indexOf(")"));
+}
+
+console.log("extractNumber() should return the number buried inside a string");
+
+try {
+  check(extractNumber).whenCalledWith("lasjdasasj(123)asljdlajk").returns(123);
+  check(extractNumber).whenCalledWith("qwasdaoyer(44687)iuwyeibasdahgsd").returns(44687);
+  check(extractNumber).whenCalledWith("qwasdasdfsyer(19827)iusdfsdfsd").returns(19827);
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+function extractNumber(code) {
+  return +code.slice(code.indexOf("(") + 1, code.indexOf(")"));
+}
+
+console.log("extractNumber() should return the number buried inside a string");
+
+try {
+  check(extractNumber).whenCalledWith("lasjdasasj(123)asljdlajk").returns(123);
+  check(extractNumber).whenCalledWith("qwasdaoyer(44687)iuwyeibasdahgsd").returns(44687);
+  check(extractNumber).whenCalledWith("qwasdasdfsyer(19827)iusdfsdfsd").returns(19827);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
