@@ -1,24 +1,3 @@
-function extractNumber(code) {
-  return +code.match(/\d+/)[0];
-}
-
-console.log("extractNumber() should return the number buried inside a string of random characters");
-
-try {
-  check(extractNumber).whenCalledWith("lasjdasasj(123)asljdlajk").returns(123);
-  check(extractNumber).whenCalledWith("qwasdaoyer(44687)iuwyeibasdahgsd").returns(44687);
-  check(extractNumber).whenCalledWith("qwasdasdfsyer(19827)iusdfsdfsd").returns(19827);
-  check(extractNumber).whenCalledWith("qwasdasdfsyer(5601)iusdfsdfsd").returns(5601);
-  check(extractNumber).whenCalledWith("qwasdasdfsyer(29)iusdfsdfsd").returns(29);
-  check(extractNumber).whenCalledWith("qwasdasdfsyer(5)iusdfsdfsd").returns(5);
-  check(extractNumber).whenCalledWith("qwasdasdfsyer(513)iusdfsdfsd").returns(513);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
-
 function isValidSortCode(sortCode) {
   // checks if a passed string is a valid sort code - this should be 2 digits hyphen 2 digits hyphen 2 digits
   return /^\d{2}-\d{2}-\d{2}$/.test(sortCode);
