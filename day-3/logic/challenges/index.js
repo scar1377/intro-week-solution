@@ -33,9 +33,9 @@ try {
   printRedMessage(error);
 }
 
-// assert that this function returns the correct message
-
-function readTrafficLight(colour) {}
+function readTrafficLight() {
+  // this function should check if the "traffic light" is red, green or amber and return a corresponding message
+}
 
 try {
   check(readTrafficLight).whenCalledWith("green").returns("GO!");
@@ -54,7 +54,7 @@ try {
 }
 
 function isMultipleOf6(num) {
-  return num % 3 === 0 && num % 2 === 0;
+  // isMultipleOf6 check if a passed value is a multiple of 6
 }
 
 console.log("isMultipleOf6() should check if a number is divisible by 6");
@@ -70,11 +70,10 @@ try {
   printRedMessage(error);
 }
 
-function checkInfinitive(word) {
-  return word.endsWith("re") || word.endsWith("ir") || word.endsWith("er");
+function checkInfinitive() {
+  // checkInfinitive will check if a French word is an infinitive French verb
+  // A French infinitive verb is a word that ends with either re, ir or er
 }
-// checkInfinitive will check if a French word is an infinitive French verb
-// A French infinitive verb is a word that ends with either re, ir or er
 
 console.log("checkInfinitive() checks if a french word is a regular verb");
 try {
@@ -98,11 +97,11 @@ try {
   printRedMessage(error);
 }
 
-function checkGame(diceRoll, coinToss) {}
-
-// checkGame should take a value from a diceRoll ( a number from 1 to 6 )
-// and should also take the result from a coinToss (either "H" for heads or "T" for tails)
-// the function should return true if the player wins the game - getting a dice roll of 3 or higher and a coinToss of 'H'
+function checkGame() {
+  // checkGame should take a value from a diceRoll ( a number from 1 to 6 )
+  // and should also take the result from a coinToss (either "H" for heads or "T" for tails)
+  // the function should return true if the player wins the game - getting a dice roll of 3 or higher and a coinToss of 'H'
+}
 
 console.log("checkGame() should check if a number is divisible by 6");
 try {
@@ -118,14 +117,14 @@ try {
   printRedMessage(error);
 }
 
-function checkBatteryLevel(batteryLevel) {}
-
-// if the battery level is less than 5% then should return a string saying:
-// "warning - battery level low: <number-here>%, please charge your device"
-// if the battery level is between 5 and 99% then it should display a string saying:
-// "Battery level: <number-here>%"
-// if the battery level is 100% then the string should say:
-// "Fully charged :)"
+function checkBatteryLevel() {
+  // if the battery level is less than 5% then should return a string saying:
+  // "warning - battery level low: <number-here>%, please charge your device"
+  // if the battery level is between 5 and 99% then it should display a string saying:
+  // "Battery level: <number-here>%"
+  // if the battery level is 100% then the string should say:
+  // "Fully charged :)"
+}
 
 try {
   check(checkBatteryLevel).whenCalledWith("100").returns("Fully charged :)");
@@ -144,6 +143,40 @@ try {
   printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+function getOrdinalSuffix() {
+  // an ordinal suffix are the letters we put after a number:
+  // E.g. "nd" is an ordinal suffix as we'd write 2nd
+  // E.g. "st" is an ordinal suffix as we'd write 1st etc
+  // getOrdinalSuffix() should take a number and return the corresponding ordinal suffix
+}
+
+try {
+  check(getOrdinalSuffix).whenCalledWith(1).returns("st");
+  check(getOrdinalSuffix).whenCalledWith(2).returns("nd");
+  check(getOrdinalSuffix).whenCalledWith(3).returns("rd");
+  check(getOrdinalSuffix).whenCalledWith(4).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(5).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(10).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(11).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(12).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(13).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(14).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(15).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(16).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(17).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(18).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(19).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(20).returns("th");
+  check(getOrdinalSuffix).whenCalledWith(21).returns("st");
+  check(getOrdinalSuffix).whenCalledWith(22).returns("nd");
+  check(getOrdinalSuffix).whenCalledWith(23).returns("rd");
+  check(getOrdinalSuffix).whenCalledWith(32).returns("nd");
+
+  printGreenMessage("Success :)");
+} catch (error) {
   printRedMessage(error);
 }
 
