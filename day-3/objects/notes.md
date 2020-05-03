@@ -1,6 +1,6 @@
 # Objects
 
-Arrays are ordered collections of data we can use for storing multiple items. There are limitations to the use of arrays however:
+Arrays are ordered collections of data we can use for storing multiple items. There are limitations to the use of ordered collections:s
 
 ```js
 const details = ["Patricia", "Lloyd", 55, "St Marys", "Leigh", "Bolton"];
