@@ -101,6 +101,12 @@ try {
   printRedMessage(error);
 }
 
+// in this task, addCoins() will take a "coin collection" which is an array consisting of 4 other nested arrays
+// each nested array represents a slot in the coin collection in the following way:
+//  1p   2p   5p   10p
+// [[],  [],  [],  []] <-- coinCollection
+// addCoins will take the coinCollection and some money and will need to update a slot with some of the coins at a given //// position
+
 console.log("addCoins() will update the coins in a given slot");
 
 try {
@@ -129,7 +135,7 @@ try {
   printRedMessage(error);
 }
 
-// accessItem should access an array element at a specified index position
+// accessItem() should access an array element at a specified index position
 
 console.log("accessItem() can retrieve an item inside in an array with a given index below the array length");
 try {
@@ -148,6 +154,23 @@ try {
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 6).returns("c");
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 10).returns("c");
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 11).returns("d");
+
+  printGreenMessage("Pass :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+// in this task,
+// 1 -> Monday, 2 -> Tuesday, 3 -> Wednesday, 4 -> Thursday, 5 -> Friday, 6 -> Saturday, 7 -> Sunday
+
+console.log("findDayOfTheWeek() returns the day of the week given a passed number");
+try {
+  check(findDayOfTheWeek).whenCalledWith(2).returns("Tuesday");
+  check(findDayOfTheWeek).whenCalledWith(3).returns("Wednesday");
+  check(findDayOfTheWeek).whenCalledWith(1).returns("Monday");
+
+  check(findDayOfTheWeek).whenCalledWith(6).returns("Saturday");
+  check(findDayOfTheWeek).whenCalledWith(7).returns("Sunday");
 
   printGreenMessage("Pass :)");
 } catch (error) {
