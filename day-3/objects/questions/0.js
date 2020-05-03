@@ -6,4 +6,5 @@ const phoneBook = {
 
 const name = "anat";
 const anatPhoneNo = phoneBook.name;
-console.log(name);
+
+console.log(anatPhoneNo);

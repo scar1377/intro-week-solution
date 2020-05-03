@@ -1,4 +1,4 @@
-// getLastItems() should return the last item from an array
+// getLastItem() should return the last item from an array
 
 console.log("getLastItem() returns the last item in an array");
 try {
@@ -29,6 +29,7 @@ console.log("removeItem() removes an item at a given index");
 try {
   check(removeItem).whenCalledWith(["a", "b", "c", "d"], 2).returns(["a", "b", "d"]);
   check(removeItem).whenCalledWith(["a", "b", "c", "d"], 0).returns(["b", "c", "d"]);
+  check(removeItem).whenCalledWith(["a", "b", "c", "d"], 1).returns(["a", "c", "d"]);
 
   printGreenMessage("Pass :)");
 } catch (error) {
@@ -63,7 +64,7 @@ try {
   printRedMessage(error);
 }
 
-// isEmpty() should return a boolean checking if an array is empty
+// isEmptyArray() should return a boolean checking if an array is empty
 
 console.log("isEmptyArray() checks if an array is empty");
 try {
@@ -77,6 +78,7 @@ try {
 }
 
 // howManyArguments() should return the number of arguments passed into the function
+// HINT: For this one you should look at notes.md
 
 console.log("howManyArguments() returns the number of items passed on a single call");
 try {
@@ -90,14 +92,14 @@ try {
   printRedMessage(error);
 }
 
-// updatePosition takes an array representing coordinates - an x position and a y position - and a direction. It shouuld return a new pair of coordinates with the coordinates array updated by moving either 1 unit in a particular direction.
+// updatePosition() takes an array representing coordinates - an x position and a y position - and a direction. It shouuld return a new pair of coordinates with the coordinates array updated by moving either 1 unit in a particular direction.
 
 // If direction is up it should move 1 unit up (+ 1 in the y direction)
 // If the direction is down it should move 1 unit down (- 1 in the y direction)
 // If the direction is right it should move 1 unit right (+ 1 in the x direction)
 // If the direction is left it should move 1 unit left (- 1 in the x direction)
 
-console.log("updatePosition() checks if an array is empty");
+console.log("updatePosition() updates a co-ordinates array");
 try {
   check(updatePosition).whenCalledWith([10, 10], "up").returns([10, 11]);
   check(updatePosition).whenCalledWith([0, 0], "down").returns([0, -1]);
@@ -149,7 +151,8 @@ try {
 
 // accessItem() should access an array element at a specified index position
 
-console.log("accessItem() can retrieve an item inside in an array with a given index below the array length");
+console.log("accessItem()");
+console.log("  can access an item inside in an array with a given index below the array length");
 try {
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 2).returns("c");
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 0).returns("a");
@@ -160,7 +163,7 @@ try {
   printRedMessage(error);
 }
 
-console.log("accessItem() can retrieve an item inside in an array with an index equal to or above the array length");
+console.log("  can access an item inside in an array with an index equal to or above the array length");
 try {
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 4).returns("a");
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 6).returns("c");

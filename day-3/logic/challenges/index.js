@@ -1,5 +1,3 @@
-console.log("isBiggerThan() returns a message indicating if a number is bigger than 10");
-
 function isBiggerThan10() {
   // checks if an number is strictly bigger than 10 and returns a message accordingly
 }
@@ -23,7 +21,7 @@ function isFalsy() {
   // checks if a value is falsy and returns true if it is - returns false otherwise
 }
 
-console.log("returns true if a value is falsy and false if it is truthy");
+console.log("is Falsy() returns true if a value is falsy and false if it is truthy");
 
 try {
   check(isFalsy).whenCalledWith(false).returns(true);
@@ -113,7 +111,7 @@ function checkGame() {
   // means that you have won the game :)
 }
 
-console.log("checkGame() should check if a number is divisible by 6");
+console.log("checkGame() should check if a user was won the game");
 try {
   check(checkGame).whenCalledWith(3, "H").returns(true);
   check(checkGame).whenCalledWith(4, "H").returns(true);
@@ -128,15 +126,15 @@ try {
 }
 
 function checkBatteryLevel() {
-  // if the battery level is less than 5% then should return a string saying:
-  // "warning - battery level low: <number-here>%, please charge your device"
-  // if the battery level is between 5 and 99% then it should display a string saying:
+  // if the battery level is less than or equal to 5%, then it should return a string stating:
+  // "Warning - battery level low: <number-here>%, please charge your device"
+  // if the battery level is between 5 and 99% then it should return a string stating:
   // "Battery level: <number-here>%"
-  // if the battery level is 100% then the string should say:
+  // if the battery level is 100% then it shoud return a string stating:
   // "Fully charged :)"
 }
 
-console.log("should return a message with info about the battery level");
+console.log("checkBatteryLevel() should return a message with info about the battery level");
 
 try {
   check(checkBatteryLevel).whenCalledWith("100").returns("Fully charged :)");
@@ -166,7 +164,7 @@ function getOrdinalSuffix() {
   // See here for more details: https://www.grammarly.com/blog/how-to-write-ordinal-numbers-correctly/
 }
 
-console.log("should give the correct ordinal suffix for a number");
+console.log("getOrdinalSuffix() should give the correct ordinal suffix for a number");
 
 try {
   check(getOrdinalSuffix).whenCalledWith(1).returns("st");

@@ -2,11 +2,7 @@
 
 ## Primitives
 
-JavaScript has 6 primitive data-types : number, string, boolean, undefined, null and Symbol. These data types are the fundamental categories we use in the programming language. We can use variables to store values with different data types in the following way:
-
-```js
-const item = "apple";
-```
+JavaScript has 6 primitive data-types : number, string, boolean, undefined, null and Symbol. These data types are the fundamental types we use in the JavaScript. However, it would become increasingly difficult to manipulate groups of data if the language only permitted the use of primitive data types.
 
 ---
 
@@ -28,14 +24,57 @@ We could continue to create variables in this way: however, we would have to kee
 
 🔑 A JavaScript array is an **ordered collection of data**.
 
-We could create an array in the following way:
+JavaScript arrays are written using `[` and `]` with each item inside the square brackets separated by a comma. We can create an array in the following way:
 
 ```js
 const items = ["apple", "banana", "strawberry"];
 ```
 
-`items` is an array containing 3 items - the strings, `"apple"`,`"banana"` and `"strawberry"`
+`items` is an array containing 3 **elements**, an **element** being an item inside the array. The strings, `"apple"`,`"banana"` and `"strawberry"` are said to be the **3 elements** making up the array `items`.
 
 ---
 
 ## Zero indexing
+
+In computer science, **zero indexing** means that we start counting ordered collections from **zero**. All JavaScript arrays are **zero-indexed**. We can use the index position together with square bracket notation in order to access an array element at a specific position:
+
+```js
+const letters = ["a", "b", "c"];
+letters[0]; // evaluates to 'a'
+letters[1]; // evaluates to 'b'
+```
+
+An array can be accessed with a position that is bigger than the array length: however, in this case the access will evaluate to `undefined`:
+
+```js
+const letters = ["a", "b", "c"];
+// only 3 items
+
+letters[5]; // evaluates to undefined
+```
+
+---
+
+## `.length`
+
+All arrays have a `.length` property indicating the number of items present inside the array. In other languages, arrays and ordered collections of data have limitations on the amount of data they can store. In JavaScript, the physical limitations of an array length are usually far beyond what will normally be needed. In addition, Javascript arrays can hold items of multiple data types, this makes them extremely flexible **data structures**. The `.length` property of an array will be updated when an arrays contents are altered. Javascript arrays are said to be **mutable** as we can update their contents over time.
+
+```js
+const items = ["apple", "banana", "strawberry"];
+items.length; // will be 3
+
+items[3] = "kiwi"; // this will insert an item "kiwi" at index position 3
+items.length; // will now be 4
+```
+
+### `.push()`
+
+We will frequently want to update arrays by adding or removing items.
+
+🔑 `.push()` is a **mutating array method**. It will mutate an array by adding an item to the end of an array.
+
+```js
+const letters = ["a", "b", "c"];
+letters.push("d");
+// letters is now ["a", "b", "c", "d"];
+```

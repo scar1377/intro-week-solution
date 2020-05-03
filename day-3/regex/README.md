@@ -1,3 +1,3 @@
 # Regex Tasks
 
-Exercises can be found here ...
+Exercises can be found here by following this link

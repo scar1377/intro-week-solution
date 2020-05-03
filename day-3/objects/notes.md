@@ -39,7 +39,9 @@ person.name; // evaluates to "Anat"
 
 The above example shows dot notation where we access a property value by stating the name of an object writing a `.` and then adding a key after the dot. This notation will
 
-## Dynamic access - square brackets
+---
+
+## Dynamic access
 
 Alternatively we could use a variable to access an object instead of dot notation. Consider the example below:
 
