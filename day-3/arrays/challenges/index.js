@@ -193,9 +193,7 @@ try {
   printRedMessage(error);
 }
 
-function extractNumber(code) {
-  return +code.match(/\d+/)[0];
-}
+function extractNumber() {}
 
 console.log("extractNumber() should return the number buried inside a string of random characters");
 
