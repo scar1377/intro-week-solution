@@ -1,9 +1,6 @@
 const multiplesOf10 = [];
 
 // your loop here ...
-for (let i = 10; i < 101; i += 5) {
-  multiplesOf10.push(i);
-}
 
 console.log("check multiples of 10 up to 100 are pushed into the array");
 

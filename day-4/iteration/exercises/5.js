@@ -2,11 +2,8 @@ let total = 0;
 
 // use iteration to get the total of all the numbers from 1 to 50
 
-for (let i = 0; i <= 50; i++) {
-  total += i;
-}
+console.log("calculate the sum of several numbers using a loop");
 
-console.log("Calculate the sum of several numbers using a loop");
 try {
   check(total).isEqualTo(1275);
 

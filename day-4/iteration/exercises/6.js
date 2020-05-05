@@ -1,9 +1,6 @@
 const alternatingChars = [];
 
 // your loop here ...
-for (let i = 0; i < 8; i++) {
-  alternatingChars.push(i % 2 ? "o" : "x");
-}
 
 console.log("can push alternating characters into an array");
 

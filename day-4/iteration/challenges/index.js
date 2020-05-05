@@ -1,7 +1,3 @@
-function makeAllUpperCase(words) {
-  return words.map((word) => word.toUpperCase());
-}
-
 console.log("makeAllUpperCase() can get all the strings from an array");
 try {
   check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
@@ -11,10 +7,6 @@ try {
 } catch (error) {
   printRedMessage("Fail ✗");
   printRedMessage(error);
-}
-
-function collectStrings(array) {
-  return array.filter((item) => typeof item === "string");
 }
 
 console.log("collectStrings() can get all the strings from an array");
@@ -28,11 +20,6 @@ try {
   printRedMessage(error);
 }
 
-function getEvenNumbers(nums) {
-  // return an array of only the even numbers in the given array
-  return nums.filter((num) => !(num % 2));
-}
-
 console.log("getEvenNumbers() can get all the even numbers from an array of numbers");
 try {
   check(getEvenNumbers).whenCalledWith([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).returns([2, 4, 6, 8, 10]);
@@ -42,11 +29,6 @@ try {
 } catch (error) {
   printRedMessage("Fail ✗");
   printRedMessage(error);
-}
-
-function collectPlurals(words) {
-  // collect all the words ending in an 's'
-  return words.filter((word) => word.endsWith("s"));
 }
 
 console.log("collectPlurals() can collect all the strings ending in an s");
@@ -65,9 +47,6 @@ try {
   printRedMessage(error);
 }
 
-function createArray(length, char) {
-  return Array.from({ length }, () => char);
-}
 // creates an array of the given length populated with the given char
 
 console.log("createArray() creates an array of the specified length using a specified character");
@@ -81,11 +60,6 @@ try {
   printRedMessage(error);
 }
 
-function deleteManyPasswords(users) {
-  // This function take an array of user objects and deletes the password key value pair on each user object.
-  return users.map(({ password, ...remainingUser }) => remainingUser);
-}
-
 console.log("deleteManyPasswords() deletes the password property for each user");
 try {
   check(deleteManyPasswords)
@@ -95,20 +69,11 @@ try {
       { name: "Kavita", password: "ilovepie" },
     ])
     .returns([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
-  // check(deleteManyPasswords).whenCalledWith(5, "a").returns(["a", "a", "a", "a", "a"]);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage("Fail ✗");
   printRedMessage(error);
-}
-
-function countTheObjects(arr) {
-  /*
-    This function takes an array of different data types. It should return a count of the number of objects in the array.
-    NB, think carefully about how to test if something is an object! Arrays are technically types of objects in JavaScript, as is the value null. However these should not be counted.
-    */
-  return arr.reduce((total, item) => (typeof item === "object" ? total + 1 : total), 0);
 }
 
 console.log("countTheObjects() counts all the objects in an array of multi-type items");

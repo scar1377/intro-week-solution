@@ -1,9 +1,8 @@
-function flipBooleans(bools) {
+function flipBooleans() {
   /*
     This function takes an array of booleans and should return an array of the opposite booleans.
     E.g. [true, true, false] => [false, false, true]
   */
-  return bools.map((bool) => !bool);
 }
 
 console.log("flipBooleans()");
@@ -21,66 +20,6 @@ try {
   check(flipBooleans([false, true, true])).isEqualTo([true, false, false]);
   check(flipBooleans([false, false, false])).isEqualTo([true, true, true]);
 
-  printGreenMessage("  Pass :)");
-} catch (error) {
-  printRedMessage("  ", error);
-}
-
-function translateKey(student, keyToChange, translation) {
-  /*
-    Northcoders is expanding to France 🎉🥖. 
-    Unfortunately, our team on the ground in Paris doesn't speak the best English and has been providing us with student data partly in French. 
-    This function will take an object representing a student's data, a key that needs changing, and its English translation.  
-    E.g. 
-    const student = {
-      prénom: 'Carla',
-      surname: 'Bruni',
-      job: 'Artist'
-    }
-    const keyToChange = 'prénom'
-    const translation = 'firstName'
-    It returns a **new object** with the key successfully translated into English.
-    E.g. 
-    {
-      firstName: 'Carla',
-      surname: 'Bruni,
-      job: 'Artist'
-    }
-  */
-}
-console.log("\n");
-console.log("translateKey()");
-console.log("  returns a new object");
-try {
-  const student = {
-    prénom: "Carla",
-    surname: "Bruni",
-    job: "Artist",
-  };
-  const actual = translateKey(student, "prénom", "firstName");
-
-  check(typeof actual).isEqualTo("object");
-
-  printGreenMessage("  Pass :)");
-} catch (error) {
-  printRedMessage("  ", error);
-}
-
-try {
-  const student = {
-    firstName: "Napoleon",
-    surname: "Bonaparte",
-    ilsSontMorts: true,
-  };
-  const actual = translateKey(student, "ilsSontMorts", "isDead");
-  const expected = {
-    firstName: "Napoleon",
-    surname: "Bonaparte",
-    isDead: true,
-  };
-
-  check(actual).isEqualTo(expected);
-
   printGreenMessage("Pass :)");
 } catch (error) {
   printRedMessage("  ", error);
@@ -88,11 +27,10 @@ try {
 
 //// next challenge - findFirstDentist ////
 
-function findFirstDentist(people) {
+function findFirstDentist() {
   /*
     This function takes an array of people objects and returns the first found dentist object from the array.
   */
-  return people.find(({ isDentist }) => isDentist) || null;
 }
 
 console.log("\n");
@@ -138,7 +76,7 @@ try {
   printRedMessage("  ", error);
 }
 
-function tallyPeopleInManchester(people) {
+function tallyPeopleInManchester() {
   /* This function receives an array of people objects in for format:
     [
       { name: 'Emmeline', lives: { country: 'UK', city: 'Manchester' }, age: 32 }
@@ -240,7 +178,7 @@ try {
   printRedMessage("  ", error);
 }
 
-function getPugOwners(dogs) {
+function getPugOwners() {
   /*
     This function takes an array of dog objects and returns an array of the names of all the pug owners.
     E.g. [
@@ -250,7 +188,6 @@ function getPugOwners(dogs) {
     ]
     will return ['Izzi', 'Anat']
   */
-  return dogs.reduce((names, { breed, owner }) => (breed === "Pug" ? [...names, owner] : [...names]), []);
 }
 console.log("\n");
 console.log("getPugOwners()");
@@ -298,7 +235,7 @@ try {
   printRedMessage("  ", error);
 }
 
-function pluraliseKeys(obj) {
+function pluraliseKeys() {
   /*
     In this function you will be provided with an object. That object is storing information on keys. 
     E.g. {
@@ -339,7 +276,6 @@ try {
   };
   const actual = pluraliseKeys(input);
 
-  check(actual).not.toBe(input);
   check(typeof actual).isEqualTo("object");
 
   printGreenMessage("  Pass :)");
@@ -399,12 +335,12 @@ try {
   printRedMessage("  ", error);
 }
 console.log("\n");
+
 function getWordLengths(str) {
   /*
     This function takes a string and returns an array of the lengths of each word in the string.
     E.g. 'pineapple and black bean curry' => [9, 3, 5, 4, 5]
   */
-  return str.split(" ").map((str) => str.length);
 }
 
 console.log("getWordLengths()");
@@ -445,13 +381,12 @@ try {
   printRedMessage("  ", error);
 }
 
-function getPalindromes(words) {
+function getPalindromes() {
   /*
     This function takes an array of words and returns an array containing only the palindromes.
     A palindrome is a word that is spelled the same way backwards.
     E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'tacocat'] =>  ['racecar', 'tacocat']
   */
-  return words.filter((word) => word.split("") === word.split("").reverse());
 }
 console.log("\n");
 console.log("getPalindromes()");
@@ -506,7 +441,7 @@ function check(func) {
     isEqualTo(expected) {
       const { actual } = this;
 
-      if (typeof actual === "object" && typeof expected === "object") {
+      if (typeof actual === "object" || typeof expected === "object") {
         if (!checkDeeplyEqual(actual, expected)) {
           throw new Error(
             `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
@@ -558,13 +493,14 @@ function createFeedback(name, actual, expected) {
   const actualString = createFeedBackString(actual);
   const expectedString = createFeedBackString(expected);
 
-  const feedback = `${name}'s output was ${actualString}, but it should be ${expectedString}`;
+  const feedback = `${name}'s return value was ${actualString}, but it should be ${expectedString}`;
+  return feedback;
 }
 
-function printRedMessage(...messages) {
-  console.log("\x1b[31m", ...messages, "\x1b[0m");
+function printRedMessage(...message) {
+  console.log("\x1b[31m", ...message, "\x1b[0m");
 }
 
-function printGreenMessage(...messages) {
-  console.log("\x1b[32m", ...messages, "\x1b[0m");
+function printGreenMessage(...message) {
+  console.log("\x1b[32m", ...message, "\x1b[0m");
 }
