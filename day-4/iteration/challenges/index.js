@@ -25,6 +25,7 @@ console.log("getEvenNumbers() can get all the even numbers from an array of numb
 try {
   check(getEvenNumbers).whenCalledWith([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).returns([2, 4, 6, 8, 10]);
   check(getEvenNumbers).whenCalledWith([9, 100, 13, 20]).returns([100, 20]);
+  check(getEvenNumbers).whenCalledWith([78, 5, 9, 11, 24]).returns([78, 24]);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
