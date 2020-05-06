@@ -24,7 +24,7 @@ function getWilliams() {
   */
 }
 
-function getFactorials(nums) {
+function getFactorials() {
   /*
     This function takes an array of positive integers and returns an array of the factorials of these numbers.
     E.g. [4, 3, 2] => [24, 6, 2]
