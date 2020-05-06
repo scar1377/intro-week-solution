@@ -8,7 +8,7 @@ const {
   findWrongWayFruit,
   pairDNA,
   tallyHashtagsAndMentions,
-} = require("./challenges");
+} = require("./index.js");
 
 describe("validMobileNumber", () => {
   it("returns false when passed a string of the wrong length", () => {

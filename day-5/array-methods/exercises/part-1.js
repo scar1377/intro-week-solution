@@ -9,6 +9,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("adds ? to the words in order to form queries");
 try {
   const words = ["who", "what", "why", "how", "huh"];
 
@@ -20,6 +21,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("will get the name and ages of each person in an array");
 try {
   const people = [
     { name: "mitch", age: 30 },
@@ -35,6 +37,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("can get the multiples of 3");
 try {
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
@@ -46,6 +49,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("can get all the words ending in er");
 try {
   const words = ["boulder", "wonder", "hello", "hi", "super", "something", "whoa", "booo"];
 
@@ -57,6 +61,31 @@ try {
   printRedMessage(error);
 }
 
+console.log("can get the names of staff over or at 28");
+try {
+  const staff = [
+    { name: "Anat", age: 22 },
+    { name: "Paul C", age: 31 },
+    { name: "Paul R", age: 27 },
+    { name: "Vel", age: 29 },
+    { name: "Sam", age: 30 },
+    { name: "Jonny", age: 32 },
+    { name: "Ant", age: 26 },
+    { name: "Mitch", age: 28 },
+    { name: "Tom", age: 24 },
+    { name: "Alex", age: 24 },
+  ];
+
+  const staffOverOrAt28 = USE_ARRAY_METHOD;
+
+  check(staffOverOrAt28).isEqualTo(["Paul C", "Vel", "Sam", "Jonny", "Mitch"]);
+
+  printGreenMessage("Success :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+console.log("can sum numbers up to 100 using forEach()");
 try {
   let sumUpTo100 = 0; // <- don't change this line
   // Try using .forEach() for this task
@@ -67,6 +96,7 @@ try {
   printRedMessage(error);
 }
 
+console.log("can find the index position of X");
 try {
   const treasureMap = "adhfashasoasduyoaisyioyadiyfoXsasdiyoiaysidyoiaysfi";
 
