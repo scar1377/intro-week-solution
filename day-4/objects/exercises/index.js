@@ -3,7 +3,7 @@ console.log("Task 1");
 try {
   const myObject = {};
 
-  check(FILL_ME_IN).isEqualTo(typeof myObject);
+  check("object").isEqualTo(typeof myObject);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
@@ -18,10 +18,10 @@ try {
     age: 33,
   };
 
-  check(FILL_ME_IN).isEqualTo(father.firstName);
-  check(FILL_ME_IN).isEqualTo(father.lastName);
-  check(FILL_ME_IN).isEqualTo(father.firstname);
-  check(FILL_ME_IN).isEqualTo(father.age);
+  check("Michael").isEqualTo(father.firstName);
+  check("Bluth").isEqualTo(father.lastName);
+  check(undefined).isEqualTo(father.firstname);
+  check(33).isEqualTo(father.age);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
@@ -36,9 +36,9 @@ try {
   son.age = 16;
   son.jobs = ["Frozen Banana Salesman", "CEO of Fakeblock"];
 
-  check(FILL_ME_IN).isEqualTo(son.name);
-  check(FILL_ME_IN).isEqualTo(typeof son.jobs);
-  check(FILL_ME_IN).isEqualTo(son.jobs[1][5]);
+  check("George Michael").isEqualTo(son.name);
+  check("object").isEqualTo(typeof son.jobs);
+  check("f").isEqualTo(son.jobs[1][5]);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
@@ -56,13 +56,15 @@ try {
   };
   const worstOne = starWars["episode" + (10 - 4)];
 
-  check(FILL_ME_IN).isEqualTo(worstOne);
-  check(starWars[FILL_ME_IN]).isEqualTo("The Force Awakens");
+  check("Return of the Jedi").isEqualTo(worstOne);
+  check(starWars["episode7"]).isEqualTo("The Force Awakens");
 
   printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
+
+console.log("Task 5");
 
 try {
   const brotherInLaw = {
@@ -71,19 +73,19 @@ try {
     job: "therapist",
   };
 
-  check(FILL_ME_IN).isEqualTo(brotherInLaw.job);
+  check("therapist").isEqualTo(brotherInLaw.job);
   brotherInLaw.job = "actor";
-  check(FILL_ME_IN).isEqualTo(brotherInLaw.job);
+  check("actor").isEqualTo(brotherInLaw.job);
 
   delete brotherInLaw.job;
-  check(FILL_ME_IN).isEqualTo(brotherInLaw.job);
+  check(undefined).isEqualTo(brotherInLaw.job);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
 
-console.log("Task 5");
+console.log("Task 6");
 
 try {
   const bluthFamily = {
@@ -97,9 +99,9 @@ try {
     daughters: [{ name: "Lindsay" }],
   };
 
-  check(FILL_ME_IN).isEqualTo(bluthFamily.father.name);
-  check(bluthFamily.FILL_ME_IN.FILL_ME_IN).isEqualTo("Lucille");
-  check(bluthFamily.FILL_ME_IN[FILL_ME_IN].FILL_ME_IN).isEqualTo("Lindsay");
+  check("George").isEqualTo(bluthFamily.father.name);
+  check(bluthFamily.mother.name).isEqualTo("Lucille");
+  check(bluthFamily.daughters[0].name).isEqualTo("Lindsay");
 
   printGreenMessage("Pass ✔");
 } catch (error) {

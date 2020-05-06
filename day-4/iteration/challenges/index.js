@@ -1,4 +1,5 @@
 console.log("makeAllUpperCase() can get all the strings from an array");
+
 try {
   check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
   check(makeAllUpperCase).whenCalledWith(["I", "love", "coding"]).returns(["I", "LOVE", "CODING"]);

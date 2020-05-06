@@ -1,8 +1,9 @@
-function flipBooleans() {
+function flipBooleans(arr) {
   /*
     This function takes an array of booleans and should return an array of the opposite booleans.
     E.g. [true, true, false] => [false, false, true]
   */
+  return arr.map((x) => !x);
 }
 
 console.log("flipBooleans()");
@@ -20,17 +21,18 @@ try {
   check(flipBooleans([false, true, true])).isEqualTo([true, false, false]);
   check(flipBooleans([false, false, false])).isEqualTo([true, true, true]);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("  Pass :)");
 } catch (error) {
   printRedMessage("  ", error);
 }
 
 //// next challenge - findFirstDentist ////
 
-function findFirstDentist() {
+function findFirstDentist(people) {
   /*
     This function takes an array of people objects and returns the first found dentist object from the array.
   */
+  return people.find((x) => x.isDentist) || null;
 }
 
 console.log("\n");
@@ -47,9 +49,10 @@ try {
 
 console.log("  returns a person object who is a dentist");
 try {
-  const dentist = { name: "Orin Scrivello", isDentist: true };
-  check(Object.keys(findFirstDentist([dentist]))).toContain("name", "isDentist");
-  check(findFirstDentist([dentist]).isDentist).toBe(true);
+  const dentists = [{ name: "Orin Scrivello", isDentist: true }];
+
+  check(findFirstDentist(dentists).isDentist).isEqualTo(true);
+  check(findFirstDentist(dentists).name).isEqualTo("Orin Scrivello");
 
   printGreenMessage("  Pass :)");
 } catch (error) {
@@ -76,13 +79,14 @@ try {
   printRedMessage("  ", error);
 }
 
-function tallyPeopleInManchester() {
+function tallyPeopleInManchester(people) {
   /* This function receives an array of people objects in for format:
     [
       { name: 'Emmeline', lives: { country: 'UK', city: 'Manchester' }, age: 32 }
     ]
     The function should return the number of people who live in the city of Manchester
   */
+  return people.reduce((total, person) => (person.lives.city === "Manchester" ? total + 1 : total), 0);
 }
 console.log("\n");
 console.log("tallyPeopleInManchester()");
@@ -178,7 +182,7 @@ try {
   printRedMessage("  ", error);
 }
 
-function getPugOwners() {
+function getPugOwners(owners) {
   /*
     This function takes an array of dog objects and returns an array of the names of all the pug owners.
     E.g. [
@@ -188,6 +192,9 @@ function getPugOwners() {
     ]
     will return ['Izzi', 'Anat']
   */
+  return owners.reduce((dogs, { breed, owner }) => {
+    return breed === "Pug" ? [...dogs, owner] : [...dogs];
+  }, []);
 }
 console.log("\n");
 console.log("getPugOwners()");
@@ -235,9 +242,21 @@ try {
   printRedMessage("  ", error);
 }
 
-function pluraliseKeys() {
+function pluraliseKeys(object) {
+  const keys = Object.keys(object);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    const value = object[key];
+
+    if (Array.isArray(value)) {
+      delete object[key];
+      object[key + "s"] = value;
+    }
+  }
+  return object;
+
   /*
-    In this function you will be provided with an object. That object is storing information on keys. 
+    In this function you will be provided with an object. That object is storing information on keys.
     E.g. {
       name: 'Tom',
       job: ['writing katas', 'marking'],
@@ -247,10 +266,9 @@ function pluraliseKeys() {
         "Sam's Pet Shop"
       ]
     };
-    In some cases, however, the keys have been very badly named. Good naming convention tells us that the keys containing arrays should be named as plurals. 
+    In some cases, however, the keys have been very badly named. Good naming convention tells us that the keys containing arrays should be named as plurals.
     This function should return a **new object** that is a copy of the input but with any keys that contain arrays pluralised (an 's' added to the end.)
-  
-    
+
     E.g. {
       name: 'Tom',
       jobs: ['writing katas', 'marking'],
@@ -337,6 +355,8 @@ try {
 console.log("\n");
 
 function getWordLengths(str) {
+  if (str.length === 0) return [];
+  return str.split(" ").map((word) => word.length);
   /*
     This function takes a string and returns an array of the lengths of each word in the string.
     E.g. 'pineapple and black bean curry' => [9, 3, 5, 4, 5]
@@ -381,12 +401,13 @@ try {
   printRedMessage("  ", error);
 }
 
-function getPalindromes() {
+function getPalindromes(arr) {
   /*
     This function takes an array of words and returns an array containing only the palindromes.
     A palindrome is a word that is spelled the same way backwards.
     E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'tacocat'] =>  ['racecar', 'tacocat']
   */
+  return arr.filter((word) => word === word.split("").reverse().join(""));
 }
 console.log("\n");
 console.log("getPalindromes()");
@@ -441,7 +462,7 @@ function check(func) {
     isEqualTo(expected) {
       const { actual } = this;
 
-      if (typeof actual === "object" || typeof expected === "object") {
+      if (isNonNullObject(actual) && isNonNullObject(expected)) {
         if (!checkDeeplyEqual(actual, expected)) {
           throw new Error(
             `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
@@ -451,6 +472,7 @@ function check(func) {
     },
     returns(expected) {
       const actual = this.func(...this.args);
+
       if (typeof actual === "object" && typeof expected === "object") {
         if (!checkDeeplyEqual(actual, expected)) {
           throw new Error(createFeedback(this.func.name, actual, expected));
@@ -462,6 +484,10 @@ function check(func) {
   if (typeof func === "function") obj.func = func;
   else obj.actual = func;
   return obj;
+}
+
+function isNonNullObject(item) {
+  return item !== null && typeof item === "object";
 }
 
 function checkDeeplyEqual(coll1, coll2) {
