@@ -21,6 +21,28 @@ try {
 }
 
 try {
+  const pattern = /^!+/;
+
+  // your pattern should match more than 1 ! at the **beginning of a string**
+
+  // use .test() to match all of these strings
+  check(pattern.test("!!!sdlasjdlajsd")).isEqualTo(true);
+  check(pattern.test("!!askjaa")).isEqualTo(true);
+  check(pattern.test("!!!!!adjaksljd")).isEqualTo(true);
+  check(pattern.test("!!!32749anks")).isEqualTo(true);
+
+  // use .test() to not match all of these strings
+  check(pattern.test("adssdk!!!")).isEqualTo(false);
+  check(pattern.test("asdk;alk!!!!")).isEqualTo(false);
+  check(pattern.test("errui!!!!")).isEqualTo(false);
+  check(pattern.test("cjljad!!!!!!")).isEqualTo(false);
+
+  printGreenMessage("Task 1  - Success :)");
+} catch (error) {
+  printRedMessage(error);
+}
+
+try {
   const pattern = /[abc]{6}/;
 
   // your pattern should match 6 of a,b or c
