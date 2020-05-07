@@ -1,9 +1,9 @@
 const filePath = "/Users/mitch/northcoders/remote_precourse/day_1/1_intro_strings";
 
-// find the index position of the last / forward slash in the filePath string
+// Use .indexOf() to find the index position of the last / forward slash in the filePath string
 let lastFowardSlashIndex = filePath.lastIndexOf("/");
 
-// use a string method to find access the directory at the end of the file paths
+// Use .slice() to access the directory at the end of filePath
 let currentDirectory = filePath.slice(lastFowardSlashIndex + 1);
 
 console.log("currentDirectory is intialised with the name of the directory and the end of the filePath");
