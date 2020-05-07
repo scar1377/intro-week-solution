@@ -61,7 +61,7 @@ try {
   printRedMessage(error);
 }
 
-console.log("can get the names of staff over or at 28");
+console.log("can get the names of staff over 28");
 try {
   const staff = [
     { name: "Anat", age: 22 },
@@ -76,9 +76,11 @@ try {
     { name: "Alex", age: 24 },
   ];
 
-  const staffOverOrAt28 = USE_ARRAY_METHOD;
+  const staffOver28 = USE_ARRAY_METHOD;
 
-  check(staffOverOrAt28).isEqualTo(["Paul C", "Vel", "Sam", "Jonny", "Mitch"]);
+  const namesOfStaffOver28 = USE_ARRAY_METHOD;
+
+  check(namesOfStaffOver28).isEqualTo(["Paul C", "Vel", "Sam", "Jonny"]);
 
   printGreenMessage("Success :)");
 } catch (error) {

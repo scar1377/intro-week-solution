@@ -98,6 +98,52 @@ try {
   printRedMessage(error);
 }
 
+function getEmptyTills(tills) {
+  // tills is the array of shopper objects
+  const emptyTills = tills.filter(function (shopper) {
+    // each individual shopper is an object in the array
+    if (shopper.checkout.length === 0) return true;
+    else return false;
+  });
+  return emptyTills;
+}
+
+console.log("getEmptyTills() gets all the tills that are empty");
+
+try {
+  const tills = [
+    {
+      name: "John",
+      checkout: ["bread", "eggs", "milk", "sauagaes"],
+    },
+    {
+      name: "Foluso",
+      checkout: [],
+    },
+    {
+      name: "Anat",
+      checkout: ["chocolate"],
+    },
+    {
+      name: "jonny",
+      checkout: [],
+    },
+  ];
+  check(getEmptyTills(tills)).isEqualTo([
+    {
+      name: "Foluso",
+      checkout: [],
+    },
+    {
+      name: "jonny",
+      checkout: [],
+    },
+  ]);
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage(error);
+}
+
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 
 function check(func) {
