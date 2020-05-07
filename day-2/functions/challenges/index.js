@@ -115,6 +115,22 @@ try {
   printRedMessage(error);
 }
 
+function capitaliseFirstLetter(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+
+console.log("capitaliseFirstLetter() can capitalise the first letter in a string");
+try {
+  check(capitaliseFirstLetter).whenCalledWith("bang").returns("Bang");
+  check(capitaliseFirstLetter).whenCalledWith("apple").returns("Apple");
+  check(capitaliseFirstLetter).whenCalledWith("coding").returns("Coding");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
 function areValuesEqual(left, right) {
   // return true if the passed arguments are strictly equal
   return left === right;
@@ -165,7 +181,9 @@ try {
   printRedMessage(error);
 }
 
-function isAbsolutePath() {}
+function isAbsolutePath(str) {
+  return str.startsWith("/");
+}
 
 console.log("isAbsolutePath() checks if a file path is absolute or relative");
 // HINT: all absolute file paths start with a /
@@ -224,6 +242,26 @@ try {
   printRedMessage(error);
 }
 
+function createPercentage(a, b) {
+  const fraction = a / b;
+  return Math.round(fraction * 100) + "%";
+}
+
+console.log('createPercentage() creates a percentage string in the form "--%"');
+
+try {
+  check(createPercentage).whenCalledWith(1, 2).returns("50%");
+  check(createPercentage).whenCalledWith(50, 100).returns("50%");
+  check(createPercentage).whenCalledWith(2, 3).returns("67%");
+  check(createPercentage).whenCalledWith(3, 4).returns("75%");
+  check(createPercentage).whenCalledWith(1, 7).returns("14%");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
 function extractNumber(code) {
   return +code.slice(code.indexOf("(") + 1, code.indexOf(")"));
 }
@@ -241,10 +279,6 @@ try {
 } catch (error) {
   printRedMessage("Fail ✗");
   printRedMessage(error);
-}
-
-function extractNumber(code) {
-  return +code.slice(code.indexOf("(") + 1, code.indexOf(")"));
 }
 
 // >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
