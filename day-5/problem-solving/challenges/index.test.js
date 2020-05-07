@@ -10,7 +10,7 @@ const {
   tallyHashtagsAndMentions,
 } = require("./index.js");
 
-describe("validMobileNumber", () => {
+describe.only("validMobileNumber", () => {
   it("returns false when passed a string of the wrong length", () => {
     expect(validMobileNumber("123")).toBe(false);
     expect(validMobileNumber("0750617250638")).toBe(false);
