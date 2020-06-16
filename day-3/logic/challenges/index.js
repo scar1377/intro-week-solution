@@ -1,10 +1,10 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
-function isBiggerThan10() {
+function isBiggerThan10(n) {
   // checks if an number is strictly bigger than 10 and returns a message accordingly
 }
 
-console.log("isBiggerThan() returns a message indicating if a number is bigger than 10");
+console.log("isBiggerThan10() returns a message indicating if a number is bigger than 10");
 try {
   check(isBiggerThan10).whenCalledWith(3).returns("Number 3 is less than 10");
   check(isBiggerThan10).whenCalledWith(4).returns("Number 4 is less than 10");

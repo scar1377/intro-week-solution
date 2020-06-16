@@ -17,7 +17,7 @@ try {
   check(pattern.test("errui!!!!")).isEqualTo(false);
   check(pattern.test("cjljad!!!!!!")).isEqualTo(false);
 
-  printGreenMessage("Task 1  - Success :)");
+  printGreenMessage("Task 0 - Success :)");
 } catch (error) {
   printRedMessage(error);
 }
@@ -39,7 +39,7 @@ try {
   check(pattern.test("errui!!!!")).isEqualTo(false);
   check(pattern.test("cjljad!!!!!!")).isEqualTo(false);
 
-  printGreenMessage("Task 1  - Success :)");
+  printGreenMessage("Task 1 - Success :)");
 } catch (error) {
   printRedMessage(error);
 }

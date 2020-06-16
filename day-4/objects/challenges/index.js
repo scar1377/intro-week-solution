@@ -4,7 +4,9 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 
 console.log("accessObject() can access a property value using a key");
 
-function accessObject(object, key) {}
+function accessObject(object, key) {
+  return object[key];
+}
 
 try {
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "name").returns("jonny");
@@ -17,7 +19,7 @@ try {
 
 // checkIfPropertyExists() should take an object and a key and return a boolean that indicates whether or not the object has the given keys
 
-const checkIfPropertyExists = () => {};
+const checkIfPropertyExists = (obj, key) => key in obj;
 
 console.log("checkIfPropertyExists() checks if a property exists inside an object");
 try {

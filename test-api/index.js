@@ -7,21 +7,14 @@ function check(func) {
     isEqualTo(expected) {
       const { actual } = this;
 
-      if (typeof actual === "object" && typeof expected === "object") {
-        if (!checkDeeplyEqual(actual, expected)) {
-          throw new Error(
-            `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
-          );
-        }
-      } else if (actual !== expected) throw new Error(`${actual} is not equal to the expected value of ${expected}`);
+      if (!checkDeeplyEqual(actual, expected))
+        throw new Error(
+          `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
+        );
     },
     returns(expected) {
       const actual = this.func(...this.args);
-      if (typeof actual === "object" && typeof expected === "object") {
-        if (!checkDeeplyEqual(actual, expected)) {
-          throw new Error(createFeedback(this.func.name, actual, expected));
-        }
-      } else if (actual !== expected) throw new Error(createFeedback(this.func.name, actual, expected));
+      if (!checkDeeplyEqual(actual, expected)) throw new Error(createFeedback(this.func.name, actual, expected));
     },
   };
   const obj = Object.create(methods);
