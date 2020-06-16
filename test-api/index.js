@@ -1,5 +1,3 @@
-// >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
-
 function check(func) {
   const methods = {
     whenCalledWith(...args) {

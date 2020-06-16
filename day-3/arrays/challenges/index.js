@@ -3,6 +3,7 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 // getLastItem() should return the last item from an array
 
 console.log("getLastItem() returns the last item in an array");
+
 try {
   check(getLastItem).whenCalledWith(["a", "b", "c", "d"]).returns("d");
   check(getLastItem).whenCalledWith(["apple", "banana", "pear", "kiwi"]).returns("kiwi");
