@@ -1,5 +1,5 @@
-# Function
+# Tasks
 
-- Functions are **sets of instructions** that can be **re-used in our code**
+Work through the tasks in the `functions` directory in the following order:
 
-- We can build or write functions with a particular **sets of instructions** in order to do some task over and over again. Consider the diagram below:
+**exercises** -> **questions** -> **challenges** -> **explore**

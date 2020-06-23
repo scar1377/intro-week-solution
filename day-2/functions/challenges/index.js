@@ -1,8 +1,7 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
-function double(n) {
+function double() {
   // return any number doubled
-  return n * 2;
 }
 
 console.log("double() gives the correct output");
@@ -17,9 +16,8 @@ try {
   printRedMessage(error);
 }
 
-function modulo(a, b) {
+function modulo() {
   // return the remainder of the division a / b
-  return a % b;
 }
 
 console.log("modulo() gives the correct output");
@@ -34,9 +32,8 @@ try {
   printRedMessage(error);
 }
 
-function squareRoot(n) {
+function squareRoot() {
   // return the square root of n
-  return Math.sqrt(n);
 }
 
 console.log("squareRoot() works for positive integers");
@@ -52,9 +49,8 @@ try {
   printRedMessage(error);
 }
 
-function raiseToPower(m, n) {
+function raiseToPower() {
   // return the result of raising m to the nth power
-  return m ** n;
 }
 
 console.log("raiseToPower() raises given number to a power");
@@ -69,9 +65,8 @@ try {
   printRedMessage(error);
 }
 
-function getLength(str) {
+function getLength() {
   // return the length of the passed string
-  return str.length;
 }
 
 console.log("getLength() returns the correct string length");
@@ -86,9 +81,8 @@ try {
   printRedMessage(error);
 }
 
-function putNamesTogether(firstName, lastName) {
+function putNamesTogether() {
   // return the first and last names with a space between them
-  return firstName + " " + lastName;
 }
 
 console.log("putNamesTogether() can join two strings with a space");
@@ -101,8 +95,7 @@ try {
   printRedMessage(error);
 }
 
-function capitaliseString(str) {
-  return str.toUpperCase();
+function capitaliseString() {
   // return the passed string with its first letter capitalised
 }
 
@@ -117,9 +110,7 @@ try {
   printRedMessage(error);
 }
 
-function capitaliseFirstLetter(word) {
-  return word[0].toUpperCase() + word.slice(1);
-}
+function capitaliseFirstLetter() {}
 
 console.log("capitaliseFirstLetter() can capitalise the first letter in a string");
 try {
@@ -133,9 +124,8 @@ try {
   printRedMessage(error);
 }
 
-function areValuesEqual(left, right) {
-  // return true if the passed arguments are strictly equal
-  return left === right;
+function areValuesEqual() {
+  // return true if the passed arguments are strictly equal;
 }
 
 console.log("areValuesEqual() checks if two values are the same");
@@ -149,8 +139,7 @@ try {
   printRedMessage(error);
 }
 
-function isFromThe60s(year) {
-  return 1960 <= year && year <= 1970;
+function isFromThe60s() {
   // return true if the year is in the 1960's
   // returns false otherwise
 }
@@ -167,9 +156,8 @@ try {
   printRedMessage(error);
 }
 
-function isEvenLength(string) {
+function isEvenLength() {
   // return true if string has an even length
-  return string.length % 2 === 0;
 }
 
 console.log("isEvenLength() checks if string has even number of characters");
@@ -183,12 +171,13 @@ try {
   printRedMessage(error);
 }
 
-function isAbsolutePath(str) {
-  return str.startsWith("/");
+function isAbsolutePath() {
+  // checks if a string is an absolute path - does it start with a /
+  // HINT: all absolute file paths start with a /
 }
 
 console.log("isAbsolutePath() checks if a file path is absolute or relative");
-// HINT: all absolute file paths start with a /
+
 try {
   check(isAbsolutePath).whenCalledWith("/Users/mitch").returns(true);
   check(isAbsolutePath).whenCalledWith("/Users/mitch/northcoders/remote_course/remote_precourse_1").returns(true);
@@ -200,9 +189,9 @@ try {
   printRedMessage(error);
 }
 
-function getMiddle(str) {
-  return str[Math.floor(str.length / 2)];
+function getMiddle() {
   // return the middle (or middle two) character(s) of the passed string
+  // HINT: You could use the ternary operator for this challenge
 }
 
 console.log("getMiddle() returns the middle character in a string of odd length");
@@ -227,8 +216,9 @@ try {
   printRedMessage(error);
 }
 
-function getCharCode(char) {
-  return `The ASCII character for ${char} is ${char.charCodeAt(0)}`;
+function getCharCode() {
+  // returns a sentence stating the character code for a given character
+  // Look up ASCII online to get a better idea of what a character code is
 }
 
 console.log("getCharCode() will return a message stating the ascci code of a passed char");
@@ -244,9 +234,8 @@ try {
   printRedMessage(error);
 }
 
-function createPercentage(a, b) {
-  const fraction = a / b;
-  return Math.round(fraction * 100) + "%";
+function createPercentage() {
+  // should take a 2 numbers and work out their percentage
 }
 
 console.log('createPercentage() creates a percentage string in the form "--%"');
@@ -264,8 +253,8 @@ try {
   printRedMessage(error);
 }
 
-function extractNumber(code) {
-  return +code.slice(code.indexOf("(") + 1, code.indexOf(")"));
+function extractNumber() {
+  // shoudld extract a number embedded in a string surrounded by ( ) parentheses
 }
 
 console.log("extractNumber() should return the number buried inside a string");

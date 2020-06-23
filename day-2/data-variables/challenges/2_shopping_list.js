@@ -5,7 +5,7 @@ const item1 = "bananas";
 const item2 = "pears";
 
 // Use the additional item variables from above to create a variable called shoppingList
-let shoppingList = item0 + ", " + item1 + " and " + item2;
+let shoppingList = EXPRESSION_HERE;
 
 console.log("shoppingList is declared and initialised as a list with values from items 0,1 and 2");
 
@@ -15,3 +15,5 @@ try {
 } catch (e) {
   printRedMessage(e);
 }
+
+var EXPRESSION_HERE;
