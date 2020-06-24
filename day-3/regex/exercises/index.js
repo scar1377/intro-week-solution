@@ -48,12 +48,12 @@ try {
   const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
-  // your pattern should match any string containing exactly 2 letters ls
+  // your pattern should match any string containing exactly 2 consecutive letter ls
 
   check(pattern.test("hello")).isEqualTo(true);
   check(pattern.test("bells")).isEqualTo(true);
-  check(pattern.test("bells")).isEqualTo(true);
-  check(pattern.test("bells")).isEqualTo(true);
+  check(pattern.test("bellows")).isEqualTo(true);
+  check(pattern.test("mitchell")).isEqualTo(true);
 
   check(pattern.test("mile")).isEqualTo(false);
   check(pattern.test("fly")).isEqualTo(false);
