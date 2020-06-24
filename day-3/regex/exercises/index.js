@@ -1,39 +1,16 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
 try {
-  const pattern = /^!+/;
+  const pattern = YOUR_REGEX_HERE;
+  // Replace YOUR_REGEX_HERE with a regular expression
 
-  // your pattern should match more than 1 ! at the **beginning of a string**
+  // Your pattern should match more than 1 ! at the **beginning of a string**
 
-  // use .test() to match all of these strings
   check(pattern.test("!!!sdlasjdlajsd")).isEqualTo(true);
   check(pattern.test("!!askjaa")).isEqualTo(true);
   check(pattern.test("!!!!!adjaksljd")).isEqualTo(true);
   check(pattern.test("!!!32749anks")).isEqualTo(true);
 
-  // use .test() to not match all of these strings
-  check(pattern.test("adssdk!!!")).isEqualTo(false);
-  check(pattern.test("asdk;alk!!!!")).isEqualTo(false);
-  check(pattern.test("errui!!!!")).isEqualTo(false);
-  check(pattern.test("cjljad!!!!!!")).isEqualTo(false);
-
-  printGreenMessage("Task 0 - Success :)");
-} catch (error) {
-  printRedMessage(error);
-}
-
-try {
-  const pattern = /^!+/;
-
-  // your pattern should match more than 1 ! at the **beginning of a string**
-
-  // use .test() to match all of these strings
-  check(pattern.test("!!!sdlasjdlajsd")).isEqualTo(true);
-  check(pattern.test("!!askjaa")).isEqualTo(true);
-  check(pattern.test("!!!!!adjaksljd")).isEqualTo(true);
-  check(pattern.test("!!!32749anks")).isEqualTo(true);
-
-  // use .test() to not match all of these strings
   check(pattern.test("adssdk!!!")).isEqualTo(false);
   check(pattern.test("asdk;alk!!!!")).isEqualTo(false);
   check(pattern.test("errui!!!!")).isEqualTo(false);
@@ -45,21 +22,22 @@ try {
 }
 
 try {
-  const pattern = /[abc]{6}/;
+  const pattern = YOUR_REGEX_HERE;
+  // Replace YOUR_REGEX_HERE with a regular expression
 
-  // your pattern should match 6 of a,b or c
+  // your pattern should match exactly 6 of a,b or c
 
-  // use .test() to match all of these strings
   check(pattern.test("abcabc")).isEqualTo(true);
   check(pattern.test("cbabac")).isEqualTo(true);
   check(pattern.test("cacaca")).isEqualTo(true);
   check(pattern.test("bbbcca")).isEqualTo(true);
 
-  // use .test() to not match all of these strings
   check(pattern.test("xyzxyz")).isEqualTo(false);
   check(pattern.test("pqrsqp")).isEqualTo(false);
   check(pattern.test("pprrss")).isEqualTo(false);
   check(pattern.test("vsxprh")).isEqualTo(false);
+  check(pattern.test("abcabca")).isEqualTo(false);
+  check(pattern.test("abca")).isEqualTo(false);
 
   printGreenMessage("Task 2 - Success :)");
 } catch (error) {
@@ -67,17 +45,16 @@ try {
 }
 
 try {
-  const pattern = /[^l]l{2}[^l]/;
+  const pattern = YOUR_REGEX_HERE;
+  // Replace YOUR_REGEX_HERE with a regular expression
 
   // your pattern should match any string containing exactly 2 letters ls
 
-  // use .test() to match all of these strings
   check(pattern.test("hello")).isEqualTo(true);
   check(pattern.test("bells")).isEqualTo(true);
   check(pattern.test("bells")).isEqualTo(true);
   check(pattern.test("bells")).isEqualTo(true);
 
-  // use .test() to not match all of these strings
   check(pattern.test("mile")).isEqualTo(false);
   check(pattern.test("fly")).isEqualTo(false);
   check(pattern.test("wellll")).isEqualTo(false);

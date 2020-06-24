@@ -1,9 +1,7 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
-function isValidSortCode(sortCode) {
-  // checks if a passed string is a valid sort code - this should be 2 digits hyphen 2 digits hyphen 2 digits
-  return /^\d{2}-\d{2}-\d{2}$/.test(sortCode);
-}
+// Declare and implement a function isValidSortCode
+// Checks if a passed string is a valid sort code - this should be 2 digits hyphen 2 digits hyphen 2 digits
 
 console.log("isValidSortCode() should check is a sort code string is in the correct format");
 
@@ -21,15 +19,5 @@ try {
   printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
-
-function grabCoefficient(expression) {}
-
-console.log("grabCoefficient() will return the coefficient from an expression");
-
-try {
-  check(grabCoefficient).whenCalledWith().returns();
-} catch (error) {
   printRedMessage(error);
 }
