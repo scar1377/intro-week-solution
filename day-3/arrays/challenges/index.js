@@ -196,9 +196,8 @@ try {
   printRedMessage(error);
 }
 
-function extractNumber(string) {
-  return +string.match(/(\d+)/)[1];
-}
+// extractNumber() should return the number embedded between the ( ) parentheses.
+// In this challenge, research the .match() method and use your knowledge of regular expressions
 
 console.log("extractNumber() should return the number buried inside a string of random characters");
 
