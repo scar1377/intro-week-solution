@@ -1,11 +1,10 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
-function flipBooleans(arr) {
+function flipBooleans() {
   /*
     This function takes an array of booleans and should return an array of the opposite booleans.
     E.g. [true, true, false] => [false, false, true]
   */
-  return arr.map((x) => !x);
 }
 
 console.log("flipBooleans()");
@@ -15,7 +14,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 console.log("inverts all booleans in the array");
 try {
@@ -25,16 +24,15 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 //// next challenge - findFirstDentist ////
 
-function findFirstDentist(people) {
+function findFirstDentist() {
   /*
     This function takes an array of people objects and returns the first found dentist object from the array.
   */
-  return people.find((x) => x.isDentist) || null;
 }
 
 console.log("\n");
@@ -46,7 +44,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns a person object who is a dentist");
@@ -58,7 +56,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns the first dentist from the array");
@@ -78,17 +76,16 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
-function tallyPeopleInManchester(people) {
+function tallyPeopleInManchester() {
   /* This function receives an array of people objects in for format:
     [
       { name: 'Emmeline', lives: { country: 'UK', city: 'Manchester' }, age: 32 }
     ]
     The function should return the number of people who live in the city of Manchester
   */
-  return people.reduce((total, person) => (person.lives.city === "Manchester" ? total + 1 : total), 0);
 }
 console.log("\n");
 console.log("tallyPeopleInManchester()");
@@ -112,7 +109,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns the length of the array when everyone is from Manchester");
@@ -134,7 +131,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns the number of people who are actually from the proud, yet fairly miserable, city of Manchester");
@@ -181,10 +178,10 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
-function getPugOwners(owners) {
+function getPugOwners() {
   /*
     This function takes an array of dog objects and returns an array of the names of all the pug owners.
     E.g. [
@@ -194,9 +191,6 @@ function getPugOwners(owners) {
     ]
     will return ['Izzi', 'Anat']
   */
-  return owners.reduce((dogs, { breed, owner }) => {
-    return breed === "Pug" ? [...dogs, owner] : [...dogs];
-  }, []);
 }
 console.log("\n");
 console.log("getPugOwners()");
@@ -207,7 +201,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns an array of pug names when passed an array of dog objects");
@@ -241,22 +235,10 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
-function pluraliseKeys(object) {
-  const keys = Object.keys(object);
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-    const value = object[key];
-
-    if (Array.isArray(value)) {
-      delete object[key];
-      object[key + "s"] = value;
-    }
-  }
-  return object;
-
+function pluraliseKeys() {
   /*
     In this function you will be provided with an object. That object is storing information on keys.
     E.g. {
@@ -300,7 +282,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns an object with identical keys to the input when the input's keys do not need pluralising");
@@ -319,7 +301,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns an object with with its keys pluralised");
@@ -352,13 +334,11 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 console.log("\n");
 
-function getWordLengths(str) {
-  if (str.length === 0) return [];
-  return str.split(" ").map((word) => word.length);
+function getWordLengths() {
   /*
     This function takes a string and returns an array of the lengths of each word in the string.
     E.g. 'pineapple and black bean curry' => [9, 3, 5, 4, 5]
@@ -373,7 +353,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns an array containing the length of a single word");
@@ -382,7 +362,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns the lengths when passed multiple words");
@@ -391,7 +371,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns lengths for longer sentences");
@@ -400,16 +380,15 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
-function getPalindromes(arr) {
+function getPalindromes() {
   /*
     This function takes an array of words and returns an array containing only the palindromes.
     A palindrome is a word that is spelled the same way backwards.
     E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'tacocat'] =>  ['racecar', 'tacocat']
   */
-  return arr.filter((word) => word === word.split("").reverse().join(""));
 }
 console.log("\n");
 console.log("getPalindromes()");
@@ -420,7 +399,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  identifies palindromes");
@@ -430,7 +409,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  ignores non-palindromes");
@@ -441,7 +420,7 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
 
 console.log("  returns [] when passed no palindromes");
@@ -450,5 +429,5 @@ try {
 
   printGreenMessage("  Pass :)");
 } catch (error) {
-  printRedMessage("  ", error);
+  printRedMessage(` ${error}`);
 }
