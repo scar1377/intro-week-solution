@@ -15,6 +15,7 @@ try {
 
 // checkIfPropertyExists() should take an object and a key and return a boolean that indicates whether or not the object has the given keys
 
+
 console.log("checkIfPropertyExists() checks if a property exists inside an object");
 try {
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "name").returns(true);
@@ -27,6 +28,7 @@ try {
 }
 
 // createObject() should take a key-value pair (stored in an array) and use it to create an object with a key and a value
+
 
 console.log("createObject() creates a new object from a key value pair");
 try {
