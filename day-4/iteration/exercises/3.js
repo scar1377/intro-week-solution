@@ -6,7 +6,6 @@ const items = [];
 
 console.log("check numbers starting at 42 and descending are pushed into an array");
 try {
-  printGreenMessage("Success :)");
   check(items).isEqualTo([
     42,
     41,
@@ -49,6 +48,8 @@ try {
     4,
     3,
   ]);
+  
+  printGreenMessage("Success :)");
 } catch (e) {
   printRedMessage(e);
 }
