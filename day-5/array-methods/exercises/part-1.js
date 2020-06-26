@@ -89,14 +89,17 @@ try {
   printRedMessage(error);
 }
 
-console.log("can sum numbers up to 100 using forEach()");
+console.log("can sum numbers in a list using forEach()");
 try {
-  let sumUpTo100 = 0; // <- don't change this line
+  const nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,15];
+  let sum = 0; // <- don't change this line
+  
   // Try using .forEach() for this task
+
 
   USE_ARRAY_METHOD;
 
-  check(sumUpTo100).isEqualTo(5050);
+  check(sum).isEqualTo(120);
   printGreenMessage("Success :)");
 } catch (error) {
   printRedMessage(error);
