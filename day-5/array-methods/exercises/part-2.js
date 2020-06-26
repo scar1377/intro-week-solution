@@ -100,15 +100,7 @@ try {
   printRedMessage(error);
 }
 
-function getEmptyTills(tills) {
-  // tills is the array of shopper objects
-  const emptyTills = tills.filter(function (shopper) {
-    // each individual shopper is an object in the array
-    if (shopper.checkout.length === 0) return true;
-    else return false;
-  });
-  return emptyTills;
-}
+function getEmptyTills() {}
 
 console.log("getEmptyTills() gets all the tills that are empty");
 
