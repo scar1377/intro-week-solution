@@ -1,8 +1,6 @@
-const obj = {};
+const person = {name: 'fraz', age: 30};
 
-obj.push('pat')
-
-console.log(obj);
+console.log(pers);
 
 // What will happen when this file is executed with NodeJS ?
 // What is the problem with this code ?
