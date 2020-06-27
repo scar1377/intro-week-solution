@@ -1,15 +1,23 @@
 {
-  "name": "remote_precourse",
+  "name": "team-remote-js-basics",
   "version": "1.0.0",
-  "description": "",
-  "main": "random.js",
+  "description": "Each section is organised into  **practice**, **challenges**, and **questions**",
+  "main": "example.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northcoders/team-remote-js-basics.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/northcoders/team-remote-js-basics/issues"
+  },
+  "homepage": "https://github.com/northcoders/team-remote-js-basics#readme",
   "devDependencies": {
-    "jest": "^25.4.0"
+    "jest": "^26.1.0"
   }
 }

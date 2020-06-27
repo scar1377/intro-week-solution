@@ -6,7 +6,7 @@ try {
   const multiplesOf10 = USE_ARRAY_METHOD;
 
   check(multiplesOf10).isEqualTo([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
-  printGreenMessage("Success :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -18,7 +18,7 @@ try {
   const queries = USE_ARRAY_METHOD;
 
   check(queries).isEqualTo(["who?", "what?", "why?", "how?", "huh?"]);
-  printGreenMessage("Success :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -34,7 +34,7 @@ try {
   const namesAndAges = USE_ARRAY_METHOD;
 
   check(namesAndAges).isEqualTo(["mitch - 30", "anat - 24", "howard - 58"]);
-  printGreenMessage("Success :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -46,7 +46,7 @@ try {
   const multiplesOf3 = USE_ARRAY_METHOD;
 
   check(multiplesOf3).isEqualTo([3, 6, 9, 12, 15, 18]);
-  printGreenMessage("Success :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -58,7 +58,7 @@ try {
   const wordsEndingInEr = USE_ARRAY_METHOD;
 
   check(wordsEndingInEr).isEqualTo(["boulder", "wonder", "super"]);
-  printGreenMessage("Success :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -84,20 +84,23 @@ try {
 
   check(namesOfStaffOver28).isEqualTo(["Paul C", "Vel", "Sam", "Jonny"]);
 
-  printGreenMessage("Success :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
 
-console.log("can sum numbers up to 100 using forEach()");
+console.log("can sum numbers in a list using forEach()");
 try {
-  let sumUpTo100 = 0; // <- don't change this line
+  const nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,15];
+  let sum = 0; // <- don't change this line
+  
   // Try using .forEach() for this task
+
 
   USE_ARRAY_METHOD;
 
-  check(sumUpTo100).isEqualTo(5050);
-  printGreenMessage("Success :)");
+  check(sum).isEqualTo(120);
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -110,7 +113,7 @@ try {
   // Look at different array methods on MDN or dev docs and try finding the best one for the job
   check(positionOfX).isEqualTo(29);
 
-  printGreenMessage("Success :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }

@@ -12,7 +12,7 @@ console.log("returns an empty array when passed []");
 try {
   check(flipBooleans([])).isEqualTo([]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -22,7 +22,7 @@ try {
   check(flipBooleans([false, true, true])).isEqualTo([true, false, false]);
   check(flipBooleans([false, false, false])).isEqualTo([true, true, true]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -42,7 +42,7 @@ console.log("  returns null if no dentist is in the array");
 try {
   check(findFirstDentist([])).isEqualTo(null);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -54,7 +54,7 @@ try {
   check(findFirstDentist(dentists).isDentist).isEqualTo(true);
   check(findFirstDentist(dentists).name).isEqualTo("Orin Scrivello");
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -74,7 +74,7 @@ try {
     isDentist: true,
   });
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -107,7 +107,7 @@ try {
     ])
   ).isEqualTo(0);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -129,7 +129,7 @@ try {
     ])
   ).isEqualTo(2);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -176,7 +176,7 @@ try {
     ])
   ).isEqualTo(1);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -199,7 +199,7 @@ console.log("  returns [] when passed []");
 try {
   check(getPugOwners([])).isEqualTo([]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -233,7 +233,7 @@ try {
   ];
   check(getPugOwners(dogs3)).isEqualTo(["Vel", "Haz", "David"]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -280,7 +280,7 @@ try {
 
   check(typeof actual).isEqualTo("object");
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -299,7 +299,7 @@ try {
 
   check(actual).isEqualTo(expected);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -332,7 +332,7 @@ try {
   };
   check(actual).isEqualTo(expected);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -351,7 +351,7 @@ console.log("  returns [] when passed an empty string");
 try {
   check(getWordLengths("")).isEqualTo([]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -360,7 +360,7 @@ console.log("  returns an array containing the length of a single word");
 try {
   check(getWordLengths("woooo")).isEqualTo([5]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -369,7 +369,7 @@ console.log("  returns the lengths when passed multiple words");
 try {
   check(getWordLengths("hello world")).isEqualTo([5, 5]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -378,7 +378,7 @@ console.log("  returns lengths for longer sentences");
 try {
   check(getWordLengths("like a bridge over troubled water")).isEqualTo([4, 1, 6, 4, 8, 5]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -397,7 +397,7 @@ console.log("  returns [] when passed []");
 try {
   check(getPalindromes([])).isEqualTo([]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -407,7 +407,7 @@ try {
   check(getPalindromes(["racecar"])).isEqualTo(["racecar"]);
   check(getPalindromes(["racecar", "racecar"])).isEqualTo(["racecar", "racecar"]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -418,7 +418,7 @@ try {
   check(getPalindromes(["racecar", "kayak", "tacocat"])).isEqualTo(["racecar", "kayak", "tacocat"]);
   check(getPalindromes(["pineapple", "pony", "racecar"])).isEqualTo(["racecar"]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }
@@ -427,7 +427,7 @@ console.log("  returns [] when passed no palindromes");
 try {
   check(getPalindromes(["pineapple", "watermelon", "pony"])).isEqualTo([]);
 
-  printGreenMessage("  Pass :)");
+  printGreenMessage("  Pass ✔");
 } catch (error) {
   printRedMessage(` ${error}`);
 }

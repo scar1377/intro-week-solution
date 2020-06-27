@@ -24,7 +24,9 @@ function check(func) {
 }
 
 function checkDeeplyEqual(coll1, coll2) {
-  if (typeof coll1 !== "object" || typeof coll2 !== "object") return coll1 === coll2;
+
+
+  if (typeof coll1 !== "object" || typeof coll2 !== "object" || coll1 === null || coll2 === null) return coll1 === coll2;
 
   if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
 

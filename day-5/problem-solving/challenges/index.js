@@ -31,6 +31,7 @@ function getFactorials() {
     The factorial of a number is the product of that number and all the integers below it.
     E.g. the factorial of 4 is 4 * 3 * 2 * 1 = 24
   */
+  // return 
 }
 
 function largestNumber() {
