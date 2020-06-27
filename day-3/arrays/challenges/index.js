@@ -4,11 +4,15 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 
 console.log("getLastItem() returns the last item in an array");
 
+function getLastItem(arr) {
+  return arr[arr.length - 1];
+}
+
 try {
   check(getLastItem).whenCalledWith(["a", "b", "c", "d"]).returns("d");
   check(getLastItem).whenCalledWith(["apple", "banana", "pear", "kiwi"]).returns("kiwi");
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -21,7 +25,7 @@ try {
   check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 0).returns([]);
   check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 3).returns(["banana", "pear", "kiwi"]);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -34,7 +38,7 @@ try {
   check(removeItem).whenCalledWith(["a", "b", "c", "d"], 0).returns(["b", "c", "d"]);
   check(removeItem).whenCalledWith(["a", "b", "c", "d"], 1).returns(["a", "c", "d"]);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -48,7 +52,7 @@ try {
   check(mergeArrays).whenCalledWith([1], [3, 5, 7]).returns([1, 3, 5, 7]);
   check(mergeArrays).whenCalledWith(["x", "y", "z"], [1, 2, 3, 4]).returns(["x", "y", "z", 1, 2, 3, 4]);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -62,7 +66,7 @@ try {
   check(getSandwichFilling).whenCalledWith([10, 20, 30, 40, 50, 60]).returns([20, 30, 40, 50]);
   check(getSandwichFilling).whenCalledWith(["northcoders", "are", "the", "best"]).returns(["are", "the"]);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -75,7 +79,7 @@ try {
   check(isEmptyArray).whenCalledWith(["a", "b", "c", "d"]).returns(false);
   check(isEmptyArray).whenCalledWith(["a"]).returns(false);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -90,7 +94,7 @@ try {
   check(howManyArguments).whenCalledWith(1, 2, 3, 4, 5).returns(5);
   check(howManyArguments).whenCalledWith("the", "meaning", "of", "life", "is", 42).returns(6);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -109,7 +113,7 @@ try {
   check(updatePosition).whenCalledWith([3, 3], "left").returns([2, 3]);
   check(updatePosition).whenCalledWith([7, 50], "right").returns([8, 50]);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -147,7 +151,7 @@ try {
     .whenCalledWith([[], [], ["5p", "5p"], []], "5p")
     .returns([[], [], ["5p", "5p", "5p"], []]);
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -161,7 +165,7 @@ try {
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 0).returns("a");
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 3).returns("d");
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -173,7 +177,7 @@ try {
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 10).returns("c");
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 11).returns("d");
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
@@ -191,7 +195,7 @@ try {
   check(findDayOfTheWeek).whenCalledWith(6).returns("Saturday");
   check(findDayOfTheWeek).whenCalledWith(7).returns("Sunday");
 
-  printGreenMessage("Pass :)");
+  printGreenMessage("Pass ✔");
 } catch (error) {
   printRedMessage(error);
 }
