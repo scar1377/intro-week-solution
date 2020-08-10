@@ -2,7 +2,7 @@
 
 ## Part 1
 
-1. Clone the `team-remote-js-basics` into the `precourse` directory inside the `northcoders` directory. Print your current working directory and double check you are inside the `team-remote-js-basics` directory.
+1. Clone the `remote-js-precourse` into the `precourse` directory inside the `northcoders` directory. Print your current working directory and double check you are inside the `remote-js-precourse` directory.
 
 2. List directory contents including all the files starting with a `.`. Double check you have a `.git` repository inside the directory. Inspect the current list of all the git commits.
 
