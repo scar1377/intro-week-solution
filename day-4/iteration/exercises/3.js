@@ -4,7 +4,7 @@ const items = [];
 
 // your loop here...
 
-console.log("check numbers starting at 42 and descending are pushed into an array");
+console.log("check numbers starting at 42 and descending to 3 are pushed into an array");
 try {
   check(items).isEqualTo([
     42,
@@ -48,7 +48,7 @@ try {
     4,
     3,
   ]);
-  
+
   printGreenMessage("Success :)");
 } catch (e) {
   printRedMessage(e);
