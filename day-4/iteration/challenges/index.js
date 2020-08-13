@@ -2,7 +2,6 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 
 console.log("makeAllUpperCase() can get all the strings from an array");
 
-
 try {
   check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
   check(makeAllUpperCase).whenCalledWith(["I", "love", "coding"]).returns(["I", "LOVE", "CODING"]);
@@ -95,6 +94,34 @@ try {
   check(countTheObjects)
     .whenCalledWith([1, { cat: "Schnitzel" }, true, {}, {}, false, 42, {}, {}])
     .returns(5);
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+console.log(
+  "collectTheVowels takes a string of many letters and returns a string containing those vowels in correct order"
+);
+try {
+  check(collectTheVowels).whenCalledWith("a").returns("a");
+  check(collectTheVowels).whenCalledWith("bcd").returns("");
+  check(collectTheVowels).whenCalledWith("bcdepiaouk").returns("eiaou");
+  check(collectTheVowels).whenCalledWith("hello world").returns("eoo");
+
+  printGreenMessage("Pass ✔");
+} catch (error) {
+  printRedMessage("Fail ✗");
+  printRedMessage(error);
+}
+
+console.log("containsNoRepeats takes a string and returns true if each character only appears once in the string");
+try {
+  check(containsNoRepeats).whenCalledWith("dog").returns(true);
+  check(containsNoRepeats).whenCalledWith("oo").returns(false);
+  check(containsNoRepeats).whenCalledWith("dooog").returns(false);
+  check(containsNoRepeats).whenCalledWith("iHaveRepeats").returns(false);
 
   printGreenMessage("Pass ✔");
 } catch (error) {
