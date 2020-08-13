@@ -12,3 +12,5 @@ If you finish both the above, research into the following types of loops that yo
 Choose some of your challenges that you used a `for` loop and refactor to use `while` and then `do while` loops.
 
 Have a think about when each might be useful.
+
+**If you've finished those, have a look at day-4/problem-solving/index**
