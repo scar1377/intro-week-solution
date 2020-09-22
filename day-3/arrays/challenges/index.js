@@ -4,9 +4,6 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 
 console.log("getLastItem() returns the last item in an array");
 
-function getLastItem(arr) {
-  return arr[arr.length - 1];
-}
 
 try {
   check(getLastItem).whenCalledWith(["a", "b", "c", "d"]).returns("d");
