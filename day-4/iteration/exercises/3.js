@@ -1,11 +1,10 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, runTest } = require("../../../test-api");
 
 const items = [];
 
 // your loop here...
 
-console.log("check numbers starting at 42 and descending to 3 are pushed into an array");
-try {
+runTest("check numbers starting at 42 and descending to 3 are pushed into an array", function () {
   check(items).isEqualTo([
     42,
     41,
@@ -48,8 +47,4 @@ try {
     4,
     3,
   ]);
-
-  printGreenMessage("Success :)");
-} catch (e) {
-  printRedMessage(e);
-}
+});

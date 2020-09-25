@@ -1,73 +1,45 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, runTest, skipTest } = require("../../../test-api");
 
 // accessObject() should take an object and a key and return the object's property value
 
-console.log("accessObject() can access a property value using a key");
-
-try {
+runTest("accessObject() can access a property value using a key", function () {
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "name").returns("jonny");
   check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(32);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 // checkIfPropertyExists() should take an object and a key and return a boolean that indicates whether or not the object has the given keys
 
-
-console.log("checkIfPropertyExists() checks if a property exists inside an object");
-try {
+runTest("checkIfPropertyExists() checks if a property exists inside an object", function () {
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "name").returns(true);
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(true);
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "pets").returns(false);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 // createObject() should take a key-value pair (stored in an array) and use it to create an object with a key and a value
 
-
-console.log("createObject() creates a new object from a key value pair");
-try {
+skipTest("createObject() creates a new object from a key value pair", function () {
   check(createObject).whenCalledWith(["name", "shaq"]).returns({ name: "shaq" });
   check(createObject).whenCalledWith(["fruit", "apple"]).returns({ fruit: "apple" });
   check(createObject).whenCalledWith(["language", "haskell"]).returns({ language: "haskell" });
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 // countProperties() should take an object and count the number of properties it has
 
-console.log("countProperties() counts the number of key-value pairs for a given object");
-try {
+skipTest("countProperties() counts the number of key-value pairs for a given object", function () {
   check(countProperties).whenCalledWith({}).returns(0);
   check(countProperties).whenCalledWith({ name: "shaq" }).returns(1);
   check(countProperties).whenCalledWith({ name: "shaq", job: "tutor", city: "Manchester" }).returns(3);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 // createArrow() will take a direction string: "left", "right", "up" and "down" and return a corresponding arrow
 // Think of how you can use an object to solve this problem
 
-console.log("createArrow() will return an arrow pointing in the right direction");
-try {
+skipTest("createArrow() will return an arrow pointing in the right direction", function () {
   check(createArrow).whenCalledWith("right").returns("→");
   check(createArrow).whenCalledWith("left").returns("←");
   check(createArrow).whenCalledWith("up").returns("↑");
   check(createArrow).whenCalledWith("down").returns("↓");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 // Uh-Oh! We've got some silly voters who've registered their addresses incorrectly.
 //   Lets help them fix those typos by changing their houseNumber to the correctHouseNumber.
@@ -84,8 +56,7 @@ try {
 //    Note - The function does NOT need to return anything.
 //
 
-console.log("updateVoterAddress() updates the voter's houseNumber");
-try {
+skipTest("updateVoterAddress() updates the voter's houseNumber", function () {
   const voter = {
     name: "Alex",
     age: 39,
@@ -107,11 +78,7 @@ try {
       city: "Chester",
     },
   });
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 // createUserString() should take as an argument an object with the format from createNorthcoder
 // returns a string with the user's details in the form:
@@ -120,8 +87,7 @@ try {
 // Note - this is a good use case of template literals:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
-console.log("createUserString() will create a message from an details object");
-try {
+skipTest("createUserString() will create a message from an details object", function () {
   check(createUserString)
     .whenCalledWith({ name: "Mitch", age: 30, language: "Javascript" })
     .returns("name: Mitch, age: 30, language: Javascript");
@@ -129,11 +95,7 @@ try {
   check(createUserString)
     .whenCalledWith({ name: "Anat", age: 24, language: "Ruby" })
     .returns("name: Anat, age: 24, language: Ruby");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 // updateCoinMachine() should take a coinMachine object with the following form:
 //  {
@@ -144,9 +106,7 @@ try {
 //  }
 // and should update the coinMachine to reflect any change that is added into the machine
 
-console.log("updateCoinMachine() will create a message from an details object");
-
-try {
+skipTest("updateCoinMachine() will create a message from an details object", function () {
   check(updateCoinMachine)
     .whenCalledWith({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "1p")
     .returns({ "1p": 1, "2p": 0, "5p": 0, "10p": 0 });
@@ -166,8 +126,4 @@ try {
   check(updateCoinMachine)
     .whenCalledWith({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "10p")
     .returns({ "1p": 0, "2p": 3, "5p": 10, "10p": 1 }, "5p");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});

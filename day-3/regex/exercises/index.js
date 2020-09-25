@@ -1,6 +1,6 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, runTest, skipTest } = require("../../../test-api");
 
-try {
+runTest("Exercise 1", function () {
   const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
@@ -15,13 +15,9 @@ try {
   check(pattern.test("asdk;alk!!!!")).isEqualTo(false);
   check(pattern.test("errui!!!!")).isEqualTo(false);
   check(pattern.test("cjljad!!!!!!")).isEqualTo(false);
+});
 
-  printGreenMessage("Task 1 - Success :)");
-} catch (error) {
-  printRedMessage(error);
-}
-
-try {
+skipTest("Exercise 2", function () {
   const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
@@ -38,13 +34,9 @@ try {
   check(pattern.test("vsxprh")).isEqualTo(false);
   check(pattern.test("abcabca")).isEqualTo(false);
   check(pattern.test("abca")).isEqualTo(false);
+});
 
-  printGreenMessage("Task 2 - Success :)");
-} catch (error) {
-  printRedMessage(error);
-}
-
-try {
+skipTest("Exercise 3", function () {
   const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
@@ -59,10 +51,6 @@ try {
   check(pattern.test("fly")).isEqualTo(false);
   check(pattern.test("wellll")).isEqualTo(false);
   check(pattern.test("mitchelllloyd")).isEqualTo(false);
-
-  printGreenMessage("Task 3 - Success :)");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 var YOUR_REGEX_HERE;

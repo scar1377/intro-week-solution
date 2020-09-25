@@ -1,15 +1,9 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, runTest } = require("../../../test-api");
 
 const alternatingChars = [];
 
 // your loop here ...
 
-console.log("can push alternating characters into an array");
-
-try {
+runTest("can push alternating characters into an array", function () {
   check(alternatingChars).isEqualTo(["x", "o", "x", "o", "x", "o", "x", "o"]);
-
-  printGreenMessage("Success :)");
-} catch (error) {
-  printRedMessage(error);
-}
+});

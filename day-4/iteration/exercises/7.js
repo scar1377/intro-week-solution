@@ -1,13 +1,11 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, runTest } = require("../../../test-api");
 
 const tutors = ["Anat", "Paul C", "Paul R", "Jonny", "Mitch", "Vel", "Alex", "Ant"];
 const tutorsAndIndex = [];
 
 // your loop here...
 
-console.log("can add an index and a tutors'name into an array");
-
-try {
+runTest("can add an index and a tutors'name into an array", function () {
   check(tutorsAndIndex).isEqualTo([
     "0 : Anat",
     "1 : Paul C",
@@ -18,8 +16,4 @@ try {
     "6 : Alex",
     "7 : Ant",
   ]);
-
-  printGreenMessage("Success :)");
-} catch (error) {
-  printRedMessage(error);
-}
+});

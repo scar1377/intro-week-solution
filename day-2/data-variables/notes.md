@@ -6,6 +6,7 @@ Suppose we are going to use some data in our code like in the following example:
 
 ```js
 "hello there northcoders!";
+
 ```
 
 We could peform several operations on this piece of data (a **string** in this case), like in the following example:
@@ -52,3 +53,5 @@ We can break this piece of code into several parts:
 4. `"hello northcoders".slice(0, 6)` this is an expression which will be assigned to `firstWord`;
 
 ---
+
+## Expressions vs statements

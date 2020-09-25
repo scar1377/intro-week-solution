@@ -1,51 +1,36 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, runTest, skipTest } = require("../../../test-api");
 
-function isBiggerThan10(n) {
+function isBiggerThan10() {
   // checks if an number is strictly bigger than 10 and returns a message accordingly
 }
 
-console.log("isBiggerThan10() returns a message indicating if a number is bigger than 10");
-try {
+runTest("isBiggerThan10() returns a message indicating if a number is bigger than 10", function () {
   check(isBiggerThan10).whenCalledWith(3).returns("Number 3 is less than 10");
   check(isBiggerThan10).whenCalledWith(4).returns("Number 4 is less than 10");
   check(isBiggerThan10).whenCalledWith(5).returns("Number 5 is less than 10");
   check(isBiggerThan10).whenCalledWith(10).returns("Number 10 is equal to 10");
   check(isBiggerThan10).whenCalledWith(11).returns("Number 11 is more than 10");
   check(isBiggerThan10).whenCalledWith(100).returns("Number 100 is more than 10");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
+});
 
 function isFalsy() {
   // checks if a value is falsy and returns true if it is - returns false otherwise
 }
 
-console.log("is Falsy() returns true if a value is falsy and false if it is truthy");
-
-try {
+skipTest("is Falsy() returns true if a value is falsy and false if it is truthy", function () {
   check(isFalsy).whenCalledWith(false).returns(true);
   check(isFalsy).whenCalledWith("").returns(true);
   check(isFalsy).whenCalledWith(0).returns(true);
   check(isFalsy).whenCalledWith(NaN).returns(true);
   check(isFalsy).whenCalledWith(undefined).returns(true);
   check(isFalsy).whenCalledWith(null).returns(true);
-
-  check(isFalsy).whenCalledWith(10).returns(false);
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});
 
 function readTrafficLight() {
   // this function should check if the "traffic light" is red, green or amber and return a corresponding message
 }
 
-console.log("readTrafficLight() should print a message according to the different colour passed in");
-
-try {
+skipTest("readTrafficLight() should print a message according to the different colour passed in", function () {
   check(readTrafficLight).whenCalledWith("green").returns("GO!");
   check(readTrafficLight).whenCalledWith("GREEN").returns("GO!");
 
@@ -54,38 +39,26 @@ try {
 
   check(readTrafficLight).whenCalledWith("red").returns("STOP!");
   check(readTrafficLight).whenCalledWith("RED").returns("STOP!");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
+});
 
 function isMultipleOf6() {
   // isMultipleOf6 check if a passed value is a multiple of 6
 }
 
-console.log("isMultipleOf6() should check if a number is divisible by 6");
-
-try {
+skipTest("isMultipleOf6() should check if a number is divisible by 6", function () {
   check(isMultipleOf6).whenCalledWith(6).returns(true);
 
   check(isMultipleOf6).whenCalledWith(10).returns(false);
   check(isMultipleOf6).whenCalledWith(15).returns(false);
   check(isMultipleOf6).whenCalledWith(36).returns(true);
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
+});
 
 function checkInfinitive() {
   // checkInfinitive() will check if a French word is an infinitive French verb
   // A French infinitive verb is a word that ends with either "re", "ir" or "er"
 }
 
-console.log("checkInfinitive() checks if a french word is an infinitive");
-try {
+skipTest("checkInfinitive() checks if a french word is an infinitive", function () {
   check(checkInfinitive).whenCalledWith("manger").returns(true);
   check(checkInfinitive).whenCalledWith("faire").returns(true);
   check(checkInfinitive).whenCalledWith("aller").returns(true);
@@ -99,12 +72,7 @@ try {
   check(checkInfinitive).whenCalledWith("ete").returns(false);
   check(checkInfinitive).whenCalledWith("sais").returns(false);
   check(checkInfinitive).whenCalledWith("allons").returns(false);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
+});
 
 function checkGame() {
   // checkGame() should take a value from a diceRoll ( a number from 1 to 6 )
@@ -113,19 +81,13 @@ function checkGame() {
   // means that you have won the game :)
 }
 
-console.log("checkGame() should check if a user was won the game");
-try {
+skipTest("checkGame() should check if a user was won the game", function () {
   check(checkGame).whenCalledWith(3, "H").returns(true);
   check(checkGame).whenCalledWith(4, "H").returns(true);
   check(checkGame).whenCalledWith(5, "H").returns(true);
   check(checkGame).whenCalledWith(6, "H").returns(true);
   check(checkGame).whenCalledWith(6, "T").returns(false);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
+});
 
 function checkBatteryLevel() {
   // if the battery level is less than or equal to 5%, then it should return a string stating:
@@ -136,9 +98,7 @@ function checkBatteryLevel() {
   // "Fully charged :)"
 }
 
-console.log("checkBatteryLevel() should return a message with info about the battery level");
-
-try {
+skipTest("checkBatteryLevel() should return a message with info about the battery level", function () {
   check(checkBatteryLevel).whenCalledWith("100").returns("Fully charged :)");
 
   check(checkBatteryLevel).whenCalledWith("99").returns("Battery level: 99%");
@@ -151,12 +111,7 @@ try {
   check(checkBatteryLevel).whenCalledWith("4").returns("Warning - battery level low: 4%, please charge your device");
   check(checkBatteryLevel).whenCalledWith("3").returns("Warning - battery level low: 3%, please charge your device");
   check(checkBatteryLevel).whenCalledWith("1").returns("Warning - battery level low: 1%, please charge your device");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
+});
 
 function getOrdinalSuffix() {
   // an ordinal suffix are the letters we put after a number:
@@ -166,9 +121,7 @@ function getOrdinalSuffix() {
   // See here for more details: https://www.grammarly.com/blog/how-to-write-ordinal-numbers-correctly/
 }
 
-console.log("getOrdinalSuffix() should give the correct ordinal suffix for a number");
-
-try {
+skipTest("getOrdinalSuffix() should give the correct ordinal suffix for a number", function () {
   check(getOrdinalSuffix).whenCalledWith(1).returns("st");
   check(getOrdinalSuffix).whenCalledWith(2).returns("nd");
   check(getOrdinalSuffix).whenCalledWith(3).returns("rd");
@@ -189,8 +142,4 @@ try {
   check(getOrdinalSuffix).whenCalledWith(22).returns("nd");
   check(getOrdinalSuffix).whenCalledWith(23).returns("rd");
   check(getOrdinalSuffix).whenCalledWith(32).returns("nd");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage(error);
-}
+});

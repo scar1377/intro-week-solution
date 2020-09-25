@@ -24,9 +24,8 @@ function check(func) {
 }
 
 function checkDeeplyEqual(coll1, coll2) {
-
-
-  if (typeof coll1 !== "object" || typeof coll2 !== "object" || coll1 === null || coll2 === null) return coll1 === coll2;
+  if (typeof coll1 !== "object" || typeof coll2 !== "object" || coll1 === null || coll2 === null)
+    return coll1 === coll2;
 
   if (Object.keys(coll1).length !== Object.keys(coll2).length) return false;
 
@@ -66,4 +65,22 @@ function printGreenMessage(message) {
   console.log("\x1b[32m", message, "\x1b[0m");
 }
 
-module.exports = { check, printGreenMessage, printRedMessage };
+function printYellowMessage(message) {
+  console.log("\x1b[33m", message, "\x1b[0m");
+}
+
+function runTest(title, func) {
+  try {
+    func();
+    printGreenMessage("Pass ✔" + " " + title);
+  } catch (error) {
+    console.log(title);
+    printRedMessage(error);
+  }
+}
+
+function skipTest(title) {
+  printYellowMessage(`skipping... ${title}`);
+}
+
+module.exports = { check, runTest, skipTest };
