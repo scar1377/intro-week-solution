@@ -8,7 +8,7 @@ There is a problem with `message.js` - correct the syntax in this file in order 
 
 ### Logs
 
-- In each of the files `log_0.js` to `log_9.js` you will find a line of code that is commented out.
+In each of the files `log_0.js` to `log_9.js` you will find a line of code that is commented out.
 
 For each file you will need to:
 
