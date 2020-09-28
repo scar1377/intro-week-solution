@@ -2,9 +2,11 @@
 
 ## How to use this repo
 
-Each section is organised into **practice**, **challenges**, and **questions**
+Each section is organised into **exercises**, **questions**, **challenges**, and **explore**
 
-## Tasks
+Not every topic will have all of these sections: sometimes there may only be an **exercises** and a **challenges** section
+
+## Activities
 
 - `exercises` 🖊️ - these tasks are designed for you to practice some of the essential skills in a particular topic
 
