@@ -57,5 +57,3 @@ To https://github.com/northcoders/remote_precourse_js.git
 ```
 
 The intricacies of the command output aren't worth exploring at this stage but its important to note we'll get output like this if the `git push` command was successful. Once this command is executed both the local `master` branch and the `origin` `master` branch abbreviated as `origin/master` will be pointing at the same commit. In this commit, both the local and the remote master branches are up to-date.
-
-### `git pull`
