@@ -196,7 +196,7 @@ try {
 }
 
 function extractNumber() {
-  // shoudld extract a number embedded in a string surrounded by ( ) parentheses
+  // should extract a number embedded in a string surrounded by ( ) parentheses
 }
 
 console.log("extractNumber() should return the number buried inside a string");
