@@ -12,7 +12,7 @@
 
 4. Change directory into the northcoders directory and print your current working directory again - always double checking where you are.
 
-5. Create some directories inside northcoders called precourse, fundamentals, frontend and random_stuff
+5. Create some directories inside northcoders called precourse, fundamentals, backend, frontend and random_stuff
 
 6. List all the directory contents of northcoders and you should have the 5 directories you've just created.
 
