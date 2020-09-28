@@ -83,4 +83,4 @@ function skipTest(title) {
   printYellowMessage(`skipping... ${title}`);
 }
 
-module.exports = { check, runTest, skipTest };
+module.exports = { check, runTest, skipTest, printGreenMessage, printRedMessage };
