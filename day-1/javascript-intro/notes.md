@@ -18,10 +18,11 @@ JavaScript is a **high level programming langauge** and one of the core technolo
 
 ### Data and functions
 
-A fundamental concept in computer programming and within JavaScript is the notion of data and functions. Data could be any piece of information from numbers to strings of text. A programming language will usually have different fundamental categories of data known as **primitive data types**. **Primitive data types** are the most basic data types we can use in a programming language. One of these **primitive data types** in JavaScript is a \*\*string\*\*. A string is a piece of text enclosed inside quotation marks, written like this:
+A fundamental concept in computer programming and within JavaScript is the notion of data and functions. Data could be any piece of information from numbers to strings of text. A programming language will usually have different fundamental categories of data known as **primitive data types**. **Primitive data types** are the most basic data types we can use in a programming language. One of these **primitive data types** in JavaScript is a **string**. A string is a piece of text enclosed inside quotation marks, written like this:
 
 ```js
 "hello northcoders";
+
 ```
 
 A function is a **set of instructions** with in a program that can be used to perform an action. A large part of programming involves writing functions that will carry out meaningful tasks with our data types. Functions are one of the fundamental units of JavaScript. A function will often be designed to take inputs, carry out some tasks and provide an output.
@@ -85,6 +86,7 @@ We can think of this as type of data used for storing textual information.
 
 ```js
 "hello northcoders";
+
 ```
 
 ### Comments
