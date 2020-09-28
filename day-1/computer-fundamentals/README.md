@@ -4,7 +4,7 @@
 
 ### Part 1
 
-1. Use the command echo to print your a message "hello <your-name>" to the terminal
+1. Use the command echo to print your a message `hello <your-name>` to the terminal
 
 2. Print your current working directory to the terminal
 

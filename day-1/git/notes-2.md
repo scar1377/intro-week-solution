@@ -1,25 +1,25 @@
 # Branches and Github
 
-## master branch
+## Branches
 
 A commit is a snapshot of the files and folders in our project over time. Over time we can create multiple commits to build up a timeline containing different snapshots. Each commit that we create will automatically point back to the previous parent commit (unless it is the root commit). The commits we create therefore create a chain or sequence. It is therefore sufficient to point to a single commit as these will continue to point back to form a chain. A **branch** in git is often referred to as a series of commits that forms a timeline representing some work in a project. However, we need only point a single commit as this one points back the others.
 
-🔑 A **branch** is a reference to a particular commit.
+> 🔑 A **branch** is a reference to a particular commit.
 
 The branch that is created by default when a new empty git repository is created is the **master** branch. Whenever a new git commit is created then **master** branch is updatd so it points to the most recent commit.
 
----
+&nbsp;
 
 ## Github
 
 Version control software allows one to manage and update the versions of a project over time. However, git is regarded more fully as **distributed version control software**. The term **distributed** means that any number of users (with the relevant permissions) can access the git repository and therefore gain access to the entire history of the project.
 Github is a website that stores github repositories in the cloud and allows multiple users to store their work so that each collaborator can share their changes online.
 
-Github repositories can be created newly on the github websites
+Github repositories can also be created newly on the github website.
 
----
+&nbsp;
 
-## Remote
+### Remotes
 
 A remote repository is one stored on github that others can access and update from local machines. A typical pattern is to have one remote repository and other uses can create clones of this repository on to their local machine. Users can create local changes to the git repository on their machine and then once ready add their changes the remote repository. The name origin is a convention way of referring to a git remote repository - a new github repository will be referred to as origin.
 
@@ -39,9 +39,7 @@ origin  https://github.com/northcoders/remote_precourse_js.git (fetch)
 origin  https://github.com/northcoders/remote_precourse_js.git (push)
 ```
 
----
-
-## `git push`
+### `git push`
 
 We can use the command `git push` in order to add any of the commits on our local machine on to a remote repository. If master branch is 3 commits ahead of our the origin repository's master branch then using `git push` will add the three local commits on to the `master` branch of the origin repository. We can use the `git push` command in the following way:
 
@@ -60,4 +58,4 @@ To https://github.com/northcoders/remote_precourse_js.git
 
 The intricacies of the command output aren't worth exploring at this stage but its important to note we'll get output like this if the `git push` command was successful. Once this command is executed both the local `master` branch and the `origin` `master` branch abbreviated as `origin/master` will be pointing at the same commit. In this commit, both the local and the remote master branches are up to-date.
 
-## `git pull`
+### `git pull`

@@ -16,9 +16,9 @@ Consider a timeline consisting of distinct points in time - each distinct part o
 3. View the changes we've made since the last point in our time line
 4. Move between between the points in the timeline (akin to time travel)
 
----
+&nbsp;
 
-# git
+# Git
 
 git is **version control software** and some of its most basic features will allow us to fulfill all the requirements of a basic content timeline.
 
@@ -40,11 +40,13 @@ $ ls -a
 . .. .git
 ```
 
----
+&nbsp;
 
 ## Storing content
 
 We can store content on our project timeline by creating distinct snapshots that show us the content of our files and directories at a given moment in time.
+
+&nbsp;
 
 ### Working directory
 
@@ -74,7 +76,9 @@ My new list of ingredients
 
 This new file is not currently stored in the git repository `.git`. Instead we have updated the **working directory**.
 
-🔑 The **working directory** refers to all of the files and directories we can currently view and edit in our project.
+> 🔑 The **working directory** refers to all of the files and directories we can currently view and edit in our project.
+
+&nbsp;
 
 `git` will register that the **working directory** has been updated and we can view this information by running the `git status` command:
 
@@ -93,6 +97,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 The most important part of this command is the section beginning `Untracked files`.
 An **untracked file** is a newly created file that has not yet been stored inside the git repository. In order to store this content on our timeline we need to use additional `git` commands.
+
+&nbsp;
 
 ### `git add`
 
@@ -124,7 +130,7 @@ Changes to be committed:
 	new file:   list.txt
 ```
 
----
+&nbsp;
 
 ## Creating a git commit
 
@@ -139,6 +145,8 @@ $ git commit -m "Add list.txt"
 ```
 
 Note that the output for this command is also saying that this commit is regarded as the **root commit** as it is the first commit stored inside the git repository.
+
+&nbsp;
 
 ### `git log`
 
