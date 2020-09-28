@@ -1,21 +1,5 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
-function double() {
-  // return any number doubled
-}
-
-console.log("double() gives the correct output");
-try {
-  check(double).whenCalledWith(11).returns(22);
-  check(double).whenCalledWith(129).returns(258);
-  check(double).whenCalledWith(25).returns(50);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
-
 function modulo() {
   // return the remainder of the division a / b
 }
@@ -65,51 +49,6 @@ try {
   printRedMessage(error);
 }
 
-function getLength() {
-  // return the length of the passed string
-}
-
-console.log("getLength() returns the correct string length");
-try {
-  check(getLength).whenCalledWith("jonny").returns(5);
-  check(getLength).whenCalledWith("jd").returns(2);
-  check(getLength).whenCalledWith("rosa").returns(4);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
-
-function putNamesTogether() {
-  // return the first and last names with a space between them
-}
-
-console.log("putNamesTogether() can join two strings with a space");
-try {
-  check(putNamesTogether).whenCalledWith("izzi", "maccabee").returns("izzi maccabee");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
-
-function capitaliseString() {
-  // return the passed string with its first letter capitalised
-}
-
-console.log("capitaliseString() can capitalise a single word");
-try {
-  check(capitaliseString).whenCalledWith("bang").returns("BANG");
-  check(capitaliseString).whenCalledWith("apple").returns("APPLE");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
-
 function capitaliseFirstLetter() {}
 
 console.log("capitaliseFirstLetter() can capitalise the first letter in a string");
@@ -125,7 +64,8 @@ try {
 }
 
 function areValuesEqual() {
-  // return true if the passed arguments are strictly equal;
+  // return true if the passed arguments are strictly equal
+  // you can complete this problem without resorting to if statements
 }
 
 console.log("areValuesEqual() checks if two values are the same");
@@ -142,6 +82,7 @@ try {
 function isFromThe60s() {
   // return true if the year is in the 1960's
   // returns false otherwise
+  // you can complete this problem without resorting to if statements
 }
 
 console.log("isFromThe60s() checks if two values are the same");
@@ -158,6 +99,7 @@ try {
 
 function isEvenLength() {
   // return true if string has an even length
+  // you can complete this problem without resorting to if statements
 }
 
 console.log("isEvenLength() checks if string has even number of characters");
@@ -235,7 +177,7 @@ try {
 }
 
 function createPercentage() {
-  // should take a 2 numbers and work out their percentage
+  // should take 2 numbers and work out their percentage
 }
 
 console.log('createPercentage() creates a percentage string in the form "--%"');
