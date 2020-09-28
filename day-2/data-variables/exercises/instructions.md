@@ -10,7 +10,7 @@ You will need to create variables representing your personal details
 
 You need to think carefully about the data types you will use for each variable
 
-- Create a variable called `firstName` and assign it a value represent in your name. Log this variable and log its type
+- Create a variable called `firstName` and assign it a value represent in your name. Log this variable and log its type.
 
 - Create a variable called `lastName` and assign it a string. Log this variable and log its type
 
