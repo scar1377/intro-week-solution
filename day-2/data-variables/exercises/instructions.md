@@ -2,7 +2,7 @@
 
 ## Task 1 - Creating variables
 
-Complete this task in `exercises/intro.js`
+Complete this task in `exercises/variables.js`
 
 In each of the following examples:
 

@@ -53,5 +53,3 @@ We can break this piece of code into several parts:
 4. `"hello northcoders".slice(0, 6)` this is an expression which will be assigned to `firstWord`;
 
 ---
-
-## Expressions vs statements

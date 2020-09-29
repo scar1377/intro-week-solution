@@ -3,7 +3,7 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 // Declare a function called multiply
 // This function should multiply 2 numbers and return the result
 
-console.log("multiply() returns the correct string length");
+console.log("multiply() can multiply 2 numbers together");
 try {
   check(multiply).whenCalledWith(10, 42).returns(420);
   check(multiply).whenCalledWith(3, 5).returns(15);
