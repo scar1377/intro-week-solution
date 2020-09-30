@@ -2,4 +2,4 @@
 
 Please work through the tasks in the following order:
 
-**exercises** -> **challenges**
+**exercises** -> **questions** -> **challenges**

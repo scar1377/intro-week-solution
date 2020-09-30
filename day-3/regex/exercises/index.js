@@ -21,7 +21,7 @@ skipTest("Exercise 2", function () {
   const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
-  // your pattern should match exactly 6 of a,b or c
+  // your pattern should match exactly 6 of a, b or c
 
   check(pattern.test("abcabc")).isEqualTo(true);
   check(pattern.test("cbabac")).isEqualTo(true);
