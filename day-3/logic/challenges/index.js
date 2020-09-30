@@ -17,7 +17,7 @@ function isFalsy() {
   // checks if a value is falsy and returns true if it is - returns false otherwise
 }
 
-skipTest("is Falsy() returns true if a value is falsy and false if it is truthy", function () {
+skipTest("isFalsy() returns true if a value is falsy and false if it is truthy", function () {
   check(isFalsy).whenCalledWith(false).returns(true);
   check(isFalsy).whenCalledWith("").returns(true);
   check(isFalsy).whenCalledWith(0).returns(true);
@@ -51,6 +51,8 @@ skipTest("isMultipleOf6() should check if a number is divisible by 6", function 
   check(isMultipleOf6).whenCalledWith(10).returns(false);
   check(isMultipleOf6).whenCalledWith(15).returns(false);
   check(isMultipleOf6).whenCalledWith(36).returns(true);
+  check(isMultipleOf6).whenCalledWith(60).returns(true);
+  check(isMultipleOf6).whenCalledWith(61).returns(false);
 });
 
 function checkInfinitive() {

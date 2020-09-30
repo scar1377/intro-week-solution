@@ -49,7 +49,7 @@ try {
   printRedMessage(error);
 }
 
-function capitaliseFirstLetter() {}
+// declare capitaliseFirstLetter here
 
 console.log("capitaliseFirstLetter() can capitalise the first letter in a string");
 try {
@@ -63,10 +63,10 @@ try {
   printRedMessage(error);
 }
 
-function areValuesEqual() {
-  // return true if the passed arguments are strictly equal
-  // you can complete this problem without resorting to if statements
-}
+// declare areValuesEqual here
+
+// return true if the passed arguments are strictly equal
+// you can complete this problem without resorting to if statements
 
 console.log("areValuesEqual() checks if two values are the same");
 try {
@@ -79,11 +79,11 @@ try {
   printRedMessage(error);
 }
 
-function isFromThe60s() {
-  // return true if the year is in the 1960's
-  // returns false otherwise
-  // you can complete this problem without resorting to if statements
-}
+// declare isFromThe60s here
+
+// return true if the year is in the 1960's
+// returns false otherwise
+// you can complete this problem without resorting to if statements
 
 console.log("isFromThe60s() checks if two values are the same");
 try {
@@ -97,10 +97,10 @@ try {
   printRedMessage(error);
 }
 
-function isEvenLength() {
-  // return true if string has an even length
-  // you can complete this problem without resorting to if statements
-}
+// declare isEvenLength here
+
+// return true if string has an even length
+// you can complete this problem without resorting to if statements
 
 console.log("isEvenLength() checks if string has even number of characters");
 try {
@@ -113,10 +113,10 @@ try {
   printRedMessage(error);
 }
 
-function isAbsolutePath() {
-  // checks if a string is an absolute path - does it start with a /
-  // HINT: all absolute file paths start with a /
-}
+// declare isAbsolutePath here
+
+// checks if a string is an absolute path - does it start with a /
+// HINT: all absolute file paths start with a /
 
 console.log("isAbsolutePath() checks if a file path is absolute or relative");
 
@@ -131,10 +131,10 @@ try {
   printRedMessage(error);
 }
 
-function getMiddle() {
-  // return the middle (or middle two) character(s) of the passed string
-  // HINT: You could use the ternary operator for this challenge
-}
+// declare getMiddle here
+
+// return the middle (or middle two) character(s) of the passed string
+// HINT: You could use the ternary operator for this challenge
 
 console.log("getMiddle() returns the middle character in a string of odd length");
 try {
@@ -158,10 +158,10 @@ try {
   printRedMessage(error);
 }
 
-function getCharCode() {
-  // returns a sentence stating the character code for a given character
-  // Look up ASCII online to get a better idea of what a character code is
-}
+// declare getCharCode here
+
+// returns a sentence stating the character code for a given character
+// Look up ASCII online to get a better idea of what a character code is
 
 console.log("getCharCode() will return a message stating the ascci code of a passed char");
 
@@ -176,9 +176,9 @@ try {
   printRedMessage(error);
 }
 
-function createPercentage() {
-  // should take 2 numbers and work out their percentage
-}
+// declare createPercentage here
+
+// should take 2 numbers and work out their percentage
 
 console.log('createPercentage() creates a percentage string in the form "--%"');
 
@@ -195,9 +195,9 @@ try {
   printRedMessage(error);
 }
 
-function extractNumber() {
-  // should extract a number embedded in a string surrounded by ( ) parentheses
-}
+// declare extractNumber here
+
+// should extract a number embedded in a string surrounded by ( ) parentheses
 
 console.log("extractNumber() should return the number buried inside a string");
 

@@ -8,6 +8,7 @@ console.log("capitaliseString() can capitalise a single word");
 try {
   check(capitaliseString).whenCalledWith("bang").returns("BANG");
   check(capitaliseString).whenCalledWith("apple").returns("APPLE");
+  check(capitaliseString).whenCalledWith("abc").returns("ABC");
 
   printGreenMessage("Pass ✔");
 } catch (error) {
