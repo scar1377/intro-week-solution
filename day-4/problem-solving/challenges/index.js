@@ -1,4 +1,4 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, runTest, skipTest } = require("../../../test-api");
 
 function flipBooleans() {
   /*
@@ -8,24 +8,15 @@ function flipBooleans() {
 }
 
 console.log("flipBooleans()");
-console.log("returns an empty array when passed []");
-try {
+runTest("returns an empty array when passed []", function () {
   check(flipBooleans([])).isEqualTo([]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-console.log("inverts all booleans in the array");
-try {
+skipTest("inverts all booleans in the array", function () {
   check(flipBooleans([true, true, true])).isEqualTo([false, false, false]);
   check(flipBooleans([false, true, true])).isEqualTo([true, false, false]);
   check(flipBooleans([false, false, false])).isEqualTo([true, true, true]);
-
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+});
 
 //// next challenge - findFirstDentist ////
 
@@ -38,29 +29,18 @@ function findFirstDentist() {
 console.log("\n");
 console.log("findFirstDentist()");
 
-console.log("  returns null if no dentist is in the array");
-try {
+skipTest("returns null if no dentist is in the array", function () {
   check(findFirstDentist([])).isEqualTo(null);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns a person object who is a dentist");
-try {
+skipTest("returns a person object who is a dentist", function () {
   const dentists = [{ name: "Orin Scrivello", isDentist: true }];
 
   check(findFirstDentist(dentists).isDentist).isEqualTo(true);
   check(findFirstDentist(dentists).name).isEqualTo("Orin Scrivello");
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns the first dentist from the array");
-try {
+skipTest("returns the first dentist from the array", function () {
   const dentists = [
     { name: "Johnny Karate", isDentist: false },
     { name: "Lucy Hobbs Taylor", isDentist: true },
@@ -73,11 +53,7 @@ try {
     name: "Lucy Hobbs Taylor",
     isDentist: true,
   });
-
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+});
 
 function tallyPeopleInManchester() {
   /* This function receives an array of people objects in for format:
@@ -90,8 +66,7 @@ function tallyPeopleInManchester() {
 console.log("\n");
 console.log("tallyPeopleInManchester()");
 
-console.log("  returns 0 when nobody is from Manchester");
-try {
+skipTest("returns 0 when nobody is from Manchester", function () {
   check(
     tallyPeopleInManchester([
       {
@@ -106,14 +81,9 @@ try {
       },
     ])
   ).isEqualTo(0);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns the length of the array when everyone is from Manchester");
-try {
+skipTest("returns the length of the array when everyone is from Manchester", function () {
   check(
     tallyPeopleInManchester([
       {
@@ -128,58 +98,52 @@ try {
       },
     ])
   ).isEqualTo(2);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+skipTest(
+  "returns the number of people who are actually from the proud, yet fairly miserable, city of Manchester",
+  function () {
+    check(
+      tallyPeopleInManchester([
+        {
+          name: "Melissandra",
+          lives: { country: "Spain", city: "Valencia" },
+          age: 55.5,
+        },
+        {
+          name: "Melissandrella",
+          lives: { country: "Spain", city: "Valencia" },
+          age: 55.555,
+        },
+        {
+          name: "Emmeline",
+          lives: { country: "England", city: "Manchester" },
+          age: 25,
+        },
+      ])
+    ).isEqualTo(1);
 
-console.log("  returns the number of people who are actually from the proud, yet fairly miserable, city of Manchester");
-
-try {
-  check(
-    tallyPeopleInManchester([
-      {
-        name: "Melissandra",
-        lives: { country: "Spain", city: "Valencia" },
-        age: 55.5,
-      },
-      {
-        name: "Melissandrella",
-        lives: { country: "Spain", city: "Valencia" },
-        age: 55.555,
-      },
-      {
-        name: "Emmeline",
-        lives: { country: "England", city: "Manchester" },
-        age: 25,
-      },
-    ])
-  ).isEqualTo(1);
-  check(
-    tallyPeopleInManchester([
-      {
-        name: "Frank",
-        lives: { country: "England", city: "Manchester" },
-        age: 15.2,
-      },
-      {
-        name: "Bob",
-        lives: { country: "Wales", city: "Abertillery" },
-        age: 555555555555.555,
-      },
-      {
-        name: "Terry",
-        lives: { country: "England", city: "Newport Pagnell" },
-        age: 0.00000002,
-      },
-    ])
-  ).isEqualTo(1);
-
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+    check(
+      tallyPeopleInManchester([
+        {
+          name: "Frank",
+          lives: { country: "England", city: "Manchester" },
+          age: 15.2,
+        },
+        {
+          name: "Bob",
+          lives: { country: "Wales", city: "Abertillery" },
+          age: 555555555555.555,
+        },
+        {
+          name: "Terry",
+          lives: { country: "England", city: "Newport Pagnell" },
+          age: 0.00000002,
+        },
+      ])
+    ).isEqualTo(1);
+  }
+);
 
 function getPugOwners() {
   /*
@@ -195,17 +159,11 @@ function getPugOwners() {
 console.log("\n");
 console.log("getPugOwners()");
 
-console.log("  returns [] when passed []");
-try {
+skipTest("returns [] when passed []", function () {
   check(getPugOwners([])).isEqualTo([]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns an array of pug names when passed an array of dog objects");
-try {
+skipTest("returns an array of pug names when passed an array of dog objects", function () {
   const dogs = [
     { name: "Beatrice", breed: "Lurcher", owner: "Tom" },
     { name: "Max", breed: "Pug", owner: "Izzi" },
@@ -232,11 +190,7 @@ try {
     { name: "Eric", breed: "Pug", owner: "David" },
   ];
   check(getPugOwners(dogs3)).isEqualTo(["Vel", "Haz", "David"]);
-
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+});
 
 function pluraliseKeys() {
   /*
@@ -266,8 +220,7 @@ function pluraliseKeys() {
 }
 console.log("\n");
 console.log("pluraliseKeys()");
-console.log("  returns a new object");
-try {
+skipTest("returns a new object", function () {
   const input = {
     name: "Sam's Pet Shop",
     tagLine: "From Aardvarks to Zebras!",
@@ -279,33 +232,26 @@ try {
   const actual = pluraliseKeys(input);
 
   check(typeof actual).isEqualTo("object");
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+skipTest(
+  "returns an object with identical keys to the input when the input's keys do not need pluralising",
+  function () {
+    const input = {
+      name: "Shaq's Taxidermy Shack",
+      tagLine: "You Love 'em; We Stuff 'em",
+    };
+    const actual = pluraliseKeys(input);
+    const expected = {
+      name: "Shaq's Taxidermy Shack",
+      tagLine: "You Love 'em; We Stuff 'em",
+    };
 
-console.log("  returns an object with identical keys to the input when the input's keys do not need pluralising");
-try {
-  const input = {
-    name: "Shaq's Taxidermy Shack",
-    tagLine: "You Love 'em; We Stuff 'em",
-  };
-  const actual = pluraliseKeys(input);
-  const expected = {
-    name: "Shaq's Taxidermy Shack",
-    tagLine: "You Love 'em; We Stuff 'em",
-  };
+    check(actual).isEqualTo(expected);
+  }
+);
 
-  check(actual).isEqualTo(expected);
-
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns an object with with its keys pluralised");
-try {
+skipTest("returns an object with with its keys pluralised", function () {
   let input = {
     name: "Paul's Donkey University",
     tagLine: "Too Mule For School",
@@ -331,11 +277,8 @@ try {
     favouriteShops: ["Paul's Donkey University", "Shaq's Taxidermy Shack", "Sam's Pet Shop"],
   };
   check(actual).isEqualTo(expected);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
 console.log("\n");
 
 function getWordLengths() {
@@ -347,41 +290,21 @@ function getWordLengths() {
 
 console.log("getWordLengths()");
 
-console.log("  returns [] when passed an empty string");
-try {
+skipTest("returns [] when passed an empty string", function () {
   check(getWordLengths("")).isEqualTo([]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns an array containing the length of a single word");
-try {
+skipTest("returns an array containing the length of a single word", function () {
   check(getWordLengths("woooo")).isEqualTo([5]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns the lengths when passed multiple words");
-try {
+skipTest("returns the lengths when passed multiple words", function () {
   check(getWordLengths("hello world")).isEqualTo([5, 5]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns lengths for longer sentences");
-try {
+skipTest("returns lengths for longer sentences", function () {
   check(getWordLengths("like a bridge over troubled water")).isEqualTo([4, 1, 6, 4, 8, 5]);
-
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+});
 
 function getPalindromes() {
   /*
@@ -393,41 +316,20 @@ function getPalindromes() {
 console.log("\n");
 console.log("getPalindromes()");
 
-console.log("  returns [] when passed []");
-try {
+skipTest("returns [] when passed []", function () {
   check(getPalindromes([])).isEqualTo([]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  identifies palindromes");
-try {
+skipTest("identifies palindromes", function () {
   check(getPalindromes(["racecar"])).isEqualTo(["racecar"]);
   check(getPalindromes(["racecar", "racecar"])).isEqualTo(["racecar", "racecar"]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  ignores non-palindromes");
-
-try {
+skipTest("ignores non-palindromes", function () {
   check(getPalindromes(["racecar", "kayak", "tacocat"])).isEqualTo(["racecar", "kayak", "tacocat"]);
   check(getPalindromes(["pineapple", "pony", "racecar"])).isEqualTo(["racecar"]);
+});
 
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
-
-console.log("  returns [] when passed no palindromes");
-try {
+skipTest("returns [] when passed no palindromes", function () {
   check(getPalindromes(["pineapple", "watermelon", "pony"])).isEqualTo([]);
-
-  printGreenMessage("  Pass ✔");
-} catch (error) {
-  printRedMessage(` ${error}`);
-}
+});

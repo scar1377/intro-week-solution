@@ -1,6 +1,6 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
-runTest("makeAllUpperCase() can get all the strings from an array", function () {
+runTest("makeAllUpperCase() can convert all strings to upper case", function () {
   check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
   check(makeAllUpperCase).whenCalledWith(["I", "love", "coding"]).returns(["I", "LOVE", "CODING"]);
 });
@@ -71,7 +71,7 @@ skipTest(
 );
 
 skipTest(
-  "containsNoRepeats takes a string and returns true if each character only appears once in the string",
+  "containsNoRepeats() takes a string and returns true if each character only appears once in the string",
   function () {
     check(containsNoRepeats).whenCalledWith("dog").returns(true);
     check(containsNoRepeats).whenCalledWith("oo").returns(false);
