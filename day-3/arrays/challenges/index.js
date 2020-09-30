@@ -1,5 +1,7 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
+// Declare each of the functions below and run their tests - and then get those tests passing :)
+
 // getLastItem() should return the last item from an array
 
 runTest("getLastItem() returns the last item in an array", function () {
@@ -9,7 +11,7 @@ runTest("getLastItem() returns the last item in an array", function () {
 
 // getLastNItems() return an array with the last n items of the array
 
-runTest("getLastNItems() returns the last n items in an array", function () {
+skipTest("getLastNItems() returns the last n items in an array", function () {
   check(getLastNItems).whenCalledWith(["a", "b", "c", "d"], 2).returns(["c", "d"]);
   check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 0).returns([]);
   check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 3).returns(["banana", "pear", "kiwi"]);
