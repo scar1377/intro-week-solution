@@ -43,23 +43,6 @@ skipTest("deleteManyPasswords() deletes the password property for each user", fu
     .returns([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
 });
 
-skipTest("countTheObjects() counts all the objects in an array of multi-type items", function () {
-  check(countTheObjects)
-    .whenCalledWith([
-      { name: "Barry", password: "ilovetea" },
-      { name: "Sandeep", password: "ilovecoffee" },
-      { name: "Kavita", password: "ilovepie" },
-    ])
-    .returns(3);
-
-  check(countTheObjects).whenCalledWith([{}, {}, {}, {}, {}]).returns(5);
-  check(countTheObjects).whenCalledWith([1, {}, true, {}, {}, false, {}, {}]).returns(5);
-
-  check(countTheObjects)
-    .whenCalledWith([1, { cat: "Schnitzel" }, true, {}, {}, false, 42, {}, {}])
-    .returns(5);
-});
-
 skipTest(
   "collectTheVowels() takes a string of many letters and returns a string containing those vowels in correct order",
   function () {
@@ -77,5 +60,9 @@ skipTest(
     check(containsNoRepeats).whenCalledWith("oo").returns(false);
     check(containsNoRepeats).whenCalledWith("dooog").returns(false);
     check(containsNoRepeats).whenCalledWith("iHaveRepeats").returns(false);
+    check(containsNoRepeats).whenCalledWith("anat").returns(false);
+    check(containsNoRepeats).whenCalledWith("cat").returns(true);
+    check(containsNoRepeats).whenCalledWith("abcde").returns(true);
+    check(containsNoRepeats).whenCalledWith("abcdea").returns(false);
   }
 );
