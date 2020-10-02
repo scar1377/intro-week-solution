@@ -66,7 +66,7 @@ runTest("can get the names of staff over 28", function () {
 });
 
 runTest("can sum numbers in a list using forEach()", function () {
-  const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15];
+  const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   let sum = 0; // <- don't change this line
 
   // Try using .forEach() for this task
@@ -74,7 +74,6 @@ runTest("can sum numbers in a list using forEach()", function () {
   USE_ARRAY_METHOD;
 
   check(sum).isEqualTo(120);
-  printGreenMessage("Pass ✔");
 });
 
 runTest("can find the index position of X", function () {
