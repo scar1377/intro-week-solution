@@ -9,7 +9,7 @@ runTest("accessObject() can access a property value using a key", function () {
 
 // checkIfPropertyExists() should take an object and a key and return a boolean that indicates whether or not the object has the given keys
 
-runTest("checkIfPropertyExists() checks if a property exists inside an object", function () {
+skipTest("checkIfPropertyExists() checks if a property exists inside an object", function () {
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "name").returns(true);
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(true);
   check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "pets").returns(false);

@@ -1,6 +1,6 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
-runTest("makeAllUpperCase() can get all the strings from an array", function () {
+runTest("makeAllUpperCase() can convert all strings to upper case", function () {
   check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
   check(makeAllUpperCase).whenCalledWith(["I", "love", "coding"]).returns(["I", "LOVE", "CODING"]);
 });
@@ -43,23 +43,6 @@ skipTest("deleteManyPasswords() deletes the password property for each user", fu
     .returns([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
 });
 
-skipTest("countTheObjects() counts all the objects in an array of multi-type items", function () {
-  check(countTheObjects)
-    .whenCalledWith([
-      { name: "Barry", password: "ilovetea" },
-      { name: "Sandeep", password: "ilovecoffee" },
-      { name: "Kavita", password: "ilovepie" },
-    ])
-    .returns(3);
-
-  check(countTheObjects).whenCalledWith([{}, {}, {}, {}, {}]).returns(5);
-  check(countTheObjects).whenCalledWith([1, {}, true, {}, {}, false, {}, {}]).returns(5);
-
-  check(countTheObjects)
-    .whenCalledWith([1, { cat: "Schnitzel" }, true, {}, {}, false, 42, {}, {}])
-    .returns(5);
-});
-
 skipTest(
   "collectTheVowels() takes a string of many letters and returns a string containing those vowels in correct order",
   function () {
@@ -71,11 +54,15 @@ skipTest(
 );
 
 skipTest(
-  "containsNoRepeats takes a string and returns true if each character only appears once in the string",
+  "containsNoRepeats() takes a string and returns true if each character only appears once in the string",
   function () {
     check(containsNoRepeats).whenCalledWith("dog").returns(true);
     check(containsNoRepeats).whenCalledWith("oo").returns(false);
     check(containsNoRepeats).whenCalledWith("dooog").returns(false);
     check(containsNoRepeats).whenCalledWith("iHaveRepeats").returns(false);
+    check(containsNoRepeats).whenCalledWith("anat").returns(false);
+    check(containsNoRepeats).whenCalledWith("cat").returns(true);
+    check(containsNoRepeats).whenCalledWith("abcde").returns(true);
+    check(containsNoRepeats).whenCalledWith("abcdea").returns(false);
   }
 );
