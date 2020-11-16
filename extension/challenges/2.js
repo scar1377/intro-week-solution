@@ -25,9 +25,10 @@ Implement a function that will take an array of time intervals for being awake/a
 */
 
 function encodeTimeIntervals(times) {
+  const minutesInHour = 60;
   return times
     .map((time, i) => {
-      const interval = i < times.length - 1 ? times[i + 1] - time : 60 - time;
+      const interval = i < times.length - 1 ? times[i + 1] - time : minutesInHour - time;
       return i % 2 === 0 ? ".".repeat(interval) : "#".repeat(interval);
     })
     .join("");
