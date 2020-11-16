@@ -162,6 +162,7 @@ try {
 
 // returns a sentence stating the character code for a given character
 // Look up ASCII online to get a better idea of what a character code is
+// Look up a useful JavaScript method for dealing with charCodes !
 
 console.log("getCharCode() will return a message stating the ascci code of a passed char");
 
@@ -169,6 +170,9 @@ try {
   check(getCharCode).whenCalledWith("A").returns("The ASCII character for A is 65");
   check(getCharCode).whenCalledWith("b").returns("The ASCII character for b is 98");
   check(getCharCode).whenCalledWith("z").returns("The ASCII character for z is 122");
+  check(getCharCode).whenCalledWith("k").returns("The ASCII character for z is 107");
+  check(getCharCode).whenCalledWith("!").returns("The ASCII character for z is 33");
+  check(getCharCode).whenCalledWith("M").returns("The ASCII character for z is 77");
 
   printGreenMessage("Pass ✔");
 } catch (error) {
