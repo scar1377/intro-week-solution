@@ -21,7 +21,7 @@ For each file you will need to:
 
 ## `challenges`
 
-Try and figure out what is going on in `poem.txt`
+Try and figure out what is going on in `poem.js`
 
 ## `explore`
 
