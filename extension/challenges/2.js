@@ -13,7 +13,7 @@ At minute 30, someone falls asleep
 At minute 55, someone wakes up
 
 These intervals can be represented by the following array:
-[0,5,25,30,55]
+[0, 5, 25, 30, 55]
 
 And now we can use a . character represents a minute spent awake
 And now we can use a # character represents a minute spent asleep
