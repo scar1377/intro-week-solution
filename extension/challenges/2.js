@@ -2,7 +2,7 @@ const { check, runTest, skipTest } = require("../../test-api");
 
 /*
 
-encodeTimeIntervals()
+encodeTimes()
 
 The statements below list the times someone spent awake / asleep over the course of a 60 minute period:
 
@@ -12,7 +12,7 @@ At minute 25, someone wakes up
 At minute 30, someone falls asleep
 At minute 55, someone wakes up
 
-These intervals can be represented by the following array:
+These times can be represented by the following array:
 [0, 5, 25, 30, 55]
 
 And now we can use a . character represents a minute spent awake
@@ -24,7 +24,7 @@ So we could represent the data above by a string in the following way:
 Implement a function that will take an array of time intervals for being awake/asleep over 60 mins and will generate a string encoding this information with a series of . and #
 */
 
-function encodeTimeIntervals(times) {
+function encodeTimes(times) {
   const minutesInHour = 60;
   return times
     .map((time, i) => {
@@ -35,16 +35,16 @@ function encodeTimeIntervals(times) {
 }
 
 runTest("can encode a series of times into a time string", function () {
-  check(encodeTimeIntervals)
+  check(encodeTimes)
     .whenCalledWith([0, 5, 25, 30, 55])
     .returns(".....####################.....#########################.....");
-  check(encodeTimeIntervals)
+  check(encodeTimes)
     .whenCalledWith([0, 40, 50])
     .returns("........................................##########..........");
-  check(encodeTimeIntervals)
+  check(encodeTimes)
     .whenCalledWith([0, 24, 29])
     .returns("........................#####...............................");
-  check(encodeTimeIntervals)
+  check(encodeTimes)
     .whenCalledWith([0, 45, 55])
     .returns(".............................................##########.....");
   // feel free to create your own assertions too with this challenge
