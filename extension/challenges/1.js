@@ -3,11 +3,21 @@ const { check, runTest, skipTest } = require("../../test-api");
 /*
 convertToBinary()
 
+
 Implement a function which takes any decimal number and converts it into binary format.
-The return value of the function should always be a string of "O"s and "1"s  representing the binary number
+The return value of the function should always be a string of "O"s and "1"s representing the binary number
 */
 
-function convertToBinary() {}
+function convertToBinary(num) {
+  if (num === 0) return "0";
+
+  let binaryNum = "";
+  while (num) {
+    binaryNum = (num % 2) + binaryNum;
+    num = Math.floor(num / 2);
+  }
+  return binaryNum;
+}
 
 runTest("can convert a single digit decimal number to binary", function () {
   check(convertToBinary).whenCalledWith(0).returns("0");
