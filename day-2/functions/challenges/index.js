@@ -170,9 +170,9 @@ try {
   check(getCharCode).whenCalledWith("A").returns("The ASCII character for A is 65");
   check(getCharCode).whenCalledWith("b").returns("The ASCII character for b is 98");
   check(getCharCode).whenCalledWith("z").returns("The ASCII character for z is 122");
-  check(getCharCode).whenCalledWith("k").returns("The ASCII character for z is 107");
-  check(getCharCode).whenCalledWith("!").returns("The ASCII character for z is 33");
-  check(getCharCode).whenCalledWith("M").returns("The ASCII character for z is 77");
+  check(getCharCode).whenCalledWith("k").returns("The ASCII character for k is 107");
+  check(getCharCode).whenCalledWith("!").returns("The ASCII character for ! is 33");
+  check(getCharCode).whenCalledWith("M").returns("The ASCII character for M is 77");
 
   printGreenMessage("Pass ✔");
 } catch (error) {
