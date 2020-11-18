@@ -1,98 +1,113 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
 runTest("Exercise 0", function () {
-  const pattern = YOUR_REGEX_HERE;
+  function testCat(str) {
+    return YOUR_REGEX_HERE.test(str);
+  }
+
   // Replace YOUR_REGEX_HERE with a regular expression
 
   // Your pattern should match a string containing the characters cat
 
-  check(pattern.test("cat")).isEqualTo(true);
-  check(pattern.test("asdcatas")).isEqualTo(true);
-  check(pattern.test("cat11234")).isEqualTo(true);
-  check(pattern.test("asdcat!")).isEqualTo(true);
-  check(pattern.test("36237cat")).isEqualTo(true);
+  check(testCat).whenCalledWith("cat").returns(true);
+  check(testCat).whenCalledWith("asdcatas").returns(true);
+  check(testCat).whenCalledWith("cat11234").returns(true);
+  check(testCat).whenCalledWith("asdcat!").returns(true);
+  check(testCat).whenCalledWith("36237cat").returns(true);
 
-  check(pattern.test("ca123")).isEqualTo(false);
-  check(pattern.test("atasdads")).isEqualTo(false);
-  check(pattern.test("caasdlkj")).isEqualTo(false);
-  check(pattern.test("12123ca234")).isEqualTo(false);
+  check(testCat).whenCalledWith("ca123").returns(false);
+  check(testCat).whenCalledWith("atasdads").returns(false);
+  check(testCat).whenCalledWith("caasdlkj").returns(false);
+  check(testCat).whenCalledWith("12123ca234").returns(false);
 });
 
 skipTest("Exercise 1", function () {
-  const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
   // Your pattern should match a string containing at least 5 of the digits from 1 to 9 only
 
-  check(pattern.test("12345")).isEqualTo(true);
-  check(pattern.test("56783")).isEqualTo(true);
-  check(pattern.test("98764")).isEqualTo(true);
-  check(pattern.test("13837")).isEqualTo(true);
-  check(pattern.test("45613837")).isEqualTo(true);
-  check(pattern.test("abc13837def")).isEqualTo(true);
-  check(pattern.test("00abcg77777")).isEqualTo(true);
-  check(pattern.test("13837!f")).isEqualTo(true);
+  function testAtLeast5Digits(str) {
+    return YOUR_REGEX_HERE.test(str);
+  }
 
-  check(pattern.test("123")).isEqualTo(false);
-  check(pattern.test("12308")).isEqualTo(false);
-  check(pattern.test("1234")).isEqualTo(false);
-  check(pattern.test("addc6826asd")).isEqualTo(false);
+  check(testAtLeast5Digits).whenCalledWith("12345").returns(true);
+  check(testAtLeast5Digits).whenCalledWith("56783").returns(true);
+  check(testAtLeast5Digits).whenCalledWith("98764").returns(true);
+  check(testAtLeast5Digits).whenCalledWith("13837").returns(true);
+  check(testAtLeast5Digits).whenCalledWith("45613837").returns(true);
+  check(testAtLeast5Digits).whenCalledWith("abc13837def").returns(true);
+  check(testAtLeast5Digits).whenCalledWith("00abcg77777").returns(true);
+  check(testAtLeast5Digits).whenCalledWith("13837!f").returns(true);
+
+  check(testAtLeast5Digits).whenCalledWith("123").returns(false);
+  check(testAtLeast5Digits).whenCalledWith("12308").returns(false);
+  check(testAtLeast5Digits).whenCalledWith("1234").returns(false);
+  check(testAtLeast5Digits).whenCalledWith("addc6826asd").returns(false);
 });
 
 skipTest("Exercise 2", function () {
-  const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
   // Your pattern should match more than 1 ! at the **beginning of a string**
   // You should look up regex anchors for this exercise !
 
-  check(pattern.test("!!!sdlasjdlajsd")).isEqualTo(true);
-  check(pattern.test("!!askjaa")).isEqualTo(true);
-  check(pattern.test("!!!!!adjaksljd")).isEqualTo(true);
-  check(pattern.test("!!!32749anks")).isEqualTo(true);
-  check(pattern.test("!abc")).isEqualTo(true);
+  function testStartsWithExclaimMarks(str) {
+    return YOUR_REGEX_HERE.test(str);
+  }
 
-  check(pattern.test("adssdk!!!")).isEqualTo(false);
-  check(pattern.test("asdk;alk!!!!")).isEqualTo(false);
-  check(pattern.test("errui!!!!")).isEqualTo(false);
-  check(pattern.test("cjljad!!!!!!")).isEqualTo(false);
+  check(testStartsWithExclaimMarks).whenCalledWith("!!!sdlasjdlajsd").returns(true);
+  check(testStartsWithExclaimMarks).whenCalledWith("!!askjaa").returns(true);
+  check(testStartsWithExclaimMarks).whenCalledWith("!!!!!adjaksljd").returns(true);
+  check(testStartsWithExclaimMarks).whenCalledWith("!!!32749anks").returns(true);
+  check(testStartsWithExclaimMarks).whenCalledWith("!abc").returns(true);
+
+  check(testStartsWithExclaimMarks).whenCalledWith("adssdk!!!").returns(false);
+  check(testStartsWithExclaimMarks).whenCalledWith("asdk;alk!!!!").returns(false);
+  check(testStartsWithExclaimMarks).whenCalledWith("errui!!!!").returns(false);
+  check(testStartsWithExclaimMarks).whenCalledWith("cjljad!!!!!!").returns(false);
 });
 
 skipTest("Exercise 3", function () {
-  const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
   // Your pattern should match exactly 6 of a, b or c
   // You should look up regex anchors for this exercise !
 
-  check(pattern.test("abcabc")).isEqualTo(true);
-  check(pattern.test("cbabac")).isEqualTo(true);
-  check(pattern.test("cacaca")).isEqualTo(true);
-  check(pattern.test("bbbcca")).isEqualTo(true);
+  function testExact6ABCs(str) {
+    return YOUR_REGEX_HERE.test(str);
+  }
 
-  check(pattern.test("xyzxyz")).isEqualTo(false);
-  check(pattern.test("pqrsqp")).isEqualTo(false);
-  check(pattern.test("pprrss")).isEqualTo(false);
-  check(pattern.test("vsxprh")).isEqualTo(false);
-  check(pattern.test("abcabca")).isEqualTo(false);
-  check(pattern.test("abca")).isEqualTo(false);
+  check(testExact6ABCs).whenCalledWith("abcabc").returns(true);
+  check(testExact6ABCs).whenCalledWith("cbabac").returns(true);
+  check(testExact6ABCs).whenCalledWith("cacaca").returns(true);
+  check(testExact6ABCs).whenCalledWith("bbbcca").returns(true);
+
+  check(testExact6ABCs).whenCalledWith("xyzxyz").returns(false);
+  check(testExact6ABCs).whenCalledWith("pqrsqp").returns(false);
+  check(testExact6ABCs).whenCalledWith("pprrss").returns(false);
+  check(testExact6ABCs).whenCalledWith("vsxprh").returns(false);
+  check(testExact6ABCs).whenCalledWith("abcabca").returns(false);
+  check(testExact6ABCs).whenCalledWith("abca").returns(false);
 });
 
 skipTest("Exercise 4", function () {
-  const pattern = YOUR_REGEX_HERE;
   // Replace YOUR_REGEX_HERE with a regular expression
 
   // Your pattern should match any string containing exactly 2 consecutive letter ls
 
-  check(pattern.test("hello")).isEqualTo(true);
-  check(pattern.test("bells")).isEqualTo(true);
-  check(pattern.test("bellows")).isEqualTo(true);
-  check(pattern.test("aaaallasdows")).isEqualTo(true);
+  function testExact2ConsecutivesLs(str) {
+    return YOUR_REGEX_HERE.test(str);
+  }
 
-  check(pattern.test("mile")).isEqualTo(false);
-  check(pattern.test("fly")).isEqualTo(false);
-  check(pattern.test("wellll")).isEqualTo(false);
-  check(pattern.test("mitchelllloyd")).isEqualTo(false);
+  check(testExact2ConsecutivesLs).whenCalledWith("hello").returns(true);
+  check(testExact2ConsecutivesLs).whenCalledWith("bells").returns(true);
+  check(testExact2ConsecutivesLs).whenCalledWith("bellows").returns(true);
+  check(testExact2ConsecutivesLs).whenCalledWith("aaaallasdows").returns(true);
+
+  check(testExact2ConsecutivesLs).whenCalledWith("mile").returns(false);
+  check(testExact2ConsecutivesLs).whenCalledWith("fly").returns(false);
+  check(testExact2ConsecutivesLs).whenCalledWith("wellll").returns(false);
+  check(testExact2ConsecutivesLs).whenCalledWith("mitchelllloyd").returns(false);
 });
 
 var YOUR_REGEX_HERE;
