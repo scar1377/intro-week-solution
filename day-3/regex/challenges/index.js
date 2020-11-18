@@ -27,3 +27,39 @@ runTest("isValidSortCode() should check is a sort code string is in the correct 
   check(isValidSortCode).whenCalledWith("a8-78-10").returns(false);
   check(isValidSortCode).whenCalledWith("45_78_10").returns(false);
 });
+
+// Declare and implement a function isProfessionalEmail
+// Returns true if the email text is professional (does not end in a kiss - 'x')
+
+runTest("isProfessionalEmail() counts the vowels in a string", function () {
+  check(isProfessionalEmail).whenCalledWith("x").returns(false);
+  check(isProfessionalEmail).whenCalledWith("Dear Sir/Madam").returns(true);
+  check(isProfessionalEmail).whenCalledWith("Dear Alex, How are you?").returns(true);
+  check(isProfessionalEmail).whenCalledWith("i miss u xx").returns(false);
+  check(isProfessionalEmail).whenCalledWith("X_X").returns(false);
+});
+
+// Declare and implement a function countVowels
+// Returns a count of the vowels in a string.
+
+runTest("countVowels() counts the vowels in a string", function () {
+  check(countVowels).whenCalledWith("").returns(0);
+  check(countVowels).whenCalledWith("bcd").returns(0);
+  check(countVowels).whenCalledWith("a").returns(1);
+  check(countVowels).whenCalledWith("abc").returns(1);
+  check(countVowels).whenCalledWith("AEbiO").returns(4);
+  check(countVowels).whenCalledWith("aaeee!!!").returns(5);
+});
+
+// declare and implement a function called sumNums
+// returns a sum of all numbers in a string
+// consecutive digits should be taken as numbers: i.e. "12" = 12, not 3
+// if there are no numbers it should return 0
+
+runTest("sumNums() counts the vowels in a string", function () {
+  check(sumNums).whenCalledWith("hello").returns(0);
+  check(sumNums).whenCalledWith("1").returns(1);
+  check(sumNums).whenCalledWith("12").returns(12);
+  check(sumNums).whenCalledWith("1hello2").returns(3);
+  check(sumNums).whenCalledWith("12hiya!3").returns(15);
+});
