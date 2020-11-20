@@ -1,25 +1,25 @@
-function check(func) {
-  const methods = {
-    whenCalledWith(...args) {
-      this.args = args;
-      return this;
-    },
-    isEqualTo(expected) {
-      const { actual } = this;
+function whenCalledWith(...args) {
+  this.args = args;
+  return this;
+}
 
-      if (!checkDeeplyEqual(actual, expected))
-        throw new Error(
-          `${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`
-        );
-    },
-    returns(expected) {
-      const actual = this.func(...this.args);
-      if (!checkDeeplyEqual(actual, expected)) throw new Error(createFeedback(this.func.name, actual, expected));
-    },
-  };
+function isEqualTo(expected) {
+  const { actual } = this;
+
+  if (!checkDeeplyEqual(actual, expected))
+    throw new Error(`${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`);
+}
+
+function returns(expected) {
+  const actual = this.func(...this.args);
+  if (!checkDeeplyEqual(actual, expected)) throw new Error(createFeedback(this.func.name, actual, expected));
+}
+
+function check(value) {
+  const methods = { whenCalledWith, isEqualTo, returns };
   const obj = Object.create(methods);
-  if (typeof func === "function") obj.func = func;
-  else obj.actual = func;
+  if (typeof value === "function") obj.func = value;
+  else obj.actual = value;
   return obj;
 }
 
