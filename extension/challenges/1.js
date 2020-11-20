@@ -8,16 +8,7 @@ Implement a function which takes any decimal number and converts it into binary 
 The return value of the function should always be a string of "O"s and "1"s representing the binary number
 */
 
-function convertToBinary(num) {
-  if (num === 0) return "0";
-
-  let binaryNum = "";
-  while (num) {
-    binaryNum = (num % 2) + binaryNum;
-    num = Math.floor(num / 2);
-  }
-  return binaryNum;
-}
+function convertToBinary() {}
 
 runTest("can convert a single digit decimal number to binary", function () {
   check(convertToBinary).whenCalledWith(0).returns("0");
@@ -30,7 +21,7 @@ runTest("can convert a single digit decimal number to binary", function () {
   check(convertToBinary).whenCalledWith(7).returns("111");
 });
 
-runTest("can convert a multiple digit decimal number to binary", function () {
+skipTest("can convert a multiple digit decimal number to binary", function () {
   check(convertToBinary).whenCalledWith(10).returns("1010");
   check(convertToBinary).whenCalledWith(23).returns("10111");
   check(convertToBinary).whenCalledWith(55).returns("110111");

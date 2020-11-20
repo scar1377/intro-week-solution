@@ -85,10 +85,14 @@ try {
 // returns false otherwise
 // you can complete this problem without resorting to if statements
 
-console.log("isFromThe60s() checks if two values are the same");
+console.log("isFromThe60s() checks if a number is within 1960 to 1969 (inclusive)");
 try {
   check(isFromThe60s).whenCalledWith(1962).returns(true);
   check(isFromThe60s).whenCalledWith(1965).returns(true);
+  check(isFromThe60s).whenCalledWith(1970).returns(false);
+  check(isFromThe60s).whenCalledWith(1960).returns(true);
+  check(isFromThe60s).whenCalledWith(1959).returns(false);
+  check(isFromThe60s).whenCalledWith(1901).returns(false);
   check(isFromThe60s).whenCalledWith(1990).returns(false);
 
   printGreenMessage("Pass ✔");
@@ -170,9 +174,9 @@ try {
   check(getCharCode).whenCalledWith("A").returns("The ASCII character for A is 65");
   check(getCharCode).whenCalledWith("b").returns("The ASCII character for b is 98");
   check(getCharCode).whenCalledWith("z").returns("The ASCII character for z is 122");
-  check(getCharCode).whenCalledWith("k").returns("The ASCII character for z is 107");
-  check(getCharCode).whenCalledWith("!").returns("The ASCII character for z is 33");
-  check(getCharCode).whenCalledWith("M").returns("The ASCII character for z is 77");
+  check(getCharCode).whenCalledWith("k").returns("The ASCII character for k is 107");
+  check(getCharCode).whenCalledWith("!").returns("The ASCII character for ! is 33");
+  check(getCharCode).whenCalledWith("M").returns("The ASCII character for M is 77");
 
   printGreenMessage("Pass ✔");
 } catch (error) {
