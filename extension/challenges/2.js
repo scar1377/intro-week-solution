@@ -24,15 +24,7 @@ So we could represent the data above by a string in the following way:
 Implement a function that will take an array of time intervals for being awake/asleep over 60 mins and will generate a string encoding this information with a series of . and #
 */
 
-function encodeTimes(times) {
-  const minutesInHour = 60;
-  return times
-    .map((time, i) => {
-      const interval = i < times.length - 1 ? times[i + 1] - time : minutesInHour - time;
-      return i % 2 === 0 ? ".".repeat(interval) : "#".repeat(interval);
-    })
-    .join("");
-}
+function encodeTimes(times) {}
 
 runTest("can encode a series of times into a time string", function () {
   check(encodeTimes)
