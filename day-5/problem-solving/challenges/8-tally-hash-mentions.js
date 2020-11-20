@@ -3,9 +3,7 @@ const { check, runTest, skipTest } = require("../../../test-api");
 console.log("tallyHashtagsAndMentions");
 
 runTest("returns an object", () => {
-  check(typeof tallyHashtagsAndMentions)
-    .whenCalledWith("")
-    .returns("object");
+  check(typeof tallyHashtagsAndMentions()).isEqualTo("object");
 });
 runTest("returns {hashtags: 0, mentions: 0} if it finds none", () => {
   check(tallyHashtagsAndMentions)
