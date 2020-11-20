@@ -6,6 +6,8 @@ convertToBinary()
 
 Implement a function which takes any decimal number and converts it into binary format.
 The return value of the function should always be a string of "O"s and "1"s representing the binary number
+
+Do not use .toString(2) for this problem - as this is the functionality you're trying to replicate :)
 */
 
 function convertToBinary() {}
