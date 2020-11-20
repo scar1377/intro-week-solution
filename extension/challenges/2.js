@@ -1,7 +1,6 @@
 const { check, runTest, skipTest } = require("../../test-api");
 
 /*
-
 encodeTimes()
 
 The statements below list the times someone spent awake / asleep over the course of a 60 minute period:
