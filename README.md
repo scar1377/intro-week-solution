@@ -21,5 +21,3 @@ Not every topic will have all of these sections: sometimes there may only be an 
 ## Notes
 
 🔑 - this symbol will be used to indicate a **key concept** or definition
-
-Each of these resources serves a specific purpose - practice is there for

@@ -2,7 +2,7 @@
 
 ## Computers
 
-Computers are machines that can perform calculations and operations on data. The development of computers since the 1930s has taken off at an explosive pace and today computers are ubiquitous throughtout the modern world. Computers are made up of many different physical components such as monitors, keyboards and chips that we refer to together as **hardware**. **Software** is the set of instructionswritten to be processed and executed by the hardware that makes up a computer.
+Computers are machines that can perform calculations and operations on data. The development of computers since the 1930s has taken off at an explosive pace and today computers are ubiquitous throughtout the modern world. Computers are made up of many different physical components such as monitors, keyboards and chips that we refer to together as **hardware**. **Software** is the set of instructions written to be processed and executed by the hardware that makes up a computer.
 
 ---
 
@@ -10,7 +10,7 @@ Computers are machines that can perform calculations and operations on data. The
 
 Modern computers such as a laptop often have to run several applications at the same time. A user could be browsing the internet whilst listening to music at the same time on 2 different applications. Each of these applications are made up of software which will require access to the physical resources of the computer in order to run. In addition, the various pieces of hardware used to make up your computer are manifold and complex - it would take a very long time indeed in order to fully comprehend the complexity of the hardware and the ways in which they interact with each other.
 
-**Operating systems** are essentially master programs that manage and co-ordinate the different software and how they get access to the physical hardware of a computer. Without the use of an operating system programmers would have to directly interface with complicated hardware which would take up a lot of time. Operating systems allow people to build software far more efficiently by abstracting away the complexities of the hardware on a machine.
+**Operating systems** are essentially master programs that manage and co-ordinate the different software and how they get access to the physical hardware of a computer. Without the use of an operating system, programmers would have to directly interface with complicated hardware which would take up a lot of time. Operating systems allow people to build software far more efficiently by abstracting away the complexities of the hardware on a machine.
 
 ### Unix
 
