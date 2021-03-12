@@ -2,4 +2,4 @@
 
 ## git-it
 
-Install git-it and start working through the exercises in this app.
+Install [git-it](https://github.com/jlord/git-it-electron/releases) and start working through the exercises in this app.

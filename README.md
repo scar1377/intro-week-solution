@@ -10,7 +10,7 @@ Not every topic will have all of these sections: sometimes there may only be an 
 
 - `exercises` 🖊️ - these tasks are designed for you to practice some of the essential skills in a particular topic
 
-- `questions` ❓ - these tasks are designed to make you think critically about a given concept. They may employ a Predict observe explain format requiring you to think or comtemplate a particular scenario and explain what will happen
+- `questions` ❓ - these tasks are designed to make you think critically about a given concept. They may employ a Predict observe explain format requiring you to think or contemplate a particular scenario and explain what will happen
 
 - `challenges` 🧠 - tasks in here are designed to make you practice building/implementing functions that must fulfil certain behaviour. They are designed to encourage you to think and problem solve independently and also make sense of instructions.
 
@@ -19,7 +19,3 @@ Not every topic will have all of these sections: sometimes there may only be an 
 ---
 
 ## Notes
-
-🔑 - this symbol will be used to indicate a **key concept** or definition
-
-Each of these resources serves a specific purpose - practice is there for

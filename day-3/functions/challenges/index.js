@@ -85,10 +85,14 @@ try {
 // returns false otherwise
 // you can complete this problem without resorting to if statements
 
-console.log("isFromThe60s() checks if two values are the same");
+console.log("isFromThe60s() checks if a number is within 1960 to 1969 (inclusive)");
 try {
   check(isFromThe60s).whenCalledWith(1962).returns(true);
   check(isFromThe60s).whenCalledWith(1965).returns(true);
+  check(isFromThe60s).whenCalledWith(1970).returns(false);
+  check(isFromThe60s).whenCalledWith(1960).returns(true);
+  check(isFromThe60s).whenCalledWith(1959).returns(false);
+  check(isFromThe60s).whenCalledWith(1901).returns(false);
   check(isFromThe60s).whenCalledWith(1990).returns(false);
 
   printGreenMessage("Pass ✔");
