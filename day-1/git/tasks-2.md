@@ -12,8 +12,6 @@ Day 1 - Git Tasks - Monday afternoon
 8.  Now run git remote -v - it should show the address of your remote repository on Github.
 9.  Try opening up remote-intro-week with VSCode - ensure you’re are still in the remote-intro-week directory and then run the command code . . A VSCode window should appear where you can inspect all of your files and directories. :smile: If code . doesn’t work then try looking here to fix it
 
-If you finish all the steps above, then you can continue working through the Git-it sections up to and including the section Forks and Clones
-
 If you manage to get through all of the above then you can check out this in the meantime:
 
 - Have a read of this :point_right: What is Javascript ? - mdn article - some good background before your next lecture
