@@ -1,6 +1,6 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
-function isBiggerThan10() {
+function isBiggerThan10(num) {
   // checks if an number is strictly bigger than 10 and returns a message accordingly
 }
 
@@ -13,7 +13,7 @@ runTest("isBiggerThan10() returns a message indicating if a number is bigger tha
   check(isBiggerThan10).whenCalledWith(100).returns("Number 100 is more than 10");
 });
 
-function isFalsy() {
+function isFalsy(value) {
   // checks if a value is falsy and returns true if it is - returns false otherwise
 }
 
@@ -26,8 +26,8 @@ skipTest("isFalsy() returns true if a value is falsy and false if it is truthy",
   check(isFalsy).whenCalledWith(null).returns(true);
 });
 
-function readTrafficLight() {
-  // this function should check if the "traffic light" is red, green or amber and return a corresponding message
+function readTrafficLight(lightColour) {
+  // this function should check if the "traffic light colour" is red, green or amber and return a corresponding message
 }
 
 skipTest("readTrafficLight() should print a message according to the different colour passed in", function () {
@@ -41,7 +41,7 @@ skipTest("readTrafficLight() should print a message according to the different c
   check(readTrafficLight).whenCalledWith("RED").returns("STOP!");
 });
 
-function isMultipleOf6() {
+function isMultipleOf6(num) {
   // isMultipleOf6 check if a passed value is a multiple of 6
 }
 
@@ -55,7 +55,7 @@ skipTest("isMultipleOf6() should check if a number is divisible by 6", function 
   check(isMultipleOf6).whenCalledWith(61).returns(false);
 });
 
-function checkInfinitive() {
+function checkInfinitive(word) {
   // checkInfinitive() will check if a French word is an infinitive French verb
   // A French infinitive verb is a word that ends with either "re", "ir" or "er"
 }
@@ -76,7 +76,7 @@ skipTest("checkInfinitive() checks if a french word is an infinitive", function 
   check(checkInfinitive).whenCalledWith("allons").returns(false);
 });
 
-function checkGame() {
+function checkGame(diceRoll, coinToss) {
   // checkGame() should take a value from a diceRoll ( a number from 1 to 6 )
   // and should also take the result from a coinToss (either "H" for heads or "T" for tails)
   // the function should return true if the player wins the game - getting a dice roll of 3 or higher AND a coinToss of 'H'
@@ -91,7 +91,7 @@ skipTest("checkGame() should check if a user was won the game", function () {
   check(checkGame).whenCalledWith(6, "T").returns(false);
 });
 
-function checkBatteryLevel() {
+function checkBatteryLevel(batteryLevel) {
   // if the battery level is less than or equal to 5%, then it should return a string stating:
   // "Warning - battery level low: <number-here>%, please charge your device"
   // if the battery level is between 5 and 99% then it should return a string stating:
@@ -115,7 +115,7 @@ skipTest("checkBatteryLevel() should return a message with info about the batter
   check(checkBatteryLevel).whenCalledWith("1").returns("Warning - battery level low: 1%, please charge your device");
 });
 
-function getOrdinalSuffix() {
+function getOrdinalSuffix(num) {
   // an ordinal suffix are the letters we put after a number:
   // E.g. "nd" is an ordinal suffix as we'd write 2nd
   // E.g. "st" is an ordinal suffix as we'd write 1st etc
