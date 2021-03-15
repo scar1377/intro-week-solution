@@ -14,5 +14,5 @@ Day 1 - Git Tasks - Monday afternoon
 
 If you manage to get through all of the above then you can check out this in the meantime:
 
-- Have a read of this :point_right: What is Javascript ? - mdn article - some good background before your next lecture
+- Have a read of this :point_right: What is Javascript ? - mdn article - some good background before your next lecture: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript
 - And then extend your command line skills with this repo :point_right: https://github.com/northcoders/word-play ( you can fork and clone this repo into the northcoders/intro-week directory
