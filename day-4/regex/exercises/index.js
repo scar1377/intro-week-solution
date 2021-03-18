@@ -48,7 +48,7 @@ skipTest("Exercise 1", function () {
 skipTest("Exercise 2", function () {
   // Replace YOUR_REGEX_HERE with a regular expression
 
-  // Your pattern should match more than 1 ! at the **beginning of a string**
+  // Your pattern should match one or more ! at the **beginning of a string**
   // You should look up regex anchors for this exercise !
 
   function testStartsWithExclaimMarks(str) {
