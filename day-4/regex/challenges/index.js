@@ -56,7 +56,7 @@ runTest("countVowels() counts the vowels in a string", function () {
 // consecutive digits should be taken as numbers: i.e. "12" = 12, not 3
 // if there are no numbers it should return 0
 
-runTest("sumNums() counts the vowels in a string", function () {
+runTest("sumNums() sums the numbers in a string", function () {
   check(sumNums).whenCalledWith("hello").returns(0);
   check(sumNums).whenCalledWith("1").returns(1);
   check(sumNums).whenCalledWith("12").returns(12);
