@@ -19,6 +19,8 @@ For each variable below, look at the relevant file in the `examples` directory a
 
 ## Section 2
 
+Still running `index.js` with node, attempt the following:
+
 1. Using only `somethingFromFile2` (_not_ file-1!), get `Vel` printed to the console
 
 2. Using only `somethingFromFile3`, get `Hello` printed to the console
