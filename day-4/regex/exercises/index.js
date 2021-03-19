@@ -93,7 +93,8 @@ skipTest("Exercise 3", function () {
 skipTest("Exercise 4", function () {
   // Replace YOUR_REGEX_HERE with a regular expression
 
-  // Your pattern should match any string containing exactly 2 consecutive letter ls
+  // Your pattern should match any string containing *exactly* 2 consecutive letter l's
+  // n.b. exactly 2 means that 3 or more consecutive l's are not allowed.
 
   function testExact2ConsecutivesLs(str) {
     return YOUR_REGEX_HERE.test(str);
