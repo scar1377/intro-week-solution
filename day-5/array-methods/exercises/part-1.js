@@ -37,7 +37,7 @@ skipTest("can get the multiples of 3", function () {
 });
 
 skipTest("can get all the words ending in er", function () {
-  const words = ["boulder", "wonder", "hello", "hi", "super", "something", "whoa", "booo"];
+  const words = ["boulder", "wonder", "hello", "hi", "super", "something", "whoa", "booo", "horror"];
 
   const wordsEndingInEr = USE_ARRAY_METHOD;
 
