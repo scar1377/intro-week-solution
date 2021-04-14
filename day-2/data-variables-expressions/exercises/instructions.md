@@ -33,9 +33,6 @@ For this task you should use the variables you created in Task 1. You should you
 
 - Create a variable called `fullName` which is a string in the form: `"<firstName> <lastName>"`
 
-- Create a variable called `birthdayInfo` which is a string in the following form: `"My name is <fullName> and I was born in <yearOfBirth>"`.
-  You can calculate `yearOfBirth` using your `age` variable.
-
 - Create a variable called `petInfo` which is `"I have pets"` or `"I don't have pets"` depending on the value of your `hasPets` variable.
   You should look into [ternary operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) for this task. You should try changing the value of the `hasPets` boolean in order to observe a change in the value of the `petInfo` variable.
 
