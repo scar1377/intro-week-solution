@@ -1,5 +1,14 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
+/*
+Instructions
+
+For each of these tests replace the variable FILL_ME_IN with a value to make the test pass.
+Each of the checks expects the value in the left hand brackets to evaluate to the same as the right hand brackets.
+
+e.g.  check(FILL_ME_IN).isEqualTo(2 + 2) becomes -> check(4).isEqualTo(2 + 2)
+*/
+
 runTest("checking multiTypeArray", function () {
   const multiTypeArray = ["I am a string", 42, true, [1, 2, 3]];
 

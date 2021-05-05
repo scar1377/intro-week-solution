@@ -1,5 +1,11 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
+/*
+  For these challenges complete the body of each function in turn.
+  Run this file with node to run the tests and check your function works correctly.
+  When you're ready to move on to the next function replace skipTests with runTests
+*/
+
 function isBiggerThan10(num) {
   // checks if an number is strictly bigger than 10 and returns a message accordingly
 }
@@ -17,6 +23,7 @@ function isFalsy(value) {
   // checks if a value is falsy and returns true if it is - returns false otherwise
 }
 
+// Replace skipTest with runTest here to see the results of the test
 skipTest("isFalsy() returns true if a value is falsy and false if it is truthy", function () {
   check(isFalsy).whenCalledWith(false).returns(true);
   check(isFalsy).whenCalledWith("").returns(true);
