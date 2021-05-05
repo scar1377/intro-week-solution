@@ -24,6 +24,7 @@ skipTest("isFalsy() returns true if a value is falsy and false if it is truthy",
   check(isFalsy).whenCalledWith(NaN).returns(true);
   check(isFalsy).whenCalledWith(undefined).returns(true);
   check(isFalsy).whenCalledWith(null).returns(true);
+  check(isFalsy).whenCalledWith(true).returns(false);
 });
 
 function readTrafficLight(lightColour) {
