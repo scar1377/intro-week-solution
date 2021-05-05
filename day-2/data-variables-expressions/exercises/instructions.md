@@ -24,7 +24,7 @@ You need to think carefully about the data types you will use for each variable
 
 ## Task 2 - Creating more expressions
 
-For this task you should use the variables you created in Task 1. You should your variables from the previous section in this task.
+For this task you should use the variables you created in Task 1. You should use your variables from the previous section in this task.
 
 - Create a variable called `message` which is a string in the following form: `"Hello my name is <firstName> <lastName> and I'm <age> years old"`.
   You should look into [template literals](https://javascript.info/types#string) for this task.
