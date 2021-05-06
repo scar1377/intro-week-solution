@@ -1,5 +1,7 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 runTest("get the multiples of 10 from 10 to 100", function () {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

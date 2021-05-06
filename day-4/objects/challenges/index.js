@@ -1,5 +1,6 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
 // accessObject() should take an object and a key and return the object's property value
 
 runTest("accessObject() can access a property value using a key", function () {

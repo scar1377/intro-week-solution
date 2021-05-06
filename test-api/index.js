@@ -1,3 +1,5 @@
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 function whenCalledWith(...args) {
   this.args = args;
   return this;

@@ -6,6 +6,7 @@ runTest("Task 1", function () {
   check(FILL_ME_IN).isEqualTo(typeof myObject);
 });
 
+// once you have passed the test above, change skipTest below to runTest so you are able to run the next test
 skipTest("Task 2", function () {
   const father = {
     firstName: "Michael",
@@ -19,6 +20,7 @@ skipTest("Task 2", function () {
   check(FILL_ME_IN).isEqualTo(father.age);
 });
 
+// once you have passed the test above, change skipTest below to runTest so you are able to run the next test
 skipTest("Task 3", function () {
   const son = {};
   son.name = "George Michael";
@@ -31,6 +33,7 @@ skipTest("Task 3", function () {
   check(FILL_ME_IN).isEqualTo(son.jobs[1][5]);
 });
 
+// once you have passed the test above, change skipTest below to runTest so you are able to run the next test
 skipTest("Task 4", function () {
   const starWars = {
     episode4: "A New Hope",
@@ -44,6 +47,7 @@ skipTest("Task 4", function () {
   check(starWars["episode7"]).isEqualTo(FILL_ME_IN);
 });
 
+// once you have passed the test above, change skipTest below to runTest so you are able to run the next test
 skipTest("Task 5", function () {
   const brotherInLaw = {
     name: "Tobias",
@@ -59,6 +63,7 @@ skipTest("Task 5", function () {
   check(FILL_ME_IN).isEqualTo(brotherInLaw.job);
 });
 
+// once you have passed the test above, change skipTest below to runTest so you are able to run the next test
 skipTest("Task 6", function () {
   const bluthFamily = {
     father: {
