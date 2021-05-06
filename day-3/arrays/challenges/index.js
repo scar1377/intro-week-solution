@@ -1,6 +1,7 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
 // Declare each of the functions below and run their tests - and then get those tests passing :)
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
 
 // getLastItem() should return the last item from an array
 
@@ -51,7 +52,7 @@ skipTest("isEmptyArray() checks if an array is empty", function () {
 });
 
 // howManyArguments() should return the number of arguments passed into the function
-// HINT: For this one you should look at notes.md
+// HINT: For this one you should look up the 'spread operator' online - MDN Web Docs and devdocs are excellent sources of JavaScript documentation
 
 skipTest("howManyArguments() returns the number of items passed on a single call", function () {
   check(howManyArguments).whenCalledWith("a", "b", "c").returns(3);
@@ -60,7 +61,7 @@ skipTest("howManyArguments() returns the number of items passed on a single call
   check(howManyArguments).whenCalledWith("the", "meaning", "of", "life", "is", 42).returns(6);
 });
 
-// updatePosition() takes an array representing coordinates - an x position and a y position - and a direction. It shouuld return a new pair of coordinates with the coordinates array updated by moving either 1 unit in a particular direction.
+// updatePosition() takes an array representing coordinates - an x position and a y position - and a direction. It should return a new pair of coordinates with the coordinates array updated by moving either 1 unit in a particular direction.
 
 // If direction is up it should move 1 unit up (+ 1 in the y direction)
 // If the direction is down it should move 1 unit down (- 1 in the y direction)

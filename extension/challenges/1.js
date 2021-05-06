@@ -10,6 +10,8 @@ The return value of the function should always be a string of "O"s and "1"s repr
 Do not use .toString(2) for this problem - as this is the functionality you're trying to replicate :)
 */
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 function convertToBinary() {}
 
 runTest("can convert a single digit decimal number to binary", function () {

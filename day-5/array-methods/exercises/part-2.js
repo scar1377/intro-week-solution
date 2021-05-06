@@ -1,5 +1,7 @@
 const { check, printGreenMessage, printRedMessage, runTest, skipTest } = require("../../../test-api");
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 runTest("makeAllUpperCase() can get all the strings from an array", () => {
   check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
   check(makeAllUpperCase).whenCalledWith(["I", "love", "coding"]).returns(["I", "LOVE", "CODING"]);

@@ -9,6 +9,8 @@ The characters should be in alphabetical order by default.
 You can assume that the only operation connecting the terms is addition.
 */
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 function collectLikeTerms() {}
 
 runTest("returns a letter when passed an expression with a single letter", function () {

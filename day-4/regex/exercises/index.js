@@ -1,5 +1,7 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 runTest("Exercise 0", function () {
   function testCat(str) {
     return YOUR_REGEX_HERE.test(str);

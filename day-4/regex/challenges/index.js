@@ -3,6 +3,8 @@ const { check, runTest, skipTest } = require("../../../test-api");
 // You should look up Regex methods to help you in these challenges :)
 // Try this link -> https://javascript.info/regexp-introduction#regular-expressions
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 // Declare a function extractCode that extracts a number from a string
 // Use the assertions below to help guide you in your logic
 

@@ -1,5 +1,7 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
+// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+
 function flipBooleans() {
   /*
     This function takes an array of booleans and should return an array of the opposite booleans.
@@ -220,6 +222,7 @@ function pluraliseKeys() {
 }
 console.log("\n");
 console.log("pluraliseKeys()");
+
 skipTest("returns a new object", function () {
   const input = {
     name: "Sam's Pet Shop",
