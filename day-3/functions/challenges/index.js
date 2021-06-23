@@ -168,7 +168,7 @@ try {
 // Look up ASCII online to get a better idea of what a character code is
 // Look up a useful JavaScript method for dealing with charCodes !
 
-console.log("getCharCode() will return a message stating the ascci code of a passed char");
+console.log("getCharCode() will return a message stating the ascii code of a passed char");
 
 try {
   check(getCharCode).whenCalledWith("A").returns("The ASCII character for A is 65");

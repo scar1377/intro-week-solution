@@ -5,7 +5,7 @@ const tutorsAndIndex = [];
 
 // your loop here...
 
-runTest("can add an index and a tutors'name into an array", function () {
+runTest("can add an index and a tutor's name into an array", function () {
   check(tutorsAndIndex).isEqualTo([
     "0 : Anat",
     "1 : Paul C",
