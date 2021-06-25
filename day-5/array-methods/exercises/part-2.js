@@ -61,7 +61,7 @@ skipTest("getEmptyTills() gets all the tills that are empty", () => {
   const tills = [
     {
       name: "John",
-      checkout: ["bread", "eggs", "milk", "sauagaes"],
+      checkout: ["bread", "eggs", "milk", "sausages"],
     },
     {
       name: "Foluso",

@@ -3,7 +3,7 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 const filePath = "/Users/mitch/northcoders/remote_precourse/day_1/1_intro_strings";
 
 // Use .lastIndexOf() to find the index position of the last / forward slash in the filePath string
-let lastFowardSlashIndex = EXPRESSION_HERE;
+let lastForwardSlashIndex = EXPRESSION_HERE;
 
 // Use .slice() to access the directory at the end of filePath
 let currentDirectory = EXPRESSION_HERE;

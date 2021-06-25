@@ -58,7 +58,7 @@ skipTest("returns the first dentist from the array", function () {
 });
 
 function tallyPeopleInManchester() {
-  /* This function receives an array of people objects in for format:
+  /* This function receives an array of people objects in the format:
     [
       { name: 'Emmeline', lives: { country: 'UK', city: 'Manchester' }, age: 32 }
     ]
@@ -254,7 +254,7 @@ skipTest(
   }
 );
 
-skipTest("returns an object with with its keys pluralised", function () {
+skipTest("returns an object with its keys pluralised", function () {
   let input = {
     name: "Paul's Donkey University",
     tagLine: "Too Mule For School",

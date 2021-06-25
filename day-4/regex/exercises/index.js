@@ -98,19 +98,19 @@ skipTest("Exercise 4", function () {
   // Your pattern should match any string containing *exactly* 2 consecutive letter l's
   // n.b. exactly 2 means that 3 or more consecutive l's are not allowed.
 
-  function testExact2ConsecutivesLs(str) {
+  function testExact2ConsecutiveLs(str) {
     return YOUR_REGEX_HERE.test(str);
   }
 
-  check(testExact2ConsecutivesLs).whenCalledWith("hello").returns(true);
-  check(testExact2ConsecutivesLs).whenCalledWith("bells").returns(true);
-  check(testExact2ConsecutivesLs).whenCalledWith("bellows").returns(true);
-  check(testExact2ConsecutivesLs).whenCalledWith("aaaallasdows").returns(true);
+  check(testExact2ConsecutiveLs).whenCalledWith("hello").returns(true);
+  check(testExact2ConsecutiveLs).whenCalledWith("bells").returns(true);
+  check(testExact2ConsecutiveLs).whenCalledWith("bellows").returns(true);
+  check(testExact2ConsecutiveLs).whenCalledWith("aaaallasdows").returns(true);
 
-  check(testExact2ConsecutivesLs).whenCalledWith("mile").returns(false);
-  check(testExact2ConsecutivesLs).whenCalledWith("fly").returns(false);
-  check(testExact2ConsecutivesLs).whenCalledWith("wellll").returns(false);
-  check(testExact2ConsecutivesLs).whenCalledWith("mitchelllloyd").returns(false);
+  check(testExact2ConsecutiveLs).whenCalledWith("mile").returns(false);
+  check(testExact2ConsecutiveLs).whenCalledWith("fly").returns(false);
+  check(testExact2ConsecutiveLs).whenCalledWith("wellll").returns(false);
+  check(testExact2ConsecutiveLs).whenCalledWith("mitchelllloyd").returns(false);
 });
 
 var YOUR_REGEX_HERE;
