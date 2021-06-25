@@ -26,7 +26,7 @@ runTest("if passed a 3-digit number then returns the correctly ordered number", 
   check(largestNumber).whenCalledWith(219).returns(921);
   check(largestNumber).whenCalledWith(581).returns(851);
 });
-runTest("returns correctly ordered number for large numbers including those with many trailiing zeros", () => {
+runTest("returns correctly ordered number for large numbers including those with many trailing zeros", () => {
   check(largestNumber).whenCalledWith(12345).returns(54321);
   check(largestNumber).whenCalledWith(12345000).returns(54321000);
   check(largestNumber).whenCalledWith(1010100).returns(1110000);
