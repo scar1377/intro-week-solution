@@ -11,6 +11,6 @@ runTest("returns one factorial", () => {
 runTest("returns multiple factorials", () => {
   check(getFactorials).whenCalledWith([3, 4, 5]).returns([6, 24, 120]);
 });
-runTest("returns largest factorials", () => {
+runTest("returns large factorials", () => {
   check(getFactorials).whenCalledWith([3, 8, 9, 10]).returns([6, 40320, 362880, 3628800]);
 });

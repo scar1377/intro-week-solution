@@ -1,7 +1,7 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
 // Declare a function called connectStrings
-// This function should take 2 strings and join them together with a space inbetween
+// This function should take 2 strings and join them together with a space in between
 
 function connectStrings() {}
 

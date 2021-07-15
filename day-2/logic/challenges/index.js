@@ -7,7 +7,7 @@ const { check, runTest, skipTest } = require("../../../test-api");
 */
 
 function isBiggerThan10(num) {
-  // checks if an number is strictly bigger than 10 and returns a message accordingly
+  // checks if a number is strictly bigger than 10 and returns a message accordingly
 }
 
 runTest("isBiggerThan10() returns a message indicating if a number is bigger than 10", function () {
@@ -104,7 +104,7 @@ function checkBatteryLevel(batteryLevel) {
   // "Warning - battery level low: <number-here>%, please charge your device"
   // if the battery level is between 5 and 99% then it should return a string stating:
   // "Battery level: <number-here>%"
-  // if the battery level is 100% then it shoud return a string stating:
+  // if the battery level is 100% then it should return a string stating:
   // "Fully charged :)"
 }
 
