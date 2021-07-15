@@ -2,7 +2,7 @@ const { check, runTest, skipTest } = require("../../../test-api");
 
 /*
   For these challenges complete the body of each function in turn.
-  Run this file with node to run the tests and check your function works correctly.
+  Run this file with Node to run the tests and check your function works correctly.
   When you're ready to move on to the next function replace skipTests with runTests
 */
 

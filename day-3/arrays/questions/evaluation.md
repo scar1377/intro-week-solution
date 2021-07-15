@@ -22,7 +22,7 @@ const arr = [];
 arr[3] = "hi";
 ```
 
-What will `arr.length` evaluate to ?
+What will `arr.length` evaluate to?
 
 a) `0`
 &nbsp;
@@ -52,7 +52,7 @@ console.log(letters[1]);
 console.log(letters[0]);
 ```
 
-Which order will the following `console.log`s appear ?
+Which order will the following `console.log`s appear?
 
 a) `c`, `b`, `a`
 &nbsp;
@@ -73,7 +73,7 @@ d) `a`, `c`, `b`
 
 ## Question 2
 
-What will be printed to the console in this example 👉
+What will be printed to the console in this example? 👉
 
 ```js
 const items = ["hello", , , "there"];
@@ -136,7 +136,7 @@ const arr = [];
 arr[100] = "X";
 ```
 
-What will `arr.length` evaluate to ?
+What will `arr.length` evaluate to?
 
 a) `0`
 &nbsp;
@@ -157,7 +157,7 @@ d) `undefined`
 
 ## Question 5
 
-**Part 1** What will happen when the following piece of code is executed ?
+**Part 1** What will happen when the following piece of code is executed?
 
 ```js
 const emptyArray = [];
@@ -178,7 +178,7 @@ d) Will throw an `Error`
 
 &nbsp;
 
-**Part 2** What will happen when the following piece of code is executed ?
+**Part 2** What will happen when the following piece of code is executed?
 
 ```js
 const emptyArray = [];

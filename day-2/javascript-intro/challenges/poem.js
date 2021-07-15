@@ -1,4 +1,4 @@
-// Research how to enter line breaks into a string in javascript and then print the output of this file into your terminal but with line breaks inserted at the correct places :)
+// Research how to enter line breaks into a string in Javascript and then print the output of this file into your terminal but with line breaks inserted at the correct places :)
 
 // Here is a link to the actual poem
 // https://poets.org/poem/do-not-go-gentle-good-night

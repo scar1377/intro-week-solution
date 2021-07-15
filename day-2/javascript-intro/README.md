@@ -17,7 +17,7 @@ For each file you will need to:
 2. Write a few comments of your own predicting what will be printed to the the terminal.
    You could look this up but its better for you to try and use your intuition to help guide you in these tasks.
    Also, try to think about exactly how `console.log` is being called and what **arguments it takes**
-3. Then execute the file with node and check your terminal to see what gets printed.
+3. Then execute the file with Node and check your terminal to see what gets printed.
 
 ## `challenges`
 

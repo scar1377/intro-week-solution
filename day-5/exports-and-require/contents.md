@@ -4,7 +4,7 @@ In `index.js`, we have multiple 'require' statements, each referencing a differe
 
 ## Section 1
 
-For each variable below, look at the relevant file in the `examples` directory and write a comment in `index.js` predicting what the variable holds (and so what will be logged). Then run `index.js` with node and see if you were correct.
+For each variable below, look at the relevant file in the `examples` directory and write a comment in `index.js` predicting what the variable holds (and so what will be logged). Then run `index.js` with Node and see if you were correct.
 
 1. `somethingFromFile1`
 2. `somethingFromFile2`
@@ -19,7 +19,7 @@ For each variable below, look at the relevant file in the `examples` directory a
 
 ## Section 2
 
-Still running `index.js` with node, attempt the following:
+Still running `index.js` with Node, attempt the following:
 
 1. Using only `somethingFromFile2` (_not_ file-1!), get `Vel` printed to the console
 

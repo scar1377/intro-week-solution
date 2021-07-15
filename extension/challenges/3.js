@@ -9,7 +9,7 @@ It will need to return an array of all possible sub-arrays given some starting a
 
 For example,
 createPowerSet(['a', 'b', 'c']) should return
- 
+
 [[], ['a'], ['b'], ['c'], ['a', 'b'], ['b', 'c'] ,['a', 'c'], ['a', 'b', 'c'] ]
 
 all the possible sub-arrays that can be constructed from 3 distinct elements
