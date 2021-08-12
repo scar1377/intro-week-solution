@@ -165,7 +165,7 @@ skipTest("returns [] when passed []", function () {
   check(getPugOwners([])).isEqualTo([]);
 });
 
-skipTest("returns an array of pug names when passed an array of dog objects", function () {
+skipTest("returns an array of pug owners names when passed an array of dog objects", function () {
   const dogs = [
     { name: "Beatrice", breed: "Lurcher", owner: "Tom" },
     { name: "Max", breed: "Pug", owner: "Izzi" },
