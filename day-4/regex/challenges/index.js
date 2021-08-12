@@ -18,7 +18,7 @@ runTest("extractCode() can find the total from a single code string", function (
 // Declare and implement a function isValidSortCode
 // Checks if a passed string is a valid sort code - this should be in the form 2 digits hyphen 2 digits hyphen 2 digits
 
-runTest("isValidSortCode() should check is a sort code string is in the correct format", function () {
+skipTest("isValidSortCode() should check is a sort code string is in the correct format", function () {
   check(isValidSortCode).whenCalledWith("10-34-67").returns(true);
   check(isValidSortCode).whenCalledWith("51-34-58").returns(true);
   check(isValidSortCode).whenCalledWith("85-16-23").returns(true);
@@ -33,7 +33,7 @@ runTest("isValidSortCode() should check is a sort code string is in the correct 
 // Declare and implement a function isProfessionalEmail
 // Returns true if the email text is professional (does not end in a kiss - 'x')
 
-runTest("isProfessionalEmail() checks if an email ends with an x", function () {
+skipTest("isProfessionalEmail() checks if an email ends with an x", function () {
   check(isProfessionalEmail).whenCalledWith("x").returns(false);
   check(isProfessionalEmail).whenCalledWith("Dear Sir/Madam").returns(true);
   check(isProfessionalEmail).whenCalledWith("Dear Alex, How are you?").returns(true);
@@ -44,7 +44,7 @@ runTest("isProfessionalEmail() checks if an email ends with an x", function () {
 // Declare and implement a function countVowels
 // Returns a count of the vowels in a string.
 
-runTest("countVowels() counts the vowels in a string", function () {
+skipTest("countVowels() counts the vowels in a string", function () {
   check(countVowels).whenCalledWith("").returns(0);
   check(countVowels).whenCalledWith("bcd").returns(0);
   check(countVowels).whenCalledWith("a").returns(1);
@@ -58,7 +58,7 @@ runTest("countVowels() counts the vowels in a string", function () {
 // consecutive digits should be taken as numbers: i.e. "12" = 12, not 3
 // if there are no numbers it should return 0
 
-runTest("sumNums() totals all of the numbers in a string", function () {
+skipTest("sumNums() totals all of the numbers in a string", function () {
   check(sumNums).whenCalledWith("hello").returns(0);
   check(sumNums).whenCalledWith("1").returns(1);
   check(sumNums).whenCalledWith("12").returns(12);
