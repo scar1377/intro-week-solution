@@ -1,6 +1,6 @@
 # Javascript intro tasks
 
-## `exercises`
+## `questions`
 
 ### `message.js`
 

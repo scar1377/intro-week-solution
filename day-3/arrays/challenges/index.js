@@ -52,7 +52,7 @@ skipTest("isEmptyArray() checks if an array is empty", function () {
 });
 
 // howManyArguments() should return the number of arguments passed into the function
-// HINT: For this one you should look up the 'spread operator' online - MDN Web Docs and devdocs are excellent sources of JavaScript documentation
+// HINT: For this one you should look up 'rest parameters' online - MDN Web Docs and devdocs are excellent sources of JavaScript documentation
 
 skipTest("howManyArguments() returns the number of items passed on a single call", function () {
   check(howManyArguments).whenCalledWith("a", "b", "c").returns(3);
