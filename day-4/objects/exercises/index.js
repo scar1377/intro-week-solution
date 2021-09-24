@@ -1,5 +1,8 @@
 const { runTest, skipTest, check } = require("../../../test-api");
 
+// for the following tasks, you will need to either fix the tests so that they are checking for the correct thing, or fill in missing information from the tests
+
+
 runTest("Task 1", function () {
   const myObject = {};
 
