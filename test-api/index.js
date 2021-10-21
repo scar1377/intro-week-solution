@@ -44,6 +44,7 @@ function createFeedBackString(item) {
   const lookup = {
     string: (item) => `"${item}"`,
     object: (item) => JSON.stringify(item),
+    function: (item) => `[Function: ${item.name}]`,
     undefined: (x) => x,
     boolean: (x) => x,
     number: (x) => x,
