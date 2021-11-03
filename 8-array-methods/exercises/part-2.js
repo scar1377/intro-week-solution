@@ -1,23 +1,23 @@
-const { check, printGreenMessage, printRedMessage, runTest, skipTest } = require("../../../test-api");
+const { check, runTest, skipTest } = require("../../../test-api");
 
 // Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
 
-runTest("makeAllUpperCase() can get all the strings from an array", () => {
+runTest("makeAllUpperCase() can get all the strings from an array", function () {
   check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
   check(makeAllUpperCase).whenCalledWith(["I", "love", "coding"]).returns(["I", "LOVE", "CODING"]);
 });
 
-skipTest("collectStrings() can get all the strings from an array", () => {
+skipTest("collectStrings() can get all the strings from an array", function () {
   check(collectStrings).whenCalledWith(["a", "b", "c"]).returns(["a", "b", "c"]);
   check(collectStrings).whenCalledWith(["a", 10, "b", 1000, "c"]).returns(["a", "b", "c"]);
 });
 
-skipTest("getEvenNumbers() can get all the even numbers from an array of numbers", () => {
+skipTest("getEvenNumbers() can get all the even numbers from an array of numbers", function () {
   check(getEvenNumbers).whenCalledWith([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).returns([2, 4, 6, 8, 10]);
   check(getEvenNumbers).whenCalledWith([9, 100, 13, 20]).returns([100, 20]);
 });
 
-skipTest("collectPlurals() can collect all the strings ending in an s", () => {
+skipTest("collectPlurals() can collect all the strings ending in an s", function () {
   check(collectPlurals)
     .whenCalledWith(["dogs", "cat", "apples", "kittens", "kiwi"])
     .returns(["dogs", "apples", "kittens"]);
@@ -27,12 +27,12 @@ skipTest("collectPlurals() can collect all the strings ending in an s", () => {
     .returns(["abcs", "humans", "thoughts", "cups"]);
 });
 
-skipTest("createArray() creates an array of the specified length using a specified character", () => {
+skipTest("createArray() creates an array of the specified length using a specified character", function () {
   check(createArray).whenCalledWith(3, "!").returns(["!", "!", "!"]);
   check(createArray).whenCalledWith(5, "a").returns(["a", "a", "a", "a", "a"]);
 });
 
-skipTest("deleteManyPasswords() deletes the password property for each user", () => {
+skipTest("deleteManyPasswords() deletes the password property for each user", function () {
   check(deleteManyPasswords)
     .whenCalledWith([
       { name: "Barry", password: "ilovetea" },
@@ -42,7 +42,7 @@ skipTest("deleteManyPasswords() deletes the password property for each user", ()
     .returns([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
 });
 
-skipTest("countTheObjects() counts all the objects in an array of multi-type items", () => {
+skipTest("countTheObjects() counts all the objects in an array of multi-type items", function () {
   check(countTheObjects)
     .whenCalledWith([
       { name: "Barry", password: "ilovetea" },
@@ -57,7 +57,7 @@ skipTest("countTheObjects() counts all the objects in an array of multi-type ite
     .returns(5);
 });
 
-skipTest("getEmptyTills() gets all the tills that are empty", () => {
+skipTest("getEmptyTills() gets all the tills that are empty", function () {
   const tills = [
     {
       name: "John",

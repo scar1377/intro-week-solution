@@ -2,10 +2,10 @@ const { check, runTest, skipTest } = require("../../test-api");
 
 console.log("tallyHashtagsAndMentions");
 
-runTest("returns an object", () => {
+runTest("returns an object", function () {
   check(typeof tallyHashtagsAndMentions()).isEqualTo("object");
 });
-skipTest("returns {hashtags: 0, mentions: 0} if it finds none", () => {
+skipTest("returns {hashtags: 0, mentions: 0} if it finds none", function () {
   check(tallyHashtagsAndMentions)
     .whenCalledWith("hello this is a tweet guaranteed to get very little engagement")
     .returns({
@@ -13,19 +13,19 @@ skipTest("returns {hashtags: 0, mentions: 0} if it finds none", () => {
       mentions: 0,
     });
 });
-skipTest("recognises no mentions", () => {
+skipTest("recognises no mentions", function () {
   check(tallyHashtagsAndMentions).whenCalledWith("#yolo").returns({
     hashtags: 1,
     mentions: 0,
   });
 });
-skipTest("recognises no hashtags", () => {
+skipTest("recognises no hashtags", function () {
   check(tallyHashtagsAndMentions).whenCalledWith("@yobo").returns({
     hashtags: 0,
     mentions: 1,
   });
 });
-skipTest("finds multiple hashtags and mentions and returns that number", () => {
+skipTest("finds multiple hashtags and mentions and returns that number", function () {
   check(tallyHashtagsAndMentions).whenCalledWith("#yolo @bolo #golo").returns({
     hashtags: 2,
     mentions: 1,
