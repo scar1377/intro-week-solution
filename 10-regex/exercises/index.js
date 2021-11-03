@@ -8,12 +8,12 @@ For each of these tests replace the variable YOUR_REGEX_HERE with a regular expr
 e.g.  return YOUR_REGEX_HERE.test(str); becomes -> return /abc/.test(str);
 */
 
-runTest("Exercise 0", function () {
+function testCat(str) {
   // Your pattern should match a string containing the characters cat
-  function testCat(str) {
-    return YOUR_REGEX_HERE.test(str);
-  }
+  return YOUR_REGEX_HERE.test(str);
+}
 
+runTest("testCat()", function () {
   check(testCat).whenCalledWith("cat").returns(true);
   check(testCat).whenCalledWith("asdcatas").returns(true);
   check(testCat).whenCalledWith("cat11234").returns(true);
@@ -26,12 +26,12 @@ runTest("Exercise 0", function () {
   check(testCat).whenCalledWith("12123ca234").returns(false);
 });
 
-skipTest("Exercise 1", function () {
+function testAtLeast5Digits(str) {
   // Your pattern should match a string containing at least 5 of the digits from 1 to 9 only
-  function testAtLeast5Digits(str) {
-    return YOUR_REGEX_HERE.test(str);
-  }
+  return YOUR_REGEX_HERE.test(str);
+}
 
+skipTest("testAtLeast5Digits()", function () {
   check(testAtLeast5Digits).whenCalledWith("12345").returns(true);
   check(testAtLeast5Digits).whenCalledWith("56783").returns(true);
   check(testAtLeast5Digits).whenCalledWith("98764").returns(true);
@@ -47,32 +47,32 @@ skipTest("Exercise 1", function () {
   check(testAtLeast5Digits).whenCalledWith("addc6826asd").returns(false);
 });
 
-skipTest("Exercise 2", function () {
-  // Your pattern should match one or more ! at the **beginning of a string**
-  // You should look up regex anchors for this exercise !
-  function testStartsWithExclaimMarks(str) {
-    return YOUR_REGEX_HERE.test(str);
-  }
+function testStartsWithExclamationMarks(str) {
+  // Your pattern should match one or more exclamation marks at the **beginning of a string**
+  // You should look up regex anchors for this exercise
+  return YOUR_REGEX_HERE.test(str);
+}
 
-  check(testStartsWithExclaimMarks).whenCalledWith("!!!sdlasjdlajsd").returns(true);
-  check(testStartsWithExclaimMarks).whenCalledWith("!!askjaa").returns(true);
-  check(testStartsWithExclaimMarks).whenCalledWith("!!!!!adjaksljd").returns(true);
-  check(testStartsWithExclaimMarks).whenCalledWith("!!!32749anks").returns(true);
-  check(testStartsWithExclaimMarks).whenCalledWith("!abc").returns(true);
+skipTest("testStartsWithExclamationMarks()", function () {
+  check(testStartsWithExclamationMarks).whenCalledWith("!!!sdlasjdlajsd").returns(true);
+  check(testStartsWithExclamationMarks).whenCalledWith("!!askjaa").returns(true);
+  check(testStartsWithExclamationMarks).whenCalledWith("!!!!!adjaksljd").returns(true);
+  check(testStartsWithExclamationMarks).whenCalledWith("!!!32749anks").returns(true);
+  check(testStartsWithExclamationMarks).whenCalledWith("!abc").returns(true);
 
-  check(testStartsWithExclaimMarks).whenCalledWith("adssdk!!!").returns(false);
-  check(testStartsWithExclaimMarks).whenCalledWith("asdk;alk!!!!").returns(false);
-  check(testStartsWithExclaimMarks).whenCalledWith("errui!!!!").returns(false);
-  check(testStartsWithExclaimMarks).whenCalledWith("cjljad!!!!!!").returns(false);
+  check(testStartsWithExclamationMarks).whenCalledWith("adssdk!!!").returns(false);
+  check(testStartsWithExclamationMarks).whenCalledWith("asdk;alk!!!!").returns(false);
+  check(testStartsWithExclamationMarks).whenCalledWith("errui!!!!").returns(false);
+  check(testStartsWithExclamationMarks).whenCalledWith("cjljad!!!!!!").returns(false);
 });
 
-skipTest("Exercise 3", function () {
+function testExact6ABCs(str) {
   // Your pattern should match exactly 6 of a, b or c
-  // You should look up regex anchors for this exercise !
-  function testExact6ABCs(str) {
-    return YOUR_REGEX_HERE.test(str);
-  }
+  // You should look up regex anchors for this exercise
+  return YOUR_REGEX_HERE.test(str);
+}
 
+skipTest("testExact6ABCs()", function () {
   check(testExact6ABCs).whenCalledWith("abcabc").returns(true);
   check(testExact6ABCs).whenCalledWith("cbabac").returns(true);
   check(testExact6ABCs).whenCalledWith("cacaca").returns(true);
@@ -86,13 +86,13 @@ skipTest("Exercise 3", function () {
   check(testExact6ABCs).whenCalledWith("abca").returns(false);
 });
 
-skipTest("Exercise 4", function () {
+function testExact2ConsecutiveLs(str) {
   // Your pattern should match any string containing *exactly* 2 consecutive letter l's
   // n.b. exactly 2 means that 3 or more consecutive l's are not allowed.
-  function testExact2ConsecutiveLs(str) {
-    return YOUR_REGEX_HERE.test(str);
-  }
+  return YOUR_REGEX_HERE.test(str);
+}
 
+skipTest("testExact2ConsecutiveLs()", function () {
   check(testExact2ConsecutiveLs).whenCalledWith("hello").returns(true);
   check(testExact2ConsecutiveLs).whenCalledWith("bells").returns(true);
   check(testExact2ConsecutiveLs).whenCalledWith("bellows").returns(true);
