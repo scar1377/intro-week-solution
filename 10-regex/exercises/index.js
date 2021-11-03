@@ -1,15 +1,18 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
-// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+/*
+Instructions
+
+For each of these tests replace the variable YOUR_REGEX_HERE with a regular expression in order to make each function pass the tests.
+
+e.g.  return YOUR_REGEX_HERE.test(str); becomes -> return /abc/.test(str);
+*/
 
 runTest("Exercise 0", function () {
+  // Your pattern should match a string containing the characters cat
   function testCat(str) {
     return YOUR_REGEX_HERE.test(str);
   }
-
-  // Replace YOUR_REGEX_HERE with a regular expression
-
-  // Your pattern should match a string containing the characters cat
 
   check(testCat).whenCalledWith("cat").returns(true);
   check(testCat).whenCalledWith("asdcatas").returns(true);
@@ -24,10 +27,7 @@ runTest("Exercise 0", function () {
 });
 
 skipTest("Exercise 1", function () {
-  // Replace YOUR_REGEX_HERE with a regular expression
-
   // Your pattern should match a string containing at least 5 of the digits from 1 to 9 only
-
   function testAtLeast5Digits(str) {
     return YOUR_REGEX_HERE.test(str);
   }
@@ -48,11 +48,8 @@ skipTest("Exercise 1", function () {
 });
 
 skipTest("Exercise 2", function () {
-  // Replace YOUR_REGEX_HERE with a regular expression
-
   // Your pattern should match one or more ! at the **beginning of a string**
   // You should look up regex anchors for this exercise !
-
   function testStartsWithExclaimMarks(str) {
     return YOUR_REGEX_HERE.test(str);
   }
@@ -70,11 +67,8 @@ skipTest("Exercise 2", function () {
 });
 
 skipTest("Exercise 3", function () {
-  // Replace YOUR_REGEX_HERE with a regular expression
-
   // Your pattern should match exactly 6 of a, b or c
   // You should look up regex anchors for this exercise !
-
   function testExact6ABCs(str) {
     return YOUR_REGEX_HERE.test(str);
   }
@@ -93,11 +87,8 @@ skipTest("Exercise 3", function () {
 });
 
 skipTest("Exercise 4", function () {
-  // Replace YOUR_REGEX_HERE with a regular expression
-
   // Your pattern should match any string containing *exactly* 2 consecutive letter l's
   // n.b. exactly 2 means that 3 or more consecutive l's are not allowed.
-
   function testExact2ConsecutiveLs(str) {
     return YOUR_REGEX_HERE.test(str);
   }
