@@ -7,8 +7,6 @@ For each of these tests replace the variable FILL_ME_IN with a value to make the
 Each of the checks expects the value in the left hand brackets to evaluate to the same as the right hand brackets.
 
 e.g.  check(FILL_ME_IN).isEqualTo(2 + 2) becomes -> check(4).isEqualTo(2 + 2)
-
-Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
 */
 
 runTest("checking multiTypeArray", function () {
