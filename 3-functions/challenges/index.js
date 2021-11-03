@@ -1,8 +1,18 @@
 const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
 
-function modulo() {
-  // return the remainder of the division a / b
-}
+/*
+Instructions
+
+For each of these tests, you are expected to declare your own function with the name and suggested behaviour provided. 
+
+Take a look at the tests to see what each function should be returning given various arguments. 
+*/
+
+/*
+modulo()
+
+This function should take two arguments a and b, and return the remainder of the division of a / b
+*/
 
 console.log("modulo() gives the correct output");
 try {
@@ -16,9 +26,11 @@ try {
   printRedMessage(error);
 }
 
-function squareRoot() {
-  // return the square root of n
-}
+/*
+squareRoot()
+
+This function should take a single argument and return its square root
+*/
 
 console.log("squareRoot() works for positive integers");
 
@@ -33,9 +45,11 @@ try {
   printRedMessage(error);
 }
 
-function raiseToPower() {
-  // return the result of raising m to the nth power
-}
+/*
+raiseToPower()
+
+This function should take two arguments, m and n, and return m raised to the power of n
+*/
 
 console.log("raiseToPower() raises given number to a power");
 try {
@@ -49,7 +63,11 @@ try {
   printRedMessage(error);
 }
 
-// declare capitaliseFirstLetter here
+/*
+capitaliseFirstLetter()
+
+This function should take a string as an argument and return the same string with the first letter capitalised
+*/
 
 console.log("capitaliseFirstLetter() can capitalise the first letter in a string");
 try {
@@ -63,10 +81,13 @@ try {
   printRedMessage(error);
 }
 
-// declare areValuesEqual here
+/*
+areValuesEqual()
 
-// return true if the passed arguments are strictly equal
-// you can complete this problem without resorting to if statements
+This function should take two arguments and return true if they are strictly equal, and false otherwise
+
+NOTE: you can complete this problem without resorting to if statements!
+*/
 
 console.log("areValuesEqual() checks if two values are the same");
 try {
@@ -79,11 +100,13 @@ try {
   printRedMessage(error);
 }
 
-// declare isFromThe60s here
+/*
+isFromThe60s()
 
-// return true if the year is in the 1960's
-// returns false otherwise
-// you can complete this problem without resorting to if statements
+This function should take a number as an argument representing a year, and return true if that year is in the 1960s and false otherwise
+
+NOTE: you can complete this problem without resorting to if statements!
+*/
 
 console.log("isFromThe60s() checks if a number is within 1960 to 1969 (inclusive)");
 try {
@@ -101,10 +124,11 @@ try {
   printRedMessage(error);
 }
 
-// declare isEvenLength here
+/*
+isEvenLength()
 
-// return true if string has an even length
-// you can complete this problem without resorting to if statements
+This function should take a string as an argument and return true if its length is even, and false otherwise
+*/
 
 console.log("isEvenLength() checks if string has even number of characters");
 try {
@@ -117,10 +141,13 @@ try {
   printRedMessage(error);
 }
 
-// declare isAbsolutePath here
+/*
+isAbsolutePath()
 
-// checks if a string is an absolute path - does it start with a /
-// HINT: all absolute file paths start with a /
+This function should take a string as an argument representing a file path and return true if it is an absolute path, and false otherwise
+
+HINT: all absolute file paths start with a /
+*/
 
 console.log("isAbsolutePath() checks if a file path is absolute or relative");
 
@@ -135,10 +162,13 @@ try {
   printRedMessage(error);
 }
 
-// declare getMiddle here
+/*
+getMiddle()
 
-// return the middle (or middle two) character(s) of the passed string
-// HINT: You could use the ternary operator for this challenge
+This function should take a string as an argument and return the middle (or middle two) character(s) of that string
+
+NOTE: you could use the ternary operator for this challenge
+*/
 
 console.log("getMiddle() returns the middle character in a string of odd length");
 try {
@@ -162,11 +192,15 @@ try {
   printRedMessage(error);
 }
 
-// declare getCharCode here
+/*
+getCharCode()
 
-// returns a sentence stating the character code for a given character
-// Look up ASCII online to get a better idea of what a character code is
-// Look up a useful JavaScript method for dealing with charCodes !
+This function should take a string as an argument and return a string which describes the ASCII code of that character
+
+The returned string should be in the following format:
+
+"The ASCII character for <character> is <character-code>"
+*/
 
 console.log("getCharCode() will return a message stating the ascii code of a passed char");
 
@@ -184,9 +218,11 @@ try {
   printRedMessage(error);
 }
 
-// declare createPercentage here
+/*
+createPercentage()
 
-// should take 2 numbers and work out their percentage
+This function should take two numbers, a and b, and return a string representing the value of a as a percentage of b
+*/
 
 console.log('createPercentage() creates a percentage string in the form "--%"');
 
@@ -203,9 +239,11 @@ try {
   printRedMessage(error);
 }
 
-// declare extractNumber here
+/*
+extractNumber()
 
-// should extract a number embedded in a string surrounded by ( ) parentheses
+This function should take a string containing a number wrapped in a pair of round brackets  and return said number
+*/
 
 console.log("extractNumber() should return the number buried inside a string");
 
