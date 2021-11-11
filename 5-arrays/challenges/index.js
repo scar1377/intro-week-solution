@@ -1,16 +1,21 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
-// Declare each of the functions below and run their tests - and then get those tests passing :)
-// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
+/*
+Instructions?
+*/
 
-// getLastItem() should return the last item from an array
+function getLastItem(arr) {
+  // This function should take an array as an argument and return the last item from it
+}
 
 runTest("getLastItem() returns the last item in an array", function () {
   check(getLastItem).whenCalledWith(["a", "b", "c", "d"]).returns("d");
   check(getLastItem).whenCalledWith(["apple", "banana", "pear", "kiwi"]).returns("kiwi");
 });
 
-// getLastNItems() return an array with the last n items of the array
+function getLastNItems(arr) {
+  // This function should take two arguments, an array and a number n, and return a new array containing the last n items of the given array
+}
 
 skipTest("getLastNItems() returns the last n items in an array", function () {
   check(getLastNItems).whenCalledWith(["a", "b", "c", "d"], 2).returns(["c", "d"]);
@@ -18,7 +23,9 @@ skipTest("getLastNItems() returns the last n items in an array", function () {
   check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 3).returns(["banana", "pear", "kiwi"]);
 });
 
-// removeItem() returns a new array without the item on position 'n', effectively removing it from the array
+function removeItem(arr) {
+  // This function should take two arguments, an array and a number n, and return a new array without the item at index 'n'
+}
 
 skipTest("removeItem() removes an item at a given index", function () {
   check(removeItem).whenCalledWith(["a", "b", "c", "d"], 2).returns(["a", "b", "d"]);
@@ -26,7 +33,9 @@ skipTest("removeItem() removes an item at a given index", function () {
   check(removeItem).whenCalledWith(["a", "b", "c", "d"], 1).returns(["a", "c", "d"]);
 });
 
-// mergeArrays() returns a new array containing all of arr1 and arr2's elements
+function mergeArrays(arr1, arr2) {
+  // This function should take two arrays as arguments and return a new array containing all of arr1 and arr2's elements (in that order)
+}
 
 skipTest("mergeArrays() will concatenate two arrays together", function () {
   check(mergeArrays).whenCalledWith(["a", "b"], ["c", "d"]).returns(["a", "b", "c", "d"]);
@@ -34,8 +43,10 @@ skipTest("mergeArrays() will concatenate two arrays together", function () {
   check(mergeArrays).whenCalledWith(["x", "y", "z"], [1, 2, 3, 4]).returns(["x", "y", "z", 1, 2, 3, 4]);
 });
 
-// if an array is like a sandwich, the first and last items are the bread
-// getSandwichFilling() should return an array with the filling of the sandwich
+function getSandwichFilling(sandwich) {
+  // If an array is like a sandwich, the first and last items are the bread
+  // This function should take an array as an argument and return an array containing the filling of the sandwich
+}
 
 skipTest("getSandwichFilling() returns the inner elements of an array", function () {
   check(getSandwichFilling).whenCalledWith(["a", "b", "c", "d"]).returns(["b", "c"]);
@@ -43,7 +54,9 @@ skipTest("getSandwichFilling() returns the inner elements of an array", function
   check(getSandwichFilling).whenCalledWith(["northcoders", "are", "the", "best"]).returns(["are", "the"]);
 });
 
-// isEmptyArray() should return a boolean checking if an array is empty
+function isEmptyArray(arr) {
+  // This function should take an array as an argument and return true if the array is empty, and false otherwise
+}
 
 skipTest("isEmptyArray() checks if an array is empty", function () {
   check(isEmptyArray).whenCalledWith([]).returns(true);
@@ -51,8 +64,10 @@ skipTest("isEmptyArray() checks if an array is empty", function () {
   check(isEmptyArray).whenCalledWith(["a"]).returns(false);
 });
 
-// howManyArguments() should return the number of arguments passed into the function
-// HINT: For this one you should look up 'rest parameters' online - MDN Web Docs and devdocs are excellent sources of JavaScript documentation
+function howManyArguments() {
+  // This function should take any number of arguments and return the number of arguments passed into the function
+  // HINT: For this one you should look up 'rest parameters' online - MDN Web Docs and devdocs are excellent sources of JavaScript documentation
+}
 
 skipTest("howManyArguments() returns the number of items passed on a single call", function () {
   check(howManyArguments).whenCalledWith("a", "b", "c").returns(3);
@@ -61,12 +76,16 @@ skipTest("howManyArguments() returns the number of items passed on a single call
   check(howManyArguments).whenCalledWith("the", "meaning", "of", "life", "is", 42).returns(6);
 });
 
-// updatePosition() takes an array representing coordinates - an x position and a y position - and a direction. It should return a new pair of coordinates with the coordinates array updated by moving either 1 unit in a particular direction.
+function updatePosition(coords, direction) {
+  /*
+  This function should take an array representing coordinates - an x position and a y position - and a string representing a direction, and it should return a new pair of coordinates, with the coords array updated by moving either x or y 1 unit in a particular direction
 
-// If direction is up it should move 1 unit up (+ 1 in the y direction)
-// If the direction is down it should move 1 unit down (- 1 in the y direction)
-// If the direction is right it should move 1 unit right (+ 1 in the x direction)
-// If the direction is left it should move 1 unit left (- 1 in the x direction)
+  If direction is "up" it should move 1 unit up (+ 1 in the y direction)
+  If the direction is "down" it should move 1 unit down (- 1 in the y direction)
+  If the direction is "right" it should move 1 unit right (+ 1 in the x direction)
+  If the direction is "left" it should move 1 unit left (- 1 in the x direction)
+  */
+}
 
 skipTest("updatePosition() updates a co-ordinates array", function () {
   check(updatePosition).whenCalledWith([10, 10], "up").returns([10, 11]);
@@ -75,11 +94,15 @@ skipTest("updatePosition() updates a co-ordinates array", function () {
   check(updatePosition).whenCalledWith([7, 50], "right").returns([8, 50]);
 });
 
-// in this task, addCoins() will take a "coin collection" which is an array consisting of 4 other nested arrays
-// each nested array represents a slot in the coin collection in the following way:
-//  1p   2p   5p   10p
-// [[],  [],  [],  []] <-- coinCollection
-// addCoins() will take the coinCollection and some money and will need to update a slot with some of the coins at a given // position
+function addCoins(collection, coin) {
+  /*
+  In this function, a "coin collection" is represented by an array containing 4 other nested arrays, each representing a slot in the collection in the following way:
+   1p   2p   5p   10p
+  [[],  [],  [],  []] <-- coinCollection
+
+  This should take two arguments, a coin collection array and a string representing a coin, and return an updated version of the given array with the coin added at the appropriate position
+  */
+}
 
 skipTest("addCoins() will update the coins in a given slot", function () {
   check(addCoins)
@@ -107,7 +130,15 @@ skipTest("addCoins() will update the coins in a given slot", function () {
     .returns([[], [], ["5p", "5p", "5p"], []]);
 });
 
-// accessItem() should access an array element at a specified index position
+function accessItem(arr, index) {
+  /* 
+  This function should take two arguments, an array and an index, and return the element at that specified index
+
+  The index provided may be equal to or greater than the length of the given array. In this case, rather than counting past the end of the array where there are no values, the indexing should be considered to "loop back around" and continue from the start of the array
+
+  For examples of this behaviour, look at the second group of tests below
+  */
+}
 
 skipTest("accessItem() can access an item inside in an array with a given index below the array length", function () {
   check(accessItem).whenCalledWith(["a", "b", "c", "d"], 2).returns("c");
@@ -125,9 +156,9 @@ skipTest(
   }
 );
 
-// findDayOfTheWeek() will need to return the day of the week
-// in this task,
-// 1 -> Monday, 2 -> Tuesday, 3 -> Wednesday, 4 -> Thursday, 5 -> Friday, 6 -> Saturday, 7 -> Sunday
+function findDayOfTheWeek(num) {
+  // This function should take a number from 1 to 7 inclusive, and return a string of the corresponding day of the week
+}
 
 skipTest("findDayOfTheWeek() returns the day of the week given a passed number", function name(params) {
   check(findDayOfTheWeek).whenCalledWith(2).returns("Tuesday");
@@ -138,8 +169,13 @@ skipTest("findDayOfTheWeek() returns the day of the week given a passed number",
   check(findDayOfTheWeek).whenCalledWith(7).returns("Sunday");
 });
 
-// extractNumber() should return the number embedded between the ( ) parentheses.
-// In this challenge, research the .match() method and use your knowledge of regular expressions
+function extractNumber(str) {
+  /* 
+  This function should take a string that consists of a series of letters that, somewhere inside of it, has a number embedded between two parentheses ( )
+
+  It should extract that number and return it
+  */
+}
 
 skipTest("extractNumber() should return the number buried inside a string of random characters", function () {
   check(extractNumber).whenCalledWith("lasjdasasj(123)asljdlajk").returns(123);
