@@ -60,9 +60,11 @@ skipTest("createArray() creates an array of the specified length using a specifi
 });
 
 function deleteManyPasswords(arr) {
-  // This function should take an array of 'user' objects as an argument
-  // Each user will be an object with a 'name' and 'password' property
-  // You should return an array of user objects each with the 'password' property removed (retaining the order)
+  /*
+  This function should take an array of 'user' objects as an argument
+  Each user will be an object with a 'name' and 'password' property
+  You should return an array of user objects each with the 'password' property removed (retaining the order)
+  */
 }
 
 skipTest("deleteManyPasswords() deletes the password property for each user", function () {
