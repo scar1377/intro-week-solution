@@ -1,7 +1,12 @@
 const { check, runTest, skipTest } = require("../../../test-api");
 
 /*
-Instructions?
+Instructions
+
+For each of these tests, a function has been declared for you.
+You are expected to fill out the function body implement the suggested behaviour provided.
+
+Take a look at the tests to see what each function should be returning given various arguments. 
 */
 
 function getLastItem(arr) {
@@ -13,7 +18,7 @@ runTest("getLastItem() returns the last item in an array", function () {
   check(getLastItem).whenCalledWith(["apple", "banana", "pear", "kiwi"]).returns("kiwi");
 });
 
-function getLastNItems(arr) {
+function getLastNItems(arr, n) {
   // This function should take two arguments, an array and a number n, and return a new array containing the last n items of the given array
 }
 
@@ -23,7 +28,7 @@ skipTest("getLastNItems() returns the last n items in an array", function () {
   check(getLastNItems).whenCalledWith(["apple", "banana", "pear", "kiwi"], 3).returns(["banana", "pear", "kiwi"]);
 });
 
-function removeItem(arr) {
+function removeItem(arr, n) {
   // This function should take two arguments, an array and a number n, and return a new array without the item at index 'n'
 }
 
