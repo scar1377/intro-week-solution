@@ -14,27 +14,26 @@ function isBiggerThan10(num) {
 }
 
 runTest("isBiggerThan10() returns a message indicating if a number is bigger than 10", function () {
-  check(isBiggerThan10).whenCalledWith(3).returns("Number 3 is less than 10");
-  check(isBiggerThan10).whenCalledWith(4).returns("Number 4 is less than 10");
-  check(isBiggerThan10).whenCalledWith(5).returns("Number 5 is less than 10");
-  check(isBiggerThan10).whenCalledWith(10).returns("Number 10 is equal to 10");
-  check(isBiggerThan10).whenCalledWith(11).returns("Number 11 is more than 10");
-  check(isBiggerThan10).whenCalledWith(100).returns("Number 100 is more than 10");
+  check(isBiggerThan10(3)).isEqualTo("Number 3 is less than 10");
+  check(isBiggerThan10(4)).isEqualTo("Number 4 is less than 10");
+  check(isBiggerThan10(5)).isEqualTo("Number 5 is less than 10");
+  check(isBiggerThan10(10)).isEqualTo("Number 10 is equal to 10");
+  check(isBiggerThan10(11)).isEqualTo("Number 11 is more than 10");
+  check(isBiggerThan10(100)).isEqualTo("Number 100 is more than 10");
 });
 
 function isFalsy(value) {
   // checks if a value is falsy and returns true if it is - returns false otherwise
 }
 
-// Replace skipTest with runTest here to see the results of the test
 skipTest("isFalsy() returns true if a value is falsy and false if it is truthy", function () {
-  check(isFalsy).whenCalledWith(false).returns(true);
-  check(isFalsy).whenCalledWith("").returns(true);
-  check(isFalsy).whenCalledWith(0).returns(true);
-  check(isFalsy).whenCalledWith(NaN).returns(true);
-  check(isFalsy).whenCalledWith(undefined).returns(true);
-  check(isFalsy).whenCalledWith(null).returns(true);
-  check(isFalsy).whenCalledWith(true).returns(false);
+  check(isFalsy(false)).isEqualTo(true);
+  check(isFalsy("")).isEqualTo(true);
+  check(isFalsy(0)).isEqualTo(true);
+  check(isFalsy(NaN)).isEqualTo(true);
+  check(isFalsy(undefined)).isEqualTo(true);
+  check(isFalsy(null)).isEqualTo(true);
+  check(isFalsy(true)).isEqualTo(false);
 });
 
 function readTrafficLight(lightColour) {
@@ -42,14 +41,14 @@ function readTrafficLight(lightColour) {
 }
 
 skipTest("readTrafficLight() should print a message according to the different colour passed in", function () {
-  check(readTrafficLight).whenCalledWith("green").returns("GO!");
-  check(readTrafficLight).whenCalledWith("GREEN").returns("GO!");
+  check(readTrafficLight("green")).isEqualTo("GO!");
+  check(readTrafficLight("GREEN")).isEqualTo("GO!");
 
-  check(readTrafficLight).whenCalledWith("amber").returns("GET READY...");
-  check(readTrafficLight).whenCalledWith("AMBER").returns("GET READY...");
+  check(readTrafficLight("amber")).isEqualTo("GET READY...");
+  check(readTrafficLight("AMBER")).isEqualTo("GET READY...");
 
-  check(readTrafficLight).whenCalledWith("red").returns("STOP!");
-  check(readTrafficLight).whenCalledWith("RED").returns("STOP!");
+  check(readTrafficLight("red")).isEqualTo("STOP!");
+  check(readTrafficLight("RED")).isEqualTo("STOP!");
 });
 
 function isMultipleOf6(num) {
@@ -57,13 +56,12 @@ function isMultipleOf6(num) {
 }
 
 skipTest("isMultipleOf6() should check if a number is divisible by 6", function () {
-  check(isMultipleOf6).whenCalledWith(6).returns(true);
-
-  check(isMultipleOf6).whenCalledWith(10).returns(false);
-  check(isMultipleOf6).whenCalledWith(15).returns(false);
-  check(isMultipleOf6).whenCalledWith(36).returns(true);
-  check(isMultipleOf6).whenCalledWith(60).returns(true);
-  check(isMultipleOf6).whenCalledWith(61).returns(false);
+  check(isMultipleOf6(6)).isEqualTo(true);
+  check(isMultipleOf6(10)).isEqualTo(false);
+  check(isMultipleOf6(15)).isEqualTo(false);
+  check(isMultipleOf6(36)).isEqualTo(true);
+  check(isMultipleOf6(60)).isEqualTo(true);
+  check(isMultipleOf6(61)).isEqualTo(false);
 });
 
 function checkInfinitive(word) {
@@ -72,19 +70,18 @@ function checkInfinitive(word) {
 }
 
 skipTest("checkInfinitive() checks if a french word is an infinitive", function () {
-  check(checkInfinitive).whenCalledWith("manger").returns(true);
-  check(checkInfinitive).whenCalledWith("faire").returns(true);
-  check(checkInfinitive).whenCalledWith("aller").returns(true);
-  check(checkInfinitive).whenCalledWith("aller").returns(true);
-  check(checkInfinitive).whenCalledWith("finir").returns(true);
-  check(checkInfinitive).whenCalledWith("rendre").returns(true);
-  check(checkInfinitive).whenCalledWith("savoir").returns(true);
+  check(checkInfinitive("manger")).isEqualTo(true);
+  check(checkInfinitive("faire")).isEqualTo(true);
+  check(checkInfinitive("aller")).isEqualTo(true);
+  check(checkInfinitive("finir")).isEqualTo(true);
+  check(checkInfinitive("rendre")).isEqualTo(true);
+  check(checkInfinitive("savoir")).isEqualTo(true);
 
-  check(checkInfinitive).whenCalledWith("suis").returns(false);
-  check(checkInfinitive).whenCalledWith("ai").returns(false);
-  check(checkInfinitive).whenCalledWith("ete").returns(false);
-  check(checkInfinitive).whenCalledWith("sais").returns(false);
-  check(checkInfinitive).whenCalledWith("allons").returns(false);
+  check(checkInfinitive("suis")).isEqualTo(false);
+  check(checkInfinitive("ai")).isEqualTo(false);
+  check(checkInfinitive("ete")).isEqualTo(false);
+  check(checkInfinitive("sais")).isEqualTo(false);
+  check(checkInfinitive("allons")).isEqualTo(false);
 });
 
 function checkGame(diceRoll, coinToss) {
@@ -95,11 +92,11 @@ function checkGame(diceRoll, coinToss) {
 }
 
 skipTest("checkGame() should check if a user was won the game", function () {
-  check(checkGame).whenCalledWith(3, "H").returns(true);
-  check(checkGame).whenCalledWith(4, "H").returns(true);
-  check(checkGame).whenCalledWith(5, "H").returns(true);
-  check(checkGame).whenCalledWith(6, "H").returns(true);
-  check(checkGame).whenCalledWith(6, "T").returns(false);
+  check(checkGame(3, "H")).isEqualTo(true);
+  check(checkGame(4, "H")).isEqualTo(true);
+  check(checkGame(5, "H")).isEqualTo(true);
+  check(checkGame(6, "H")).isEqualTo(true);
+  check(checkGame(6, "T")).isEqualTo(false);
 });
 
 function checkBatteryLevel(batteryLevel) {
@@ -112,18 +109,18 @@ function checkBatteryLevel(batteryLevel) {
 }
 
 skipTest("checkBatteryLevel() should return a message with info about the battery level", function () {
-  check(checkBatteryLevel).whenCalledWith("100").returns("Fully charged :)");
+  check(checkBatteryLevel("100")).isEqualTo("Fully charged :)");
 
-  check(checkBatteryLevel).whenCalledWith("99").returns("Battery level: 99%");
-  check(checkBatteryLevel).whenCalledWith("80").returns("Battery level: 80%");
-  check(checkBatteryLevel).whenCalledWith("30").returns("Battery level: 30%");
-  check(checkBatteryLevel).whenCalledWith("10").returns("Battery level: 10%");
-  check(checkBatteryLevel).whenCalledWith("6").returns("Battery level: 6%");
+  check(checkBatteryLevel("99")).isEqualTo("Battery level: 99%");
+  check(checkBatteryLevel("80")).isEqualTo("Battery level: 80%");
+  check(checkBatteryLevel("30")).isEqualTo("Battery level: 30%");
+  check(checkBatteryLevel("10")).isEqualTo("Battery level: 10%");
+  check(checkBatteryLevel("6")).isEqualTo("Battery level: 6%");
 
-  check(checkBatteryLevel).whenCalledWith("5").returns("Warning - battery level low: 5%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith("4").returns("Warning - battery level low: 4%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith("3").returns("Warning - battery level low: 3%, please charge your device");
-  check(checkBatteryLevel).whenCalledWith("1").returns("Warning - battery level low: 1%, please charge your device");
+  check(checkBatteryLevel("5")).isEqualTo("Warning - battery level low: 5%, please charge your device");
+  check(checkBatteryLevel("4")).isEqualTo("Warning - battery level low: 4%, please charge your device");
+  check(checkBatteryLevel("3")).isEqualTo("Warning - battery level low: 3%, please charge your device");
+  check(checkBatteryLevel("1")).isEqualTo("Warning - battery level low: 1%, please charge your device");
 });
 
 function getOrdinalSuffix(num) {
@@ -135,24 +132,24 @@ function getOrdinalSuffix(num) {
 }
 
 skipTest("getOrdinalSuffix() should give the correct ordinal suffix for a number", function () {
-  check(getOrdinalSuffix).whenCalledWith(1).returns("st");
-  check(getOrdinalSuffix).whenCalledWith(2).returns("nd");
-  check(getOrdinalSuffix).whenCalledWith(3).returns("rd");
-  check(getOrdinalSuffix).whenCalledWith(4).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(5).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(10).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(11).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(12).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(13).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(14).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(15).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(16).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(17).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(18).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(19).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(20).returns("th");
-  check(getOrdinalSuffix).whenCalledWith(21).returns("st");
-  check(getOrdinalSuffix).whenCalledWith(22).returns("nd");
-  check(getOrdinalSuffix).whenCalledWith(23).returns("rd");
-  check(getOrdinalSuffix).whenCalledWith(32).returns("nd");
+  check(getOrdinalSuffix(1)).isEqualTo("st");
+  check(getOrdinalSuffix(2)).isEqualTo("nd");
+  check(getOrdinalSuffix(3)).isEqualTo("rd");
+  check(getOrdinalSuffix(4)).isEqualTo("th");
+  check(getOrdinalSuffix(5)).isEqualTo("th");
+  check(getOrdinalSuffix(10)).isEqualTo("th");
+  check(getOrdinalSuffix(11)).isEqualTo("th");
+  check(getOrdinalSuffix(12)).isEqualTo("th");
+  check(getOrdinalSuffix(13)).isEqualTo("th");
+  check(getOrdinalSuffix(14)).isEqualTo("th");
+  check(getOrdinalSuffix(15)).isEqualTo("th");
+  check(getOrdinalSuffix(16)).isEqualTo("th");
+  check(getOrdinalSuffix(17)).isEqualTo("th");
+  check(getOrdinalSuffix(18)).isEqualTo("th");
+  check(getOrdinalSuffix(19)).isEqualTo("th");
+  check(getOrdinalSuffix(20)).isEqualTo("th");
+  check(getOrdinalSuffix(21)).isEqualTo("st");
+  check(getOrdinalSuffix(22)).isEqualTo("nd");
+  check(getOrdinalSuffix(23)).isEqualTo("rd");
+  check(getOrdinalSuffix(32)).isEqualTo("nd");
 });
