@@ -3,10 +3,10 @@ const { check, runTest, skipTest } = require("../../../test-api");
 /*
 Instructions
 
-For each of these tests, a function has been declared for you.
-You are expected to fill out the function body implement the suggested behaviour provided.
-
-Take a look at the tests to see what each function should be returning given various arguments. 
+For these challenges complete the body of each function in turn.
+Run this file with Node to run the tests and check your function works correctly.
+Take a look at the tests to see what each function should be returning given various arguments.
+When you're ready to move on to the next function replace skipTest with runTest.
 */
 
 function getLastItem(arr) {

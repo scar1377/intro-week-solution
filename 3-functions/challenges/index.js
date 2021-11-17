@@ -3,9 +3,8 @@ const { check, printGreenMessage, printRedMessage } = require("../../../test-api
 /*
 Instructions
 
-For each of these tests, you are expected to declare your own function with the name and suggested behaviour provided. 
-
-Take a look at the tests to see what each function should be returning given various arguments. 
+For each of these tests, you are expected to declare your own function with the name and suggested behaviour provided.
+Take a look at the tests to see what each function should be returning given various arguments.
 */
 
 /*
