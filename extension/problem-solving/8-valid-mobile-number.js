@@ -1,4 +1,4 @@
-const { check, skipTest, skipTest } = require("../../test-api");
+const { check, runTest, skipTest } = require("../../test-api");
 
 // declare validMobileNumber here
 
