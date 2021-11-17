@@ -9,7 +9,7 @@ function isEqualTo(expected) {
   const { actual } = this;
 
   if (!checkDeeplyEqual(actual, expected))
-    throw new Error(`${JSON.stringify(actual)}\n is not equal to the expected value of \n${JSON.stringify(expected)}`);
+    throw new Error(`${JSON.stringify(actual)}\n is not equal to the expected value of\n ${JSON.stringify(expected)}`);
 }
 
 function returns(expected) {
