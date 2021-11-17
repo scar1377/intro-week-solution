@@ -1,4 +1,4 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, printGreenMessage, printRedMessage } = require("../../test-api");
 
 const item0 = "apples";
 const item1 = "bananas";

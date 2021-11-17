@@ -1,4 +1,4 @@
-const { runTest, skipTest, check } = require("../../../test-api");
+const { runTest, skipTest, check } = require("../../test-api");
 
 // For each of these tests replace the variable FILL_ME_IN with a value to make the test pass.
 

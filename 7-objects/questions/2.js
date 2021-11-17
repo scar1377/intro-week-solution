@@ -1,6 +1,6 @@
 const obj = {};
 
-obj.push('pat')
+obj.push("pat");
 
 console.log(obj);
 

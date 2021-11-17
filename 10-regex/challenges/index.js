@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api");
+const { check, runTest, skipTest } = require("../../test-api");
 
 // You should look up Regex methods to help you in these challenges :)
 // Try this link -> https://javascript.info/regexp-introduction#regular-expressions

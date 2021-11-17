@@ -1,4 +1,4 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, printGreenMessage, printRedMessage } = require("../../test-api");
 
 function double() {
   // return any number doubled

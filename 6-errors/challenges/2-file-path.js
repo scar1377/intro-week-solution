@@ -1,4 +1,4 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, printGreenMessage, printRedMessage } = require("../../test-api");
 
 const filePath = "/Users/mitch/northcoders/remote_precourse/day_1/1_intro_strings";
 

@@ -1,4 +1,4 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, printGreenMessage, printRedMessage } = require("../../test-api");
 
 function capitaliseString(string) {
   // return the passed string as upper case

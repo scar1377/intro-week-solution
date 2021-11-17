@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api");
+const { check, runTest } = require("../../test-api");
 
 const sounds = ["fizz", "buzz", "bang", "crash", "wallop"];
 const exclaimedSounds = [];

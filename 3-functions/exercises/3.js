@@ -1,4 +1,4 @@
-const { check, printGreenMessage, printRedMessage } = require("../../../test-api");
+const { check, printGreenMessage, printRedMessage } = require("../../test-api");
 
 // Declare a function called multiply
 // This function should multiply 2 numbers and return the result

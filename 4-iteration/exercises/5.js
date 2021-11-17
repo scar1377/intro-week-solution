@@ -1,4 +1,4 @@
-const { check, runTest } = require("../../../test-api");
+const { check, runTest } = require("../../test-api");
 
 let total = 0;
 

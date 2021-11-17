@@ -1,4 +1,4 @@
-const { check, runTest } = require("../../../test-api");
+const { check, runTest } = require("../../test-api");
 
 const tutors = ["Anat", "Paul C", "Paul R", "Jonny", "Mitch", "Vel", "Alex", "Ant"];
 const tutorsAndIndex = [];

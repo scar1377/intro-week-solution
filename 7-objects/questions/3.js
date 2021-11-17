@@ -1,4 +1,4 @@
-const person = {name: 'fraz', age: 30};
+const person = { name: "fraz", age: 30 };
 
 console.log(pers);
 
