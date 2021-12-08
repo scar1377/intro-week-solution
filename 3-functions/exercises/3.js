@@ -1,16 +1,11 @@
-const { check, printGreenMessage, printRedMessage } = require("../../test-api");
+const { check, runTest } = require("../../test-api");
 
-// Declare a function called multiply
-// This function should multiply 2 numbers and return the result
-
-console.log("multiply() can multiply 2 numbers together");
-try {
-  check(multiply).whenCalledWith(10, 42).returns(420);
-  check(multiply).whenCalledWith(3, 5).returns(15);
-  check(multiply).whenCalledWith(-180, 2).returns(-360);
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
+function multiply() {
+  // return the product of two passed numbers
 }
+
+runTest("multiply() can multiply 2 numbers together", function () {
+  check(multiply(10, 42)).isEqualTo(420);
+  check(multiply(3, 5)).isEqualTo(15);
+  check(multiply(-180, 2)).isEqualTo(-360);
+});

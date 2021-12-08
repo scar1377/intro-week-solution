@@ -1,17 +1,11 @@
-const { check, printGreenMessage, printRedMessage } = require("../../test-api");
+const { check, runTest } = require("../../test-api");
 
-function capitaliseString(string) {
+function capitaliseString() {
   // return the passed string as upper case
 }
 
-console.log("capitaliseString() can capitalise a single word");
-try {
-  check(capitaliseString).whenCalledWith("bang").returns("BANG");
-  check(capitaliseString).whenCalledWith("apple").returns("APPLE");
-  check(capitaliseString).whenCalledWith("abc").returns("ABC");
-
-  printGreenMessage("Pass ✔");
-} catch (error) {
-  printRedMessage("Fail ✗");
-  printRedMessage(error);
-}
+runTest("capitaliseString() can capitalise a single word", function () {
+  check(capitaliseString("bang")).isEqualTo("BANG");
+  check(capitaliseString("apple")).isEqualTo("APPLE");
+  check(capitaliseString("abc")).isEqualTo("ABC");
+});
