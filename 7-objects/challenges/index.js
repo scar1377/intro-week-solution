@@ -14,8 +14,8 @@ function accessObject(obj, key) {
 }
 
 runTest("accessObject() can access a property value using a key", function () {
-  check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "name").returns("jonny");
-  check(accessObject).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(32);
+  check(accessObject({ name: "jonny", age: 32 }, "name")).isEqualTo("jonny");
+  check(accessObject({ name: "jonny", age: 32 }, "age")).isEqualTo(32);
 });
 
 function checkIfPropertyExists(obj, key) {
@@ -23,9 +23,9 @@ function checkIfPropertyExists(obj, key) {
 }
 
 skipTest("checkIfPropertyExists() checks if a property exists inside an object", function () {
-  check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "name").returns(true);
-  check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "age").returns(true);
-  check(checkIfPropertyExists).whenCalledWith({ name: "jonny", age: 32 }, "pets").returns(false);
+  check(checkIfPropertyExists({ name: "jonny", age: 32 }, "name")).isEqualTo(true);
+  check(checkIfPropertyExists({ name: "jonny", age: 32 }, "age")).isEqualTo(true);
+  check(checkIfPropertyExists({ name: "jonny", age: 32 }, "pets")).isEqualTo(false);
 });
 
 function createObject(arr) {
@@ -33,9 +33,9 @@ function createObject(arr) {
 }
 
 skipTest("createObject() creates a new object from a key value pair", function () {
-  check(createObject).whenCalledWith(["name", "shaq"]).returns({ name: "shaq" });
-  check(createObject).whenCalledWith(["fruit", "apple"]).returns({ fruit: "apple" });
-  check(createObject).whenCalledWith(["language", "haskell"]).returns({ language: "haskell" });
+  check(createObject(["name", "shaq"])).isEqualTo({ name: "shaq" });
+  check(createObject(["fruit", "apple"])).isEqualTo({ fruit: "apple" });
+  check(createObject(["language", "haskell"])).isEqualTo({ language: "haskell" });
 });
 
 function countProperties(obj) {
@@ -43,9 +43,9 @@ function countProperties(obj) {
 }
 
 skipTest("countProperties() counts the number of key-value pairs for a given object", function () {
-  check(countProperties).whenCalledWith({}).returns(0);
-  check(countProperties).whenCalledWith({ name: "shaq" }).returns(1);
-  check(countProperties).whenCalledWith({ name: "shaq", job: "tutor", city: "Manchester" }).returns(3);
+  check(countProperties({})).isEqualTo(0);
+  check(countProperties({ name: "shaq" })).isEqualTo(1);
+  check(countProperties({ name: "shaq", job: "tutor", city: "Manchester" })).isEqualTo(3);
 });
 
 function createArrow(direction) {
@@ -54,10 +54,10 @@ function createArrow(direction) {
 }
 
 skipTest("createArrow() will return an arrow pointing in the right direction", function () {
-  check(createArrow).whenCalledWith("left").returns("←");
-  check(createArrow).whenCalledWith("right").returns("→");
-  check(createArrow).whenCalledWith("up").returns("↑");
-  check(createArrow).whenCalledWith("down").returns("↓");
+  check(createArrow("left")).isEqualTo("←");
+  check(createArrow("right")).isEqualTo("→");
+  check(createArrow("up")).isEqualTo("↑");
+  check(createArrow("down")).isEqualTo("↓");
 });
 
 function updateVoterAddress(voter, correctHouseNumber) {
@@ -119,13 +119,10 @@ function createUserString(user) {
 }
 
 skipTest("createUserString() will create a message from an details object", function () {
-  check(createUserString)
-    .whenCalledWith({ name: "Mitch", age: 30, language: "Javascript" })
-    .returns("name: Mitch, age: 30, language: Javascript");
-
-  check(createUserString)
-    .whenCalledWith({ name: "Anat", age: 24, language: "Ruby" })
-    .returns("name: Anat, age: 24, language: Ruby");
+  check(createUserString({ name: "Mitch", age: 30, language: "Javascript" })).isEqualTo(
+    "name: Mitch, age: 30, language: Javascript"
+  );
+  check(createUserString({ name: "Anat", age: 24, language: "Ruby" })).isEqualTo("name: Anat, age: 24, language: Ruby");
 });
 
 function updateCoinMachine(coinMachine, coin) {
@@ -143,23 +140,32 @@ function updateCoinMachine(coinMachine, coin) {
 }
 
 skipTest("updateCoinMachine() will create a message from an details object", function () {
-  check(updateCoinMachine)
-    .whenCalledWith({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "1p")
-    .returns({ "1p": 1, "2p": 0, "5p": 0, "10p": 0 });
-
-  check(updateCoinMachine)
-    .whenCalledWith({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "2p")
-    .returns({ "1p": 0, "2p": 1, "5p": 0, "10p": 0 });
-
-  check(updateCoinMachine)
-    .whenCalledWith({ "1p": 0, "2p": 3, "5p": 0, "10p": 0 }, "2p")
-    .returns({ "1p": 0, "2p": 4, "5p": 0, "10p": 0 });
-
-  check(updateCoinMachine)
-    .whenCalledWith({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "5p")
-    .returns({ "1p": 0, "2p": 3, "5p": 11, "10p": 0 });
-
-  check(updateCoinMachine)
-    .whenCalledWith({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "10p")
-    .returns({ "1p": 0, "2p": 3, "5p": 10, "10p": 1 }, "5p");
+  check(updateCoinMachine({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "1p")).isEqualTo({
+    "1p": 1,
+    "2p": 0,
+    "5p": 0,
+    "10p": 0,
+  });
+  check(updateCoinMachine({ "1p": 0, "2p": 0, "5p": 0, "10p": 0 }, "2p")).isEqualTo({
+    "1p": 0,
+    "2p": 1,
+    "5p": 0,
+    "10p": 0,
+  });
+  check(updateCoinMachine({ "1p": 0, "2p": 3, "5p": 0, "10p": 0 }, "2p")).isEqualTo({
+    "1p": 0,
+    "2p": 4,
+    "5p": 0,
+    "10p": 0,
+  });
+  check(updateCoinMachine({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "5p")).isEqualTo({
+    "1p": 0,
+    "2p": 3,
+    "5p": 11,
+    "10p": 0,
+  });
+  check(updateCoinMachine({ "1p": 0, "2p": 3, "5p": 10, "10p": 0 }, "10p")).isEqualTo(
+    { "1p": 0, "2p": 3, "5p": 10, "10p": 1 },
+    "5p"
+  );
 });
