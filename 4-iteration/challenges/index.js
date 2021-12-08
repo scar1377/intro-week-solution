@@ -14,8 +14,8 @@ function makeAllUpperCase(arr) {
 }
 
 runTest("makeAllUpperCase() can convert all strings to upper case", function () {
-  check(makeAllUpperCase).whenCalledWith(["a", "b", "c"]).returns(["A", "B", "C"]);
-  check(makeAllUpperCase).whenCalledWith(["I", "love", "coding"]).returns(["I", "LOVE", "CODING"]);
+  check(makeAllUpperCase(["a", "b", "c"])).isEqualTo(["A", "B", "C"]);
+  check(makeAllUpperCase(["I", "love", "coding"])).isEqualTo(["I", "LOVE", "CODING"]);
 });
 
 function collectStrings(arr) {
@@ -23,8 +23,8 @@ function collectStrings(arr) {
 }
 
 skipTest("collectStrings() can get all the strings from an array", function () {
-  check(collectStrings).whenCalledWith(["a", "b", "c"]).returns(["a", "b", "c"]);
-  check(collectStrings).whenCalledWith(["a", 10, "b", 1000, "c"]).returns(["a", "b", "c"]);
+  check(collectStrings(["a", "b", "c"])).isEqualTo(["a", "b", "c"]);
+  check(collectStrings(["a", 10, "b", 1000, "c"])).isEqualTo(["a", "b", "c"]);
 });
 
 function getEvenNumbers(arr) {
@@ -32,9 +32,9 @@ function getEvenNumbers(arr) {
 }
 
 skipTest("getEvenNumbers() can get all the even numbers from an array of numbers", function () {
-  check(getEvenNumbers).whenCalledWith([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).returns([2, 4, 6, 8, 10]);
-  check(getEvenNumbers).whenCalledWith([9, 100, 13, 20]).returns([100, 20]);
-  check(getEvenNumbers).whenCalledWith([78, 5, 9, 11, 24]).returns([78, 24]);
+  check(getEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).isEqualTo([2, 4, 6, 8, 10]);
+  check(getEvenNumbers([9, 100, 13, 20])).isEqualTo([100, 20]);
+  check(getEvenNumbers([78, 5, 9, 11, 24])).isEqualTo([78, 24]);
 });
 
 function collectPlurals(arr) {
@@ -42,12 +42,13 @@ function collectPlurals(arr) {
 }
 
 skipTest("collectPlurals() can collect all the strings ending in an s", function () {
-  check(collectPlurals)
-    .whenCalledWith(["dogs", "cat", "apples", "kittens", "kiwi"])
-    .returns(["dogs", "apples", "kittens"]);
-  check(collectPlurals)
-    .whenCalledWith(["abcs", "humans", "thoughts", "cloud", "computer", "cups"])
-    .returns(["abcs", "humans", "thoughts", "cups"]);
+  check(collectPlurals(["dogs", "cat", "apples", "kittens", "kiwi"])).isEqualTo(["dogs", "apples", "kittens"]);
+  check(collectPlurals(["abcs", "humans", "thoughts", "cloud", "computer", "cups"])).isEqualTo([
+    "abcs",
+    "humans",
+    "thoughts",
+    "cups",
+  ]);
 });
 
 function createArray(length, char) {
@@ -55,8 +56,8 @@ function createArray(length, char) {
 }
 
 skipTest("createArray() creates an array of the specified length using a specified character", function () {
-  check(createArray).whenCalledWith(3, "!").returns(["!", "!", "!"]);
-  check(createArray).whenCalledWith(5, "a").returns(["a", "a", "a", "a", "a"]);
+  check(createArray(3, "!")).isEqualTo(["!", "!", "!"]);
+  check(createArray(5, "a")).isEqualTo(["a", "a", "a", "a", "a"]);
 });
 
 function deleteManyPasswords(arr) {
@@ -68,13 +69,13 @@ function deleteManyPasswords(arr) {
 }
 
 skipTest("deleteManyPasswords() deletes the password property for each user", function () {
-  check(deleteManyPasswords)
-    .whenCalledWith([
+  check(
+    deleteManyPasswords([
       { name: "Barry", password: "ilovetea" },
       { name: "Sandeep", password: "ilovecoffee" },
       { name: "Kavita", password: "ilovepie" },
     ])
-    .returns([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
+  ).isEqualTo([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
 });
 
 function collectTheVowels(str) {
@@ -84,10 +85,10 @@ function collectTheVowels(str) {
 skipTest(
   "collectTheVowels() takes a string of many letters and returns a string containing those vowels in correct order",
   function () {
-    check(collectTheVowels).whenCalledWith("a").returns("a");
-    check(collectTheVowels).whenCalledWith("bcd").returns("");
-    check(collectTheVowels).whenCalledWith("bcdepiaouk").returns("eiaou");
-    check(collectTheVowels).whenCalledWith("hello world").returns("eoo");
+    check(collectTheVowels("a")).isEqualTo("a");
+    check(collectTheVowels("bcd")).isEqualTo("");
+    check(collectTheVowels("bcdepiaouk")).isEqualTo("eiaou");
+    check(collectTheVowels("hello world")).isEqualTo("eoo");
   }
 );
 
@@ -98,13 +99,13 @@ function containsNoRepeats(str) {
 skipTest(
   "containsNoRepeats() takes a string and returns true if each character only appears once in the string",
   function () {
-    check(containsNoRepeats).whenCalledWith("dog").returns(true);
-    check(containsNoRepeats).whenCalledWith("oo").returns(false);
-    check(containsNoRepeats).whenCalledWith("dooog").returns(false);
-    check(containsNoRepeats).whenCalledWith("iHaveRepeats").returns(false);
-    check(containsNoRepeats).whenCalledWith("anat").returns(false);
-    check(containsNoRepeats).whenCalledWith("cat").returns(true);
-    check(containsNoRepeats).whenCalledWith("abcde").returns(true);
-    check(containsNoRepeats).whenCalledWith("abcdea").returns(false);
+    check(containsNoRepeats("dog")).isEqualTo(true);
+    check(containsNoRepeats("oo")).isEqualTo(false);
+    check(containsNoRepeats("dooog")).isEqualTo(false);
+    check(containsNoRepeats("iHaveRepeats")).isEqualTo(false);
+    check(containsNoRepeats("anat")).isEqualTo(false);
+    check(containsNoRepeats("cat")).isEqualTo(true);
+    check(containsNoRepeats("abcde")).isEqualTo(true);
+    check(containsNoRepeats("abcdea")).isEqualTo(false);
   }
 );
