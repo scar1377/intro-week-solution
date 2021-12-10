@@ -1,35 +1,37 @@
 const { check, runTest, skipTest } = require("../../test-api");
 
+// declare getLargestNumber here
+
 console.log("getLargestNumber");
 
 runTest("if passed a single-digit number then returns that number", function () {
-  check(getLargestNumber).whenCalledWith(9).returns(9);
-  check(getLargestNumber).whenCalledWith(0).returns(0);
-  check(getLargestNumber).whenCalledWith(1).returns(1);
+  check(getLargestNumber(9)).isEqualTo(9);
+  check(getLargestNumber(0)).isEqualTo(0);
+  check(getLargestNumber(1)).isEqualTo(1);
 });
 skipTest("if passed a 2-digit number then does nothing if they are in descending order", function () {
-  check(getLargestNumber).whenCalledWith(43).returns(43);
-  check(getLargestNumber).whenCalledWith(81).returns(81);
-  check(getLargestNumber).whenCalledWith(21).returns(21);
-  check(getLargestNumber).whenCalledWith(20).returns(20);
+  check(getLargestNumber(43)).isEqualTo(43);
+  check(getLargestNumber(81)).isEqualTo(81);
+  check(getLargestNumber(21)).isEqualTo(21);
+  check(getLargestNumber(20)).isEqualTo(20);
 });
 skipTest("if passed a 2-digit number then swaps the numbers if they are are in ascending order", function () {
-  check(getLargestNumber).whenCalledWith(19).returns(91);
-  check(getLargestNumber).whenCalledWith(23).returns(32);
-  check(getLargestNumber).whenCalledWith(35).returns(53);
+  check(getLargestNumber(19)).isEqualTo(91);
+  check(getLargestNumber(23)).isEqualTo(32);
+  check(getLargestNumber(35)).isEqualTo(53);
 });
 skipTest("if passed a 3-digit number then returns the correctly ordered number", function () {
-  check(getLargestNumber).whenCalledWith(473).returns(743);
-  check(getLargestNumber).whenCalledWith(850).returns(850);
-  check(getLargestNumber).whenCalledWith(801).returns(810);
-  check(getLargestNumber).whenCalledWith(100).returns(100);
-  check(getLargestNumber).whenCalledWith(219).returns(921);
-  check(getLargestNumber).whenCalledWith(581).returns(851);
+  check(getLargestNumber(473)).isEqualTo(743);
+  check(getLargestNumber(850)).isEqualTo(850);
+  check(getLargestNumber(801)).isEqualTo(810);
+  check(getLargestNumber(100)).isEqualTo(100);
+  check(getLargestNumber(219)).isEqualTo(921);
+  check(getLargestNumber(581)).isEqualTo(851);
 });
 skipTest("returns correctly ordered number for large numbers including those with many trailing zeros", function () {
-  check(getLargestNumber).whenCalledWith(12345).returns(54321);
-  check(getLargestNumber).whenCalledWith(12345000).returns(54321000);
-  check(getLargestNumber).whenCalledWith(1010100).returns(1110000);
-  check(getLargestNumber).whenCalledWith(89382291).returns(99883221);
-  check(getLargestNumber).whenCalledWith(8001009100).returns(9811000000);
+  check(getLargestNumber(12345)).isEqualTo(54321);
+  check(getLargestNumber(12345000)).isEqualTo(54321000);
+  check(getLargestNumber(1010100)).isEqualTo(1110000);
+  check(getLargestNumber(89382291)).isEqualTo(99883221);
+  check(getLargestNumber(8001009100)).isEqualTo(9811000000);
 });
