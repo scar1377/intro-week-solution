@@ -86,22 +86,6 @@ skipTest("testExact6ABCs()", function () {
   check(testExact6ABCs("abca")).isEqualTo(false);
 });
 
-function testExact2ConsecutiveLs(str) {
-  // Your pattern should match any string containing *exactly* 2 consecutive letter l's
-  // n.b. exactly 2 means that 3 or more consecutive l's are not allowed.
-  return YOUR_REGEX_HERE.test(str);
-}
-
-skipTest("testExact2ConsecutiveLs()", function () {
-  check(testExact2ConsecutiveLs("hello")).isEqualTo(true);
-  check(testExact2ConsecutiveLs("bells")).isEqualTo(true);
-  check(testExact2ConsecutiveLs("bellows")).isEqualTo(true);
-  check(testExact2ConsecutiveLs("aaaallasdows")).isEqualTo(true);
-
-  check(testExact2ConsecutiveLs("mile")).isEqualTo(false);
-  check(testExact2ConsecutiveLs("fly")).isEqualTo(false);
-  check(testExact2ConsecutiveLs("wellll")).isEqualTo(false);
-  check(testExact2ConsecutiveLs("mitchelllloyd")).isEqualTo(false);
-});
+// >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
 
 var YOUR_REGEX_HERE;
