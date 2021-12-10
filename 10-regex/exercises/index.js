@@ -14,16 +14,16 @@ function testCat(str) {
 }
 
 runTest("testCat()", function () {
-  check(testCat).whenCalledWith("cat").returns(true);
-  check(testCat).whenCalledWith("asdcatas").returns(true);
-  check(testCat).whenCalledWith("cat11234").returns(true);
-  check(testCat).whenCalledWith("asdcat!").returns(true);
-  check(testCat).whenCalledWith("36237cat").returns(true);
+  check(testCat("cat")).isEqualTo(true);
+  check(testCat("asdcatas")).isEqualTo(true);
+  check(testCat("cat11234")).isEqualTo(true);
+  check(testCat("asdcat!")).isEqualTo(true);
+  check(testCat("36237cat")).isEqualTo(true);
 
-  check(testCat).whenCalledWith("ca123").returns(false);
-  check(testCat).whenCalledWith("atasdads").returns(false);
-  check(testCat).whenCalledWith("caasdlkj").returns(false);
-  check(testCat).whenCalledWith("12123ca234").returns(false);
+  check(testCat("ca123")).isEqualTo(false);
+  check(testCat("atasdads")).isEqualTo(false);
+  check(testCat("caasdlkj")).isEqualTo(false);
+  check(testCat("12123ca234")).isEqualTo(false);
 });
 
 function testAtLeast5Digits(str) {
@@ -32,19 +32,19 @@ function testAtLeast5Digits(str) {
 }
 
 skipTest("testAtLeast5Digits()", function () {
-  check(testAtLeast5Digits).whenCalledWith("12345").returns(true);
-  check(testAtLeast5Digits).whenCalledWith("56783").returns(true);
-  check(testAtLeast5Digits).whenCalledWith("98764").returns(true);
-  check(testAtLeast5Digits).whenCalledWith("13837").returns(true);
-  check(testAtLeast5Digits).whenCalledWith("45613837").returns(true);
-  check(testAtLeast5Digits).whenCalledWith("abc13837def").returns(true);
-  check(testAtLeast5Digits).whenCalledWith("00abcg77777").returns(true);
-  check(testAtLeast5Digits).whenCalledWith("13837!f").returns(true);
+  check(testAtLeast5Digits("12345")).isEqualTo(true);
+  check(testAtLeast5Digits("56783")).isEqualTo(true);
+  check(testAtLeast5Digits("98764")).isEqualTo(true);
+  check(testAtLeast5Digits("13837")).isEqualTo(true);
+  check(testAtLeast5Digits("45613837")).isEqualTo(true);
+  check(testAtLeast5Digits("abc13837def")).isEqualTo(true);
+  check(testAtLeast5Digits("00abcg77777")).isEqualTo(true);
+  check(testAtLeast5Digits("13837!f")).isEqualTo(true);
 
-  check(testAtLeast5Digits).whenCalledWith("123").returns(false);
-  check(testAtLeast5Digits).whenCalledWith("12308").returns(false);
-  check(testAtLeast5Digits).whenCalledWith("1234").returns(false);
-  check(testAtLeast5Digits).whenCalledWith("addc6826asd").returns(false);
+  check(testAtLeast5Digits("123")).isEqualTo(false);
+  check(testAtLeast5Digits("12308")).isEqualTo(false);
+  check(testAtLeast5Digits("1234")).isEqualTo(false);
+  check(testAtLeast5Digits("addc6826asd")).isEqualTo(false);
 });
 
 function testStartsWithExclamationMarks(str) {
@@ -54,16 +54,16 @@ function testStartsWithExclamationMarks(str) {
 }
 
 skipTest("testStartsWithExclamationMarks()", function () {
-  check(testStartsWithExclamationMarks).whenCalledWith("!!!sdlasjdlajsd").returns(true);
-  check(testStartsWithExclamationMarks).whenCalledWith("!!askjaa").returns(true);
-  check(testStartsWithExclamationMarks).whenCalledWith("!!!!!adjaksljd").returns(true);
-  check(testStartsWithExclamationMarks).whenCalledWith("!!!32749anks").returns(true);
-  check(testStartsWithExclamationMarks).whenCalledWith("!abc").returns(true);
+  check(testStartsWithExclamationMarks("!!!sdlasjdlajsd")).isEqualTo(true);
+  check(testStartsWithExclamationMarks("!!askjaa")).isEqualTo(true);
+  check(testStartsWithExclamationMarks("!!!!!adjaksljd")).isEqualTo(true);
+  check(testStartsWithExclamationMarks("!!!32749anks")).isEqualTo(true);
+  check(testStartsWithExclamationMarks("!abc")).isEqualTo(true);
 
-  check(testStartsWithExclamationMarks).whenCalledWith("adssdk!!!").returns(false);
-  check(testStartsWithExclamationMarks).whenCalledWith("asdk;alk!!!!").returns(false);
-  check(testStartsWithExclamationMarks).whenCalledWith("errui!!!!").returns(false);
-  check(testStartsWithExclamationMarks).whenCalledWith("cjljad!!!!!!").returns(false);
+  check(testStartsWithExclamationMarks("adssdk!!!")).isEqualTo(false);
+  check(testStartsWithExclamationMarks("asdk;alk!!!!")).isEqualTo(false);
+  check(testStartsWithExclamationMarks("errui!!!!")).isEqualTo(false);
+  check(testStartsWithExclamationMarks("cjljad!!!!!!")).isEqualTo(false);
 });
 
 function testExact6ABCs(str) {
@@ -73,17 +73,17 @@ function testExact6ABCs(str) {
 }
 
 skipTest("testExact6ABCs()", function () {
-  check(testExact6ABCs).whenCalledWith("abcabc").returns(true);
-  check(testExact6ABCs).whenCalledWith("cbabac").returns(true);
-  check(testExact6ABCs).whenCalledWith("cacaca").returns(true);
-  check(testExact6ABCs).whenCalledWith("bbbcca").returns(true);
+  check(testExact6ABCs("abcabc")).isEqualTo(true);
+  check(testExact6ABCs("cbabac")).isEqualTo(true);
+  check(testExact6ABCs("cacaca")).isEqualTo(true);
+  check(testExact6ABCs("bbbcca")).isEqualTo(true);
 
-  check(testExact6ABCs).whenCalledWith("xyzxyz").returns(false);
-  check(testExact6ABCs).whenCalledWith("pqrsqp").returns(false);
-  check(testExact6ABCs).whenCalledWith("pprrss").returns(false);
-  check(testExact6ABCs).whenCalledWith("vsxprh").returns(false);
-  check(testExact6ABCs).whenCalledWith("abcabca").returns(false);
-  check(testExact6ABCs).whenCalledWith("abca").returns(false);
+  check(testExact6ABCs("xyzxyz")).isEqualTo(false);
+  check(testExact6ABCs("pqrsqp")).isEqualTo(false);
+  check(testExact6ABCs("pprrss")).isEqualTo(false);
+  check(testExact6ABCs("vsxprh")).isEqualTo(false);
+  check(testExact6ABCs("abcabca")).isEqualTo(false);
+  check(testExact6ABCs("abca")).isEqualTo(false);
 });
 
 function testExact2ConsecutiveLs(str) {
@@ -93,15 +93,15 @@ function testExact2ConsecutiveLs(str) {
 }
 
 skipTest("testExact2ConsecutiveLs()", function () {
-  check(testExact2ConsecutiveLs).whenCalledWith("hello").returns(true);
-  check(testExact2ConsecutiveLs).whenCalledWith("bells").returns(true);
-  check(testExact2ConsecutiveLs).whenCalledWith("bellows").returns(true);
-  check(testExact2ConsecutiveLs).whenCalledWith("aaaallasdows").returns(true);
+  check(testExact2ConsecutiveLs("hello")).isEqualTo(true);
+  check(testExact2ConsecutiveLs("bells")).isEqualTo(true);
+  check(testExact2ConsecutiveLs("bellows")).isEqualTo(true);
+  check(testExact2ConsecutiveLs("aaaallasdows")).isEqualTo(true);
 
-  check(testExact2ConsecutiveLs).whenCalledWith("mile").returns(false);
-  check(testExact2ConsecutiveLs).whenCalledWith("fly").returns(false);
-  check(testExact2ConsecutiveLs).whenCalledWith("wellll").returns(false);
-  check(testExact2ConsecutiveLs).whenCalledWith("mitchelllloyd").returns(false);
+  check(testExact2ConsecutiveLs("mile")).isEqualTo(false);
+  check(testExact2ConsecutiveLs("fly")).isEqualTo(false);
+  check(testExact2ConsecutiveLs("wellll")).isEqualTo(false);
+  check(testExact2ConsecutiveLs("mitchelllloyd")).isEqualTo(false);
 });
 
 var YOUR_REGEX_HERE;
