@@ -10,7 +10,7 @@ When you're ready to move on to the next function replace skipTest with runTest.
 */
 
 function isBiggerThan10(num) {
-  // checks if a number is strictly bigger than 10 and returns a message accordingly
+  // This function should take a number as an argument, and return an appropriate message based on that number's relationship to the number 10
 }
 
 runTest("isBiggerThan10() returns a message indicating if a number is bigger than 10", function () {
@@ -23,7 +23,7 @@ runTest("isBiggerThan10() returns a message indicating if a number is bigger tha
 });
 
 function isFalsy(value) {
-  // checks if a value is falsy and returns true if it is - returns false otherwise
+  // This function should take any value as an argument, and return true if it is falsy, and false otherwise
 }
 
 skipTest("isFalsy() returns true if a value is falsy and false if it is truthy", function () {
@@ -37,7 +37,9 @@ skipTest("isFalsy() returns true if a value is falsy and false if it is truthy",
 });
 
 function readTrafficLight(lightColour) {
-  // this function should check if the "traffic light colour" is red, green or amber and return a corresponding message
+  // This function should take a string representing a traffic light colour as an argument
+  // It will be one of "red", "green" or "amber" in either uppercase or lowercase
+  // You should return a corresponding message
 }
 
 skipTest("readTrafficLight() should print a message according to the different colour passed in", function () {
@@ -52,7 +54,7 @@ skipTest("readTrafficLight() should print a message according to the different c
 });
 
 function isMultipleOf6(num) {
-  // isMultipleOf6 check if a passed value is a multiple of 6
+  // This function should take a number as an argument, and return true if it is a multiple of 6, and false otherwise
 }
 
 skipTest("isMultipleOf6() should check if a number is divisible by 6", function () {
@@ -65,7 +67,7 @@ skipTest("isMultipleOf6() should check if a number is divisible by 6", function 
 });
 
 function checkInfinitive(word) {
-  // checkInfinitive() will check if a French word is an infinitive French verb
+  // This function should take a string representing a French word as an argument, and return true if it is an infinitive verb, and false otherwise
   // A French infinitive verb is a word that ends with either "re", "ir" or "er"
 }
 
@@ -85,10 +87,11 @@ skipTest("checkInfinitive() checks if a french word is an infinitive", function 
 });
 
 function checkGame(diceRoll, coinToss) {
-  // checkGame() should take a value from a diceRoll ( a number from 1 to 6 )
-  // and should also take the result from a coinToss (either "H" for heads or "T" for tails)
-  // the function should return true if the player wins the game - getting a dice roll of 3 or higher AND a coinToss of 'H'
-  // means that you have won the game :)
+  // This function should take a number representing a dice roll and a string repesenting a coin toss as its arguments
+  // A dice roll will be a number between 1 and 6
+  // A coin toss will be "H" or "T" representing heads or tails
+  // The game is considered to be won if the dice roll is 3 or higher AND the coin toss is "H"
+  // You should return true if the game has been won, and false otherwise
 }
 
 skipTest("checkGame() should check if a user was won the game", function () {
@@ -100,34 +103,35 @@ skipTest("checkGame() should check if a user was won the game", function () {
 });
 
 function checkBatteryLevel(batteryLevel) {
-  // if the battery level is less than or equal to 5%, then it should return a string stating:
+  // This function should take a number representing a battery level as a percentage
+  // If the battery level is less than or equal to 5%, then you should return a string stating:
   // "Warning - battery level low: <number-here>%, please charge your device"
-  // if the battery level is between 5 and 99% then it should return a string stating:
+  // If the battery level is between 5 and 99% then it should return a string stating:
   // "Battery level: <number-here>%"
-  // if the battery level is 100% then it should return a string stating:
+  // If the battery level is 100% then it should return a string stating:
   // "Fully charged :)"
 }
 
 skipTest("checkBatteryLevel() should return a message with info about the battery level", function () {
-  check(checkBatteryLevel("100")).isEqualTo("Fully charged :)");
+  check(checkBatteryLevel(100)).isEqualTo("Fully charged :)");
 
-  check(checkBatteryLevel("99")).isEqualTo("Battery level: 99%");
-  check(checkBatteryLevel("80")).isEqualTo("Battery level: 80%");
-  check(checkBatteryLevel("30")).isEqualTo("Battery level: 30%");
-  check(checkBatteryLevel("10")).isEqualTo("Battery level: 10%");
-  check(checkBatteryLevel("6")).isEqualTo("Battery level: 6%");
+  check(checkBatteryLevel(99)).isEqualTo("Battery level: 99%");
+  check(checkBatteryLevel(80)).isEqualTo("Battery level: 80%");
+  check(checkBatteryLevel(30)).isEqualTo("Battery level: 30%");
+  check(checkBatteryLevel(10)).isEqualTo("Battery level: 10%");
+  check(checkBatteryLevel(6)).isEqualTo("Battery level: 6%");
 
-  check(checkBatteryLevel("5")).isEqualTo("Warning - battery level low: 5%, please charge your device");
-  check(checkBatteryLevel("4")).isEqualTo("Warning - battery level low: 4%, please charge your device");
-  check(checkBatteryLevel("3")).isEqualTo("Warning - battery level low: 3%, please charge your device");
-  check(checkBatteryLevel("1")).isEqualTo("Warning - battery level low: 1%, please charge your device");
+  check(checkBatteryLevel(5)).isEqualTo("Warning - battery level low: 5%, please charge your device");
+  check(checkBatteryLevel(4)).isEqualTo("Warning - battery level low: 4%, please charge your device");
+  check(checkBatteryLevel(3)).isEqualTo("Warning - battery level low: 3%, please charge your device");
+  check(checkBatteryLevel(1)).isEqualTo("Warning - battery level low: 1%, please charge your device");
 });
 
 function getOrdinalSuffix(num) {
-  // an ordinal suffix are the letters we put after a number:
-  // E.g. "nd" is an ordinal suffix as we'd write 2nd
-  // E.g. "st" is an ordinal suffix as we'd write 1st etc
-  // getOrdinalSuffix() should take a number and return the corresponding ordinal suffix
+  // This function should take a number as an argument
+  // An ordinal suffix are the letters we put after a number:
+  // E.g. "nd" is an ordinal suffix as we'd write 2nd and "st" is an ordinal suffix as we'd write 1st etc
+  // You should return the corresponding ordinal suffix
   // See here for more details: https://www.grammarly.com/blog/how-to-write-ordinal-numbers-correctly/
 }
 
