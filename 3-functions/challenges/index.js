@@ -68,6 +68,7 @@ skipTest("areValuesEqual() checks if two values are strictly equal", function ()
   check(areValuesEqual(10, 10)).isEqualTo(true);
   check(areValuesEqual("hello", "hello")).isEqualTo(true);
   check(areValuesEqual("good", "bad")).isEqualTo(false);
+  check(areValuesEqual("10", 10)).isEqualTo(false);
 });
 
 /*
