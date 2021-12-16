@@ -15,18 +15,18 @@ Do not use .toString(2) for this problem - as this is the functionality you're t
 function convertToBinary() {}
 
 runTest("can convert a single digit decimal number to binary", function () {
-  check(convertToBinary).whenCalledWith(0).returns("0");
-  check(convertToBinary).whenCalledWith(1).returns("1");
-  check(convertToBinary).whenCalledWith(2).returns("10");
-  check(convertToBinary).whenCalledWith(3).returns("11");
-  check(convertToBinary).whenCalledWith(4).returns("100");
-  check(convertToBinary).whenCalledWith(5).returns("101");
-  check(convertToBinary).whenCalledWith(6).returns("110");
-  check(convertToBinary).whenCalledWith(7).returns("111");
+  check(convertToBinary(0)).isEqualTo("0");
+  check(convertToBinary(1)).isEqualTo("1");
+  check(convertToBinary(2)).isEqualTo("10");
+  check(convertToBinary(3)).isEqualTo("11");
+  check(convertToBinary(4)).isEqualTo("100");
+  check(convertToBinary(5)).isEqualTo("101");
+  check(convertToBinary(6)).isEqualTo("110");
+  check(convertToBinary(7)).isEqualTo("111");
 });
 
 skipTest("can convert a multiple digit decimal number to binary", function () {
-  check(convertToBinary).whenCalledWith(10).returns("1010");
-  check(convertToBinary).whenCalledWith(23).returns("10111");
-  check(convertToBinary).whenCalledWith(55).returns("110111");
+  check(convertToBinary(10)).isEqualTo("1010");
+  check(convertToBinary(23)).isEqualTo("10111");
+  check(convertToBinary(55)).isEqualTo("110111");
 });

@@ -22,5 +22,5 @@ You will need to write your own tests for this task to prove your function is wo
 */
 
 runTest("returns an array including empty array when passed an empty array", function () {
-  check(createPowerSet).whenCalledWith([]).returns([[]]);
+  check(createPowerSet([])).isEqualTo([[]]);
 });

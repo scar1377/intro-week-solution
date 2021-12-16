@@ -26,17 +26,9 @@ Implement a function that will take an array of time intervals for being awake/a
 function encodeTimes(times) {}
 
 runTest("can encode a series of times into a time string", function () {
-  check(encodeTimes)
-    .whenCalledWith([0, 5, 25, 30, 55])
-    .returns(".....####################.....#########################.....");
-  check(encodeTimes)
-    .whenCalledWith([0, 40, 50])
-    .returns("........................................##########..........");
-  check(encodeTimes)
-    .whenCalledWith([0, 24, 29])
-    .returns("........................#####...............................");
-  check(encodeTimes)
-    .whenCalledWith([0, 45, 55])
-    .returns(".............................................##########.....");
+  check(encodeTimes([0, 5, 25, 30, 55])).isEqualTo(".....####################.....#########################.....");
+  check(encodeTimes([0, 40, 50])).isEqualTo("........................................##########..........");
+  check(encodeTimes([0, 24, 29])).isEqualTo("........................#####...............................");
+  check(encodeTimes([0, 45, 55])).isEqualTo(".............................................##########.....");
   // feel free to create your own assertions too with this challenge
 });
