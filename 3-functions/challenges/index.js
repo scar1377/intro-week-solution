@@ -142,16 +142,16 @@ This function should take a string as an argument and return a string which desc
 
 The returned string should be in the following format:
 
-"The ASCII character for <character> is <character-code>"
+"The ASCII code for <character> is <character-code>"
 */
 
 skipTest("getCharCode() will return a message stating the ASCII code of a passed char", function () {
-  check(getCharCode("A")).returns("The ASCII character for A is 65");
-  check(getCharCode("b")).returns("The ASCII character for b is 98");
-  check(getCharCode("z")).returns("The ASCII character for z is 122");
-  check(getCharCode("k")).returns("The ASCII character for k is 107");
-  check(getCharCode("!")).returns("The ASCII character for ! is 33");
-  check(getCharCode("M")).returns("The ASCII character for M is 77");
+  check(getCharCode("A")).returns("The ASCII code for A is 65");
+  check(getCharCode("b")).returns("The ASCII code for b is 98");
+  check(getCharCode("z")).returns("The ASCII code for z is 122");
+  check(getCharCode("k")).returns("The ASCII code for k is 107");
+  check(getCharCode("!")).returns("The ASCII code for ! is 33");
+  check(getCharCode("M")).returns("The ASCII code for M is 77");
 });
 
 /*
