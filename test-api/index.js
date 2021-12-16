@@ -1,28 +1,21 @@
-// Once you have passed the current test, change skipTest on the following test to runTest so you are able to run it with Node
-
-function whenCalledWith(...args) {
-  this.args = args;
-  return this;
-}
-
-function isEqualTo(expected) {
-  const { actual } = this;
-
-  if (!checkDeeplyEqual(actual, expected))
-    throw new Error(`${JSON.stringify(actual)}\n is not equal to the expected value of\n ${JSON.stringify(expected)}`);
-}
-
-function returns(expected) {
-  const actual = this.func(...this.args);
-  if (!checkDeeplyEqual(actual, expected)) throw new Error(createFeedback(this.func.name, actual, expected));
+function customStringify(item) {
+  function replacer(key, value) {
+    if (typeof value === "function") return `[Function: ${value.name || "(anonymous)"}]`;
+    // if undefined value is nested
+    if (typeof value === "undefined" && key !== "") return "undefined";
+    return value;
+  }
+  return JSON.stringify(item, replacer);
 }
 
 function check(value) {
-  const methods = { whenCalledWith, isEqualTo, returns };
-  const obj = Object.create(methods);
-  if (typeof value === "function") obj.func = value;
-  else obj.actual = value;
-  return obj;
+  function isEqualTo(expected) {
+    if (!checkDeeplyEqual(value, expected))
+      throw new Error(
+        `${customStringify(value)}\n is not equal to the expected value of\n ${customStringify(expected)}`
+      );
+  }
+  return { isEqualTo };
 }
 
 function checkDeeplyEqual(coll1, coll2) {
@@ -38,26 +31,6 @@ function checkDeeplyEqual(coll1, coll2) {
     if (!checkDeeplyEqual(coll1[key1], coll2[key1])) return false;
   }
   return true;
-}
-
-function createFeedBackString(item) {
-  const lookup = {
-    string: (item) => `"${item}"`,
-    object: (item) => JSON.stringify(item),
-    function: (item) => `[Function: ${item.name}]`,
-    undefined: (x) => x,
-    boolean: (x) => x,
-    number: (x) => x,
-  };
-  return lookup[typeof item](item);
-}
-
-function createFeedback(name, actual, expected) {
-  const actualString = createFeedBackString(actual);
-  const expectedString = createFeedBackString(expected);
-
-  const feedback = `${name}'s output was ${actualString}, but it should be ${expectedString}`;
-  return feedback;
 }
 
 function printRedMessage(message) {
