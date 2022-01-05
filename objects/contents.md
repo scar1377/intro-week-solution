@@ -13,4 +13,4 @@ Choose some of your challenges that you used a `for` loop and refactor to use `w
 
 Have a think about when each might be useful.
 
-**If you've finished those, have a look at day-4/problem-solving/index**
+**If you've finished those, have a look at the extension directory for some extra tasks**
