@@ -83,4 +83,6 @@ skipTest("Task 6", function () {
   check(bluthFamily.daughters[FILL_ME_IN].FILL_ME_IN).isEqualTo("Lindsay");
 });
 
+// >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
+
 var FILL_ME_IN;
