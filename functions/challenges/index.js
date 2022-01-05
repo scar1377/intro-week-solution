@@ -146,12 +146,12 @@ The returned string should be in the following format:
 */
 
 skipTest("getCharCode() will return a message stating the ASCII code of a passed char", function () {
-  check(getCharCode("A")).returns("The ASCII code for A is 65");
-  check(getCharCode("b")).returns("The ASCII code for b is 98");
-  check(getCharCode("z")).returns("The ASCII code for z is 122");
-  check(getCharCode("k")).returns("The ASCII code for k is 107");
-  check(getCharCode("!")).returns("The ASCII code for ! is 33");
-  check(getCharCode("M")).returns("The ASCII code for M is 77");
+  check(getCharCode("A")).isEqualTo("The ASCII code for A is 65");
+  check(getCharCode("b")).isEqualTo("The ASCII code for b is 98");
+  check(getCharCode("z")).isEqualTo("The ASCII code for z is 122");
+  check(getCharCode("k")).isEqualTo("The ASCII code for k is 107");
+  check(getCharCode("!")).isEqualTo("The ASCII code for ! is 33");
+  check(getCharCode("M")).isEqualTo("The ASCII code for M is 77");
 });
 
 /*
