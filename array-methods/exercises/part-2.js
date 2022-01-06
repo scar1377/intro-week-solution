@@ -114,7 +114,7 @@ skipTest("countTheObjects() counts all the objects in an array of multi-type ite
   check(countTheObjects([{}, {}, {}, {}, {}])).isEqualTo(5);
   check(countTheObjects([1, {}, true, {}, {}, false, {}, {}])).isEqualTo(5);
   check(countTheObjects([1, { cat: "Schnitzel" }, true, {}, {}, false, 42, {}, {}])).isEqualTo(5);
-  check(countTheObjects([7, "hello", 45, tru])).isEqualTo(0);
+  check(countTheObjects([7, "hello", 45, true])).isEqualTo(0);
 });
 
 /*
