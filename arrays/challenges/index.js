@@ -156,20 +156,4 @@ skipTest("findDayOfTheWeek() returns the day of the week given a passed number",
   check(findDayOfTheWeek(7)).isEqualTo("Sunday");
 });
 
-function extractNumber(str) {
-  /* 
-  This function should take a string that consists of a series of letters that, somewhere inside of it, has a number embedded between two parentheses ( )
 
-  It should extract that number and return it
-  */
-}
-
-skipTest("extractNumber() should return the number buried inside a string of random characters", function () {
-  check(extractNumber("lasjdasasj(123)asljdlajk")).isEqualTo(123);
-  check(extractNumber("qwasdaoyer(44687)iuwyeibasdahgsd")).isEqualTo(44687);
-  check(extractNumber("qwasdasdfsyer(19827)iusdfsdfsd")).isEqualTo(19827);
-  check(extractNumber("qwasdasdfsyer(5601)iusdfsdfsd")).isEqualTo(5601);
-  check(extractNumber("qwasdasdfsyer(29)iusdfsdfsd")).isEqualTo(29);
-  check(extractNumber("qwasdasdfsyer(5)iusdfsdfsd")).isEqualTo(5);
-  check(extractNumber("qwasdasdfsyer(513)iusdfsdfsd")).isEqualTo(513);
-});
