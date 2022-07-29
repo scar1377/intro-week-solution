@@ -1,4 +1,4 @@
-# Remote Javascript basics
+# Javascript Foundations
 
 ## How to use this repo
 
