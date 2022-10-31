@@ -1,12 +1,11 @@
 const { check, runTest, skipTest } = require("../../test-api");
 
-function getPalindromes(words) {
-  /*
-    This function takes an array of words and returns an array containing only the palindromes.
-    A palindrome is a word that is spelled the same way backwards.
-    E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'tacocat'] =>  ['racecar', 'tacocat']
-  */
-}
+/*
+  This function takes an array of words and returns an array containing only the palindromes.
+  A palindrome is a word that is spelled the same way backwards.
+  E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'tacocat'] =>  ['racecar', 'tacocat']
+*/
+function getPalindromes(words) {}
 
 console.log("getPalindromes()");
 

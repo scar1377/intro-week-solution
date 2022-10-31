@@ -95,6 +95,41 @@ skipTest("sumNums() totals all of the numbers in a string", function () {
 });
 
 /*
+testValidCountdown()
+
+This function should take a string as an argument
+The function must return a boolean depending on if the string is a valid 
+collection of letters for the TV show countdown.
+In countdown a valid collection contains at least 4 consonants and 3 vowels and have exactly 9 letters
+*/
+
+skipTest("testValidCountdown()", function () {
+  check(testValidCountdown("aaabbbccc")).isEqualTo(true);
+  check(testValidCountdown("eeeedddff")).isEqualTo(true);
+  check(testValidCountdown("aeiouwxyz")).isEqualTo(true);
+  check(testValidCountdown("aeiouaxyz")).isEqualTo(false);
+  check(testValidCountdown("aabbbcccd")).isEqualTo(false);
+  check(testValidCountdown("aeiouvwxyz")).isEqualTo(false);
+  check(testValidCountdown("aaaaaaaaa")).isEqualTo(false);
+  check(testValidCountdown("bbbbbbbbb")).isEqualTo(false);
+});
+
+/*
+extractRepoName()
+
+This function should take a string representing a github url and return the name of the repo
+Github urls are of the form https://github.com/northcoders/intro-week
+where "northcoders" is the name of the account and "intro week is the name of the repo"
+*/
+
+skipTest("extractRepoName()", function () {
+  check(extractRepoName("https://github.com/northcoders/intro-week")).isEqualTo("intro-week");
+  check(extractRepoName("https://github.com/northcoders/remote-git-workshop")).isEqualTo("remote-git-workshop");
+  check(extractRepoName("https://github.com/myAccount/notes")).isEqualTo("notes");
+  check(extractRepoName("https://github.com/myAccount/notes/settings")).isEqualTo("notes");
+});
+
+/*
 testExact2ConsecutiveLs()
 
 This function should take a string as an argument

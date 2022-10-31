@@ -1,6 +1,6 @@
 const { check, runTest, skipTest } = require("../../test-api");
 
-// For the rest of the challenges in this directory, take a look at what is expected in the tests to help you determine what behaviour your function should exhibit
+// For this function take a look at what is expected in the tests to help you determine what behaviour your function should exhibit
 
 // declare validMobileNumber here
 
