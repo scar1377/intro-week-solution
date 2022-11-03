@@ -100,7 +100,7 @@ testValidCountdown()
 This function should take a string as an argument
 The function must return a boolean depending on if the string is a valid 
 collection of letters for the TV show countdown.
-In countdown a valid collection contains at least 4 consonants and 3 vowels and have exactly 9 letters
+In countdown a valid collection contains at least 4 consonants and 3 vowels and has exactly 9 letters
 */
 
 skipTest("testValidCountdown()", function () {
