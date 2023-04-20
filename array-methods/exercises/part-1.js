@@ -5,7 +5,7 @@ const { check, runTest, skipTest } = require("../../test-api");
 runTest("get the multiples of 10 from 10 to 100", function () {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  const multiplesOf10 = USE_ARRAY_METHOD;
+  const multiplesOf10 = items.map((item) => item * 10);
 
   check(multiplesOf10).isEqualTo([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
 });
