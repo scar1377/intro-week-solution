@@ -1,3 +1,3 @@
 const num = 101;
 
-module.exports = '???';
+module.exports = num.toString();
